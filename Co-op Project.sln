@@ -13,6 +13,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceTesting", "Insuran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestmentTesting", "InvestmentTesting\InvestmentTesting.csproj", "{18002A01-F4EA-49A5-AC3F-3E8EFBF5900B}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Co-opFrontOffice", "Co-opFrontOffice\", "{1789679A-75B9-4D73-AB5D-78FE16B31772}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{120b064d-5a0d-4e86-8384-58780cc8edf6}|Co-opClasses.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58275"
+		Debug.AspNetCompiler.PhysicalPath = "Co-opFrontOffice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58275\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58275"
+		Release.AspNetCompiler.PhysicalPath = "Co-opFrontOffice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58275\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58275"
+		SlnRelativePath = "Co-opFrontOffice\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +62,10 @@ Global
 		{18002A01-F4EA-49A5-AC3F-3E8EFBF5900B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18002A01-F4EA-49A5-AC3F-3E8EFBF5900B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18002A01-F4EA-49A5-AC3F-3E8EFBF5900B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1789679A-75B9-4D73-AB5D-78FE16B31772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1789679A-75B9-4D73-AB5D-78FE16B31772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1789679A-75B9-4D73-AB5D-78FE16B31772}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1789679A-75B9-4D73-AB5D-78FE16B31772}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
