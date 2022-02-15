@@ -45,7 +45,9 @@
     <Compile Include="clsClaimCollection.cs" />
     <Compile Include="clsClaimInjury.cs" />
     <Compile Include="clsClaimInjuryCollection.cs" />
+    <Compile Include="clsClient.cs" />
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsFees.cs" />
     <Compile Include="clsPersonalInjury.cs" />
     <Compile Include="clsPersonalInjuryCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
