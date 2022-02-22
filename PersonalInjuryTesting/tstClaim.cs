@@ -7,6 +7,13 @@ namespace PersonalInjuryTesting
     [TestClass]
     public class tstClaim
     {
+        //good test data to pass to the method
+        string Location = "Oadby";
+        string Status = "In Progress";
+        string DateOfClaim = DateTime.Now.Date.ToString();
+        string DateOfInjury = DateTime.Now.Date.AddYears(-3).ToString();
+        
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -35,11 +42,11 @@ namespace PersonalInjuryTesting
             //create an instance of the class
             clsClaim AClaim = new clsClaim();
             //create some test data to assign to the property
-            string SomeLocation = "Leicester";
+            string Location = "Oadby";
             //assign the data to the property
-            AClaim.Location = SomeLocation;
+            AClaim.Location = Location;
             //test to see it exists
-            Assert.AreEqual(AClaim.Location, SomeLocation);
+            Assert.AreEqual(AClaim.Location, Location);
         }
 
         [TestMethod]
@@ -48,11 +55,11 @@ namespace PersonalInjuryTesting
             //create an instance of the class
             clsClaim AClaim = new clsClaim();
             //create some test data to assign to the property
-            string SomeStatus = "In Progress";
+            string Status = "In Progress";
             //assign the data to the property
-            AClaim.Status = SomeStatus;
+            AClaim.Status = Status;
             //test to see it exists
-            Assert.AreEqual(AClaim.Status, SomeStatus);
+            Assert.AreEqual(AClaim.Status, Status);
         }
 
 
@@ -103,9 +110,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of validation
             String Error = "";
             //create some test data to test the method
-            string SomeLocation = "TestData";
+            string Location = "Oadby";
             //invoke the method
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see it exists
             Assert.AreEqual(Error, "");
         }
@@ -122,9 +129,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -137,9 +144,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "h";
+            string Location = "O";
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -152,9 +159,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "he";
+            string Location = "Oa";
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -167,11 +174,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //pad the string with characters
-            SomeLocation = SomeLocation.PadRight(49, 'a');
+            Location = Location.PadRight(49, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -184,11 +191,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //pad the string with characters
-            SomeLocation = SomeLocation.PadRight(50, 'a');
+            Location = Location.PadRight(50, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -201,11 +208,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //pad the string with characters
-            SomeLocation = SomeLocation.PadRight(51, 'a');
+            Location = Location.PadRight(51, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -218,11 +225,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //pad the string with characters
-            SomeLocation = SomeLocation.PadRight(25, 'a');
+            Location = Location.PadRight(25, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -235,11 +242,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeLocation = "";
+            string Location = "";
             //pad the string with characters
-            SomeLocation = SomeLocation.PadRight(500, 'a');
+            Location = Location.PadRight(500, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeLocation);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -257,9 +264,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -272,9 +279,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "h";
+            string Status = "h";
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -287,9 +294,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "he";
+            string Status = "he";
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -302,11 +309,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //pad the string with characters
-            SomeStatus = SomeStatus.PadRight(49, 'a');
+            Status = Status.PadRight(49, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -319,11 +326,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //pad the string with characters
-            SomeStatus = SomeStatus.PadRight(50, 'a');
+            Status = Status.PadRight(50, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -336,11 +343,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //pad the string with characters
-            SomeStatus = SomeStatus.PadRight(51, 'a');
+            Status = Status.PadRight(51, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -353,11 +360,11 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //pad the string with characters
-            SomeStatus = SomeStatus.PadRight(25, 'a');
+            Status = Status.PadRight(25, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -370,12 +377,242 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeStatus = "";
+            string Status = "";
             //pad the string with characters
-            SomeStatus = SomeStatus.PadRight(500, 'a');
+            Status = Status.PadRight(500, 'a');
             //invoke the method 
-            Error = AClaim.Valid(SomeStatus);
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfClaimExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is - 100 years
+            TestData = TestData.AddYears(-100);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfClaimMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is - 1 day
+            TestData = TestData.AddDays(-1);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfClaimMin()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfClaimMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is + 1 day
+            TestData = TestData.AddDays(1);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfClaimExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is + 100 years
+            TestData = TestData.AddYears(100);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfClaimInvalidData()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //set the dateOfClaim to a non date value
+            string DateOfClaim = "This is not a date";
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+       /* [TestMethod]
+        public void DateOfInjuryExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is - 100 years
+            TestData = TestData.AddYears(-100);
+            //convert the date variable to a string variable 
+            string DateOfInjury = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfInjuryMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is - 366 days
+            TestData = TestData.AddDays(-366);
+            //convert the date variable to a string variable 
+            string DateOfInjury = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfInjuryMin()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is -365 days
+            TestData = TestData.AddDays(-365);
+            //convert the date variable to a string variable 
+            string DateOfInjury = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfInjuryMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is -364days
+            TestData = TestData.AddDays(-364);
+            //convert the date variable to a string variable 
+            string DateOfInjury = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        } */
+        [TestMethod]
+        public void DatOfInjuryExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is + 100 years
+            TestData = TestData.AddYears(100);
+            //convert the date variable to a string variable 
+            string DateOfInjury = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateOfInjuryInvalidData()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //set the dateOfInjury to a non date value
+            string DateOfInjury = "This is not in a date format";
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
     }

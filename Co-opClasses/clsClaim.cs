@@ -4,54 +4,146 @@ namespace Co_opClasses
 {
     public class clsClaim
     {
-        public int ClaimID { get; set; }
-        public string Location { get; set; }
-        public string Status { get; set; }
-        public DateTime DateOfClaim { get; set; }
-        public DateTime DateOfInjury { get; set; }
-        public bool EvidenceProvided { get; set; }
+        //private data members for all the properties
+        private Int32 mClaimID;
+        private string mLocation;
+        private string mStatus;
+        private DateTime mDateOfClaim;
+        private DateTime mDateOfInjury;
+        private Boolean mEvidenceProvided;
+        public int ClaimID
+        {
+            get
+            {
+                return mClaimID;
+            }
+            set
+            {
+                mClaimID = value;
+            }
+        }
+        public string Location
+        {
+            get
+            {
+                return mLocation;
+            }
+            set
+            {
+                mLocation = value;
+            }
+        }
+        public string Status
+        {
+            get
+            {
+                return mStatus;
+            }
+            set
+            {
+                mStatus = value;
+            }
+        }
+        public DateTime DateOfClaim
+        {
+            get
+            {
+                return mDateOfClaim;
+            }
+            set
+            {
+                mDateOfClaim = value;
+            }
+        }
+        public DateTime DateOfInjury
+        {
+            get
+            {
+                return mDateOfInjury;
+            }
+            set
+            {
+                mDateOfInjury = value;
+            }
+        }
+        public bool EvidenceProvided
+        {
+            get
+            {
+                return mEvidenceProvided;
+            }
+            set
+            {
+                mEvidenceProvided = value;
+            }
+        }
 
-        public string Valid(string someLocation, string someStatus)
+        public string Valid(string location, string status, string dateOfClaim, string dateOfInjury)
         {
             //string variable to store the error message
             string Error = "";
+            //create a temp variable to store date values
+            DateTime DateTemp;
             //if the name of the personal injury is more than 50 characters
-            if (someLocation.Length > 50)
+            if (location.Length > 50)
             {
                 //return a blank string
                 Error = "The Location cannot have more than 50 characters";
             }
-            if (someLocation.Length == 0)
+            if (location.Length == 0)
             {
                 //return an error message
                 Error = "The Location must not be blank";
             }
-            if (someStatus.Length > 50)
+            if (status.Length > 50)
             {
                 //return a blank string
                 Error = "The Status cannot have more than 50 characters";
             }
-            if (someStatus.Length == 0)
+            if (status.Length == 0)
             {
                 //return an error message
                 Error = "The Status must not be blank";
             }
-            return Error;
-        }
 
-        public string Valid(string someStatus)
-        {
-            string Error = "";
-            if (someStatus.Length > 50)
+            try
             {
-                //return a blank string
-                Error = "The Status cannot have more than 50 characters";
+                //cope the dateOfClaim value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateOfClaim);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                DateTemp = Convert.ToDateTime(dateOfClaim);
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
             }
-            if (someStatus.Length == 0)
+            catch
             {
-                //return an error message
-                Error = "The Status must not be blank";
+                //record the error
+                Error = Error + "The date entered is not in the valid format : ";
             }
+
+            try
+            {
+                //cope the dateOfInjury value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateOfInjury);
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date entered is not in the valid format : ";
+            }
+
             return Error;
         }
     }
