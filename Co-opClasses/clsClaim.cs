@@ -11,6 +11,7 @@ namespace Co_opClasses
         private DateTime mDateOfClaim;
         private DateTime mDateOfInjury;
         private Boolean mEvidenceProvided;
+
         public int ClaimID
         {
             get

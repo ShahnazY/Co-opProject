@@ -4,10 +4,55 @@ namespace Co_opClasses
 {
     public class clsPersonalInjury
     {
-        public int PersonalInjuryID { get; set; }
-        public string TypeOfInjury { get; set; }
-        public string Severity { get; set; }
-        public decimal Compensation { get; set; }
+        private Int32 mPersonalInjuryID;
+        private string mTypeOfInjury;
+        private string mSeverity;
+        private decimal mCompensation;
+
+        public int PersonalInjuryID
+        {
+            get
+            {
+                return mPersonalInjuryID;
+            }
+            set
+            {
+                mPersonalInjuryID = value;
+            }
+        }
+        public string TypeOfInjury
+        {
+            get
+            {
+                return mTypeOfInjury;
+            }
+            set
+            {
+                mTypeOfInjury = value;
+            }
+        }
+        public string Severity
+        {
+            get
+            {
+                return mSeverity;
+            }
+            set
+            {
+                mSeverity = value;
+            }
+        }
+        public decimal Compensation
+        {
+            get
+            {
+                return mCompensation;
+            }
+            set
+            {
+                mCompensation = value;
+            }
+        }
 
         public string Valid(string somePersonalInjury, string someSeverity)
         {
