@@ -52,6 +52,7 @@
     <Compile Include="tstFees.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstClient.cs" />
+    <Compile Include="tstFunds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
