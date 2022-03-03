@@ -152,5 +152,79 @@ namespace Co_opClasses
 
             }
         }//end of find function
+
+
+        //fuction for the public validation method
+        public string Valid(string symbol, string fundName, string risk, string objective, string change, string stocks, string marketPrice)
+        {
+            //this function accepts 7 parameters for validation
+            //it returns string containing error message
+            //if no erorr is found, it return blank string
+
+            //string variable to store error
+            String Error = "";
+            //storing temporaty variables
+            Int32 ValueTemp;
+
+            //if the symbol is blank
+            if (symbol.Length == 0)
+            {
+                Error = Error + "The symbol may not be blank!  ";
+            }
+
+            //if the symbol is too long
+            if (symbol.Length > 10)
+            {
+                Error = Error + "The symbol must be less than 10 characters!  ";
+            }
+
+            //if the fund name is blank
+            if (fundName.Length == 0)
+            {
+                Error = Error + "The fund name may not be blank!  ";
+            }
+
+            //if the fund name is too long
+            if (fundName.Length > 50)
+            {
+                Error = Error + "The fund name must be less than 50 characters!  ";
+            }
+
+            //if the objective is blank
+            if (objective.Length == 0)
+            {
+                Error = Error + "The objective may not be blank!  ";
+            }
+
+            //if the objective is too long
+            if (objective.Length > 500)
+            {
+                Error = Error + "The objective must be less than 500 characters!  ";
+            }
+
+            try
+            {
+                ValueTemp = Convert.ToInt32(risk);
+                //if the risk value is 0
+                if (ValueTemp == 0)
+                {
+                    Error = Error + "The risk value cannot be 0!  ";
+                }
+
+                //if the risk value is too big
+                if (ValueTemp > 50000)
+                {
+                    Error = Error + "The risk value is too big! Maximum risk value is 7. ";
+                }
+            }
+
+            catch
+            {
+                Error = Error + "The risk value must be a number!  ";
+            }
+
+            //return any error message
+            return Error;
+        }
     }
 }
