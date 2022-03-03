@@ -15,6 +15,7 @@ namespace InvestmentTesting
         string Stocks = "1876";
         string MarketPrice = "£47.71";
         string Objective = "The Fund employs a passive management – or indexing – investment approach, through physical acquisition of securities, and seeks to track the performance of the FTSE Emerging Index (the “Index”). The Index is comprised of large and mid - sized company stocks in emerging markets. The Fund attempts to: 1.Track the performance of the Index by investing in a representative sample of Index constituent securities. 2.Remain fully invested except in extraordinary market, political or similar conditions.";
+        
         //these lines of code are all for FIND METHOD with all attributes
         //it starts here
         //////////////////////////////////////////////////////////////////////////////////
@@ -887,6 +888,125 @@ namespace InvestmentTesting
             Int32 TestValue;
             TestValue = 5000000;
             String Risk = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //test method for extreme maximum stocks value
+        [TestMethod]
+        public void StocksExtremeMax()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //this should fail
+            Int32 TestValue;
+            TestValue = 500000000;
+            String Stocks = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //test method for Stocks data value
+        [TestMethod]
+        public void StocksInvalidData()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //set the date added to non date value
+            String Stocks = "This is not a number!";
+            //invoke the method
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        //test method for Stocks value
+        [TestMethod]
+        public void StocksMin()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //1 should pass
+            Int32 TestValue;
+            TestValue = 1;
+            String Stocks = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //test method for minimum Stocks value
+        [TestMethod]
+        public void StocksMinLessOne()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //0 should fail
+            Int32 TestValue;
+            TestValue = 0;
+            String Stocks = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //test method for middle Stocks value
+        [TestMethod]
+        public void StocksMid()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //this should pass
+            Int32 TestValue;
+            TestValue = 500000;
+            String Stocks = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //test method for maximum Stocks value
+        [TestMethod]
+        public void StocksMax()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //this should pass
+            Int32 TestValue;
+            TestValue = 1000000;
+            String Stocks = TestValue.ToString();
+            Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //test method for maximum Stocks value plus one
+        [TestMethod]
+        public void StocksMaxPlusOne()
+        {
+            //create instance of the class
+            clsFund AFund = new clsFund();
+            //string to store error message
+            String Error = "";
+            //this should fail
+            Int32 TestValue;
+            TestValue = 1000001;
+            String Stocks = TestValue.ToString();
             Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");

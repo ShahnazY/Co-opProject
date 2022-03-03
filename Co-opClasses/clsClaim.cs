@@ -145,6 +145,22 @@ namespace Co_opClasses
                 Error = Error + "The date entered is not in the valid format : ";
             }
 
+            try
+            {
+                //cope the dateOfInjury value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateOfInjury);
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date entered is not in the valid format : ";
+            }
+
             return Error;
         }
     }

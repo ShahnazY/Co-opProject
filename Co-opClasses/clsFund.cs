@@ -223,6 +223,27 @@ namespace Co_opClasses
                 Error = Error + "The risk value must be a number!  ";
             }
 
+            try
+            {
+                ValueTemp = Convert.ToInt32(stocks);
+                //if the stock value is 0
+                if (ValueTemp == 0)
+                {
+                    Error = Error + "The stock value cannot be 0!  ";
+                }
+
+                //if the stock value is too big
+                if (ValueTemp > 50000000)
+                {
+                    Error = Error + "The stock value is too big! Maximum risk value is 1000000. ";
+                }
+            }
+
+            catch
+            {
+                Error = Error + "The stock value must be a number!  ";
+            }
+
             //return any error message
             return Error;
         }
