@@ -34,6 +34,7 @@ namespace Co_opClasses
                 mLocation = value;
             }
         }
+
         public string Status
         {
             get
@@ -78,6 +79,24 @@ namespace Co_opClasses
                 mEvidenceProvided = value;
             }
         }
+
+        public string Valid(string status)
+        {
+            string Error = "";
+            if (status.Length > 50)
+            {
+                //return a blank string
+                Error = "The Status cannot have more than 50 characters";
+            }
+            if (status.Length == 0)
+            {
+                //return an error message
+                Error = "The Status must not be blank";
+            }
+
+            return Error;
+        }
+
 
         public string Valid(string location, string status, string dateOfClaim, string dateOfInjury)
         {

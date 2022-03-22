@@ -4,17 +4,139 @@ namespace Co_opClasses
 {
     public class clsCustomer
     {
-        public int CustomerID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ContactNo { get; set; }
-        public string Gender { get; set; }
-        public int HouseNo { get; set; }
-        public string Street { get; set; }
-        public string Town { get; set; }
-        public string PostCode { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string Email { get; set; }
+        //private data members for all the properties
+        private Int32 mCustomerID;
+        private string mFirstName;
+        private string mLastName;
+        private string mContactNo;
+        private string mGender;
+        private Int32 mHouseNo;
+        private string mStreet;
+        private string mTown;
+        private string mPostCode;
+        private DateTime mDateOfBirth;
+        private string mEmail;
+        public int CustomerID
+        {
+            get
+            {
+                return mCustomerID;
+            }
+            set
+            {
+                mCustomerID = value;
+            }
+        }
+        public string FirstName
+        {
+            get
+            {
+                return mFirstName;
+            }
+            set
+            {
+                mFirstName = value;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return mLastName;
+            }
+            set
+            {
+                mLastName = value;
+            }
+        }
+        public string ContactNo
+        {
+            get
+            {
+                return mContactNo;
+            }
+            set
+            {
+                mContactNo = value;
+            }
+        }
+        public string Gender
+        {
+            get
+            {
+                return mGender
+            }
+            set
+            {
+                mGender = value;
+            }
+        }
+        public int HouseNo
+        {
+            get
+            {
+                return mHouseNo;
+            }
+            set
+            {
+                mHouseNo = value;
+            }
+        }
+        public string Street
+        {
+            get
+            {
+                return mStreet;
+            }
+            set
+            {
+                mStreet = value;
+            }
+        }
+        public string Town
+        {
+            get
+            {
+                return mTown;
+            }
+            set
+            {
+                mTown = value;
+            }
+        }
+        public string PostCode
+        {
+            get
+            {
+                return mPostCode;
+            }
+            set
+            {
+                mPostCode = value;
+            }
+        }
+        public DateTime DateOfBirth
+        {
+            get
+            {
+                return mDateOfBirth;
+            }
+            set
+            {
+                mDateOfBirth = value;
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                return mEmail;
+            }
+            set
+            {
+                mEmail = value;
+            }
+        }
 
         public string Valid(string firstName, string lastName, string dateOfBirth, string email, string houseNo, string street, string town, string postCode)
         {
