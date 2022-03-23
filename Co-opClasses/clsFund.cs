@@ -12,6 +12,7 @@ namespace Co_opClasses
         private string mMarketPrice;
         private Int32 mStocks;
         private string mObjective;
+        private string mSymbol;
 
 
         public int FundNo
@@ -25,6 +26,20 @@ namespace Co_opClasses
             {
                 //this line of code allows data into property
                 mFundNo = value;
+            }
+        }
+
+        public string Symbol
+        {
+            get
+            {
+                //tis line of code sends data out of the property
+                return mSymbol;
+            }
+            set
+            {
+                //this line of code allows data into property
+                mSymbol = value;
             }
         }
 
@@ -140,6 +155,7 @@ namespace Co_opClasses
                 mMarketPrice = Convert.ToString(DB.DataTable.Rows[0]["MarketPrice"]);
                 mStocks = Convert.ToInt32(DB.DataTable.Rows[0]["Stocks"]);
                 mObjective = Convert.ToString(DB.DataTable.Rows[0]["Objective"]);
+                mSymbol = Convert.ToString(DB.DataTable.Rows[0]["Symbol"]);
 
                 //return that everything worked
                 return true;
