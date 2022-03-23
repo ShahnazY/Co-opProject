@@ -159,12 +159,12 @@ namespace Co_opClasses
                 //read the fields from the current record
                 AFund.FundNo = Convert.ToInt32(DB.DataTable.Rows[Index]["FundNo"]);
                 AFund.Risk = Convert.ToInt32(DB.DataTable.Rows[Index]["Risk"]);
-                AFund.Change = Convert.ToString(DB.DataTable.Rows[0]["Change"]);
-                AFund.FundName = Convert.ToString(DB.DataTable.Rows[0]["FundName"]);
-                AFund.MarketPrice = Convert.ToString(DB.DataTable.Rows[0]["MarketPrice"]);
-                AFund.Stocks = Convert.ToInt32(DB.DataTable.Rows[0]["Stocks"]);
-                AFund.Objective = Convert.ToString(DB.DataTable.Rows[0]["Objective"]);
-                AFund.Symbol = Convert.ToString(DB.DataTable.Rows[0]["Symbol"]);
+                AFund.Change = Convert.ToString(DB.DataTable.Rows[Index]["Change"]);
+                AFund.FundName = Convert.ToString(DB.DataTable.Rows[Index]["FundName"]);
+                AFund.MarketPrice = Convert.ToString(DB.DataTable.Rows[Index]["MarketPrice"]);
+                AFund.Stocks = Convert.ToInt32(DB.DataTable.Rows[Index]["Stocks"]);
+                AFund.Objective = Convert.ToString(DB.DataTable.Rows[Index]["Objective"]);
+                AFund.Symbol = Convert.ToString(DB.DataTable.Rows[Index]["Symbol"]);
                 //add the record to the private data member
                 mFundList.Add(AFund);
                 //point at the next record
