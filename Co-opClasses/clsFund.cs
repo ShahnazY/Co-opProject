@@ -135,7 +135,7 @@ namespace Co_opClasses
         //private Int32 mStocks;
         //private string mObjective;
 
-        public bool Find(int fundNo)
+        public bool Find(int FundNo)
         {
             //create instance of the data connection
             clsDataConnection DB = new clsDataConnection();
@@ -262,6 +262,26 @@ namespace Co_opClasses
 
             //return any error message
             return Error;
+        }
+
+        public bool FindTheFundNo()
+        {
+            //create instance of data connection class
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure to find last order nmber
+            DB.Execute("sproc_tblFund_SelectFundNo");
+            //if one record is found
+            if (DB.Count == 1)
+            {
+                mFundNo = Convert.ToInt32(DB.DataTable.Rows[0]["FundNo"]);
+                return true;
+            }
+            else
+
+            {
+                return false;
+            }
+
         }
     }
 }
