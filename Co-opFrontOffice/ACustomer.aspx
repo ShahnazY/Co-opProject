@@ -15,7 +15,6 @@
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 297px; top: 312px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 601px; top: 215px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtStreet" runat="server" style="z-index: 1; left: 602px; top: 263px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtTown" runat="server" style="z-index: 1; left: 600px; top: 314px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 602px; top: 359px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 407px; top: 446px; position: absolute"></asp:Label>
         <asp:Label ID="lblFirstName" runat="server" style="z-index: 1; left: 179px; top: 215px; position: absolute" Text="First Name"></asp:Label>
@@ -29,6 +28,8 @@
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 507px; top: 512px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Label ID="lblDateOfBirth" runat="server" style="z-index: 1; left: 167px; top: 372px; position: absolute" Text="Date of Birth"></asp:Label>
         <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 294px; top: 368px; position: absolute"></asp:TextBox>
+        <asp:DropDownList ID="ddlTown" runat="server" style="z-index: 1; left: 602px; top: 315px; position: absolute">
+        </asp:DropDownList>
     </form>
 </body>
 </html>

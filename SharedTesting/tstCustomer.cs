@@ -180,5 +180,544 @@ namespace SharedTesting
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
+
+        /// <summary>
+        /// Firstname property tests for minimums, mid and maximums
+        /// </summary>
+
+        [TestMethod]
+        public void FirstNameMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMinBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "J";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "Jo";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //pad the string with characters
+            FirstName = FirstName.PadRight(49, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //pad the string with characters
+            FirstName = FirstName.PadRight(50, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //pad the string with characters
+            FirstName = FirstName.PadRight(51, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //pad the string with characters
+            FirstName = FirstName.PadRight(25, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string FirstName = "";
+            //pad the string with characters
+            FirstName = FirstName.PadRight(500, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Lastname property tests for minimums, mid and maximums
+        /// </summary>
+
+        [TestMethod]
+        public void LastNameMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMinBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "J";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "Jo";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //pad the string with characters
+            LastName = LastName.PadRight(49, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //pad the string with characters
+            LastName = LastName.PadRight(50, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //pad the string with characters
+            LastName = LastName.PadRight(51, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //pad the string with characters
+            LastName = LastName.PadRight(25, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string LastName = "";
+            //pad the string with characters
+            LastName = LastName.PadRight(500, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Street property tests for minimums, mid and maximums
+        /// </summary>
+
+        [TestMethod]
+        public void StreetMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMinBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "O";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "Ox";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(49, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMaxBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(50, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(51, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(25, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(500, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Town property tests for minimums, mid and maximums
+        /// </summary>
+
+        [TestMethod]
+        public void TownMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMinBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "L";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "Le";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //pad the string with characters
+            Town = Town.PadRight(49, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMaxBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //pad the string with characters
+            Town = Town.PadRight(50, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //pad the string with characters
+            Town = Town.PadRight(51, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //pad the string with characters
+            Town = Town.PadRight(25, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void TownExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Town = "";
+            //pad the string with characters
+            Town = Town.PadRight(500, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        
+
     }
 }
