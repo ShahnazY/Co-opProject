@@ -64,7 +64,7 @@ namespace Co_opClasses
         {
             get
             {
-                return mGender
+                return mGender;
             }
             set
             {

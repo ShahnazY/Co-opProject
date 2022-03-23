@@ -16,6 +16,5 @@ namespace Co_opBackOffice
         {
             InitializeComponent();
         }
-
     }
 }
