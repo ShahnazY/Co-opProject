@@ -80,7 +80,7 @@ namespace Co_opClasses
             }
         }
 
-        public string Valid(string status)
+        /*public string Valid(string status)
         {
             string Error = "";
             if (status.Length > 50)
@@ -181,6 +181,6 @@ namespace Co_opClasses
             }
 
             return Error;
-        }
+        }*/
     }
 }
