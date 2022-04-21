@@ -54,7 +54,18 @@ namespace Co_opClasses
             }
         }
 
-        public string Valid(string somePersonalInjury, string someSeverity)
+        public bool Find(int PersonalInjuryID)
+        {
+            //set the private data members to the test data value
+            mPersonalInjuryID = 2;
+            mTypeOfInjury = "Head";
+            mSeverity = "High";
+            mCompensation = 2000M;
+            //always return true
+            return true;
+        }
+
+        /*public string Valid(string somePersonalInjury, string someSeverity)
         {
             //string variable to store the error message
             string Error = "";
@@ -103,6 +114,6 @@ namespace Co_opClasses
                 }
             }
             return Error;
-        }
+        }*/
     }
 }

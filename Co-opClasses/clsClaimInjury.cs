@@ -7,7 +7,7 @@ namespace Co_opClasses
         public int ClaimID { get; set; }
         public int InjuryID { get; set; }
 
-        public string Valid(string someClaimInjury)
+        /*public string Valid(string someClaimInjury)
         {
             //if the name of the personal injury is not blank
             if (someClaimInjury != "")
@@ -20,6 +20,6 @@ namespace Co_opClasses
                 //otherwise return an error message
                 return "The Claim Injury must not be blank";
             }
-        }
+        }*/
     }
 }

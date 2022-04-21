@@ -68,6 +68,110 @@ namespace PersonalInjuryTesting
         }
 
         [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an insrance of the class 
+            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 PersonalInjuryID = 2;
+            //invoke the method
+            Found = APersonalInjury.Find(PersonalInjuryID);
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestPersonalInjuryIDFound()
+        {
+            //create an insrance of the class 
+            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 PersonalInjuryID = 2;
+            //invoke the method
+            Found = APersonalInjury.Find(PersonalInjuryID);
+            //check the personal injury ID
+            if(APersonalInjury.PersonalInjuryID != 2)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTypeOfInjuryFound()
+        {
+            //create an insrance of the class 
+            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 PersonalInjuryID = 2;
+            //invoke the method
+            Found = APersonalInjury.Find(PersonalInjuryID);
+            //check the personal injury ID
+            if (APersonalInjury.TypeOfInjury != ("Head"))
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestSeverityFound()
+        {
+            //create an insrance of the class 
+            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 PersonalInjuryID = 2;
+            //invoke the method
+            Found = APersonalInjury.Find(PersonalInjuryID);
+            //check the personal injury ID
+            if (APersonalInjury.Severity != ("High"))
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCompensationFound()
+        {
+            //create an insrance of the class 
+            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+            //Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 PersonalInjuryID = 2;
+            //invoke the method
+            Found = APersonalInjury.Find(PersonalInjuryID);
+            //check the personal injury ID
+            if (APersonalInjury.Compensation != 2000M)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+
+        /*[TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class

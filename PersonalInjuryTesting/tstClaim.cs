@@ -102,7 +102,7 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(TestData, AClaim.EvidenceProvided);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
@@ -580,7 +580,7 @@ namespace PersonalInjuryTesting
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
-        } */
+        } 
         [TestMethod]
         public void DatOfInjuryExtremeMax()
         {
@@ -614,6 +614,6 @@ namespace PersonalInjuryTesting
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
-        }
+        }*/
     }
 }
