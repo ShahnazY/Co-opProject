@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -82,15 +83,29 @@ namespace Co_opClasses
 
         public bool Find(int ClaimID)
         {
-            //set the private data members to the test data value
-            mClaimID = 4;
-            mLocation = "Leicester";
-            mStatus = "Pending";
-            mDateOfClaim = Convert.ToDateTime("22/04/2022");
-            mDateOfInjury = Convert.ToDateTime("10/04/2022");
-            mEvidenceProvided = true;
-            //always return true
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the claimID to search for
+            DB.AddParameter("@ClaimID", ClaimID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblClaim_FilterByClaimID");
+            //if a record is found
+            if (DB.Count == 1)
+            {
+                //copy the data from database to the private data mmembers
+                mClaimID = Convert.ToInt32(DB.DataTable.Rows[0]["ClaimID"]);
+                mLocation = Convert.ToString(DB.DataTable.Rows[0]["Location"]); ;
+                mStatus = Convert.ToString(DB.DataTable.Rows[0]["Status"]);
+                mDateOfClaim = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfClaim"]);
+                mDateOfInjury = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfInjury"]);
+                mEvidenceProvided = Convert.ToBoolean(DB.DataTable.Rows[0]["EvidenceProvided"]);
+                //return everything worked
+                return true;
+            }
+            else
+            {
+                //return a problem
+                return false;
+            }
         }
 
         /*public string Valid(string status)

@@ -112,11 +112,11 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the claim ID
-            if (AClaim.ClaimID != 4)
+            if (AClaim.ClaimID != 1)
             {
                 OK = false;
             }
@@ -134,7 +134,7 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the property
@@ -156,11 +156,11 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the property
-            if (AClaim.Status != "Pending")
+            if (AClaim.Status != "In Progress")
             {
                 OK = false;
             }
@@ -178,7 +178,7 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the property
@@ -200,11 +200,11 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the property
-            if (AClaim.DateOfInjury != Convert.ToDateTime("10/04/2022"))
+            if (AClaim.DateOfInjury != Convert.ToDateTime("08/04/2022"))
             {
                 OK = false;
             }
@@ -222,7 +222,7 @@ namespace PersonalInjuryTesting
             //boolean variable to record if the data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 ClaimID = 4;
+            Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
             //check the property
