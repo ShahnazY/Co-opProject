@@ -17,6 +17,19 @@ namespace PersonalInjuryTesting
         }
 
         [TestMethod]
+        public void ClaimInjuryIDOK()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create some test data to assign to the property
+            Int32 ClaimInjuryID = 1;
+            //assign the data to the property
+            AClaimInjury.ClaimInjuryID = ClaimInjuryID;
+            //test to see it exists
+            Assert.AreEqual(AClaimInjury.ClaimInjuryID, ClaimInjuryID);
+        }
+
+        [TestMethod]
         public void ClaimIDOK()
         {
             //create an instance of the class
@@ -40,6 +53,65 @@ namespace PersonalInjuryTesting
             AClaimInjury.InjuryID = InjuryID;
             //test to see it exists
             Assert.AreEqual(AClaimInjury.InjuryID, InjuryID);
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 ClaimInjuryID = 2;
+            //invoke the method
+            Found = AClaimInjury.Find(ClaimInjuryID);
+            //test to see it exists
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestClaimIDOK()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimInjuryID = 2;
+            //invoke the method
+            Found = AClaimInjury.Find(ClaimInjuryID);
+            //check the property
+            if (AClaimInjury.ClaimID != 5)
+            {
+                OK = false;
+            }
+            //test to see it exists
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestInjuryIDOK()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimInjuryID = 2;
+            //invoke the method
+            Found = AClaimInjury.Find(ClaimInjuryID);
+            //check the property
+            if (AClaimInjury.InjuryID != 8)
+            {
+                OK = false;
+            }
+            //test to see it exists
+            Assert.IsTrue(OK);
         }
 
         /*[TestMethod]

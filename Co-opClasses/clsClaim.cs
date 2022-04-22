@@ -80,6 +80,19 @@ namespace Co_opClasses
             }
         }
 
+        public bool Find(int ClaimID)
+        {
+            //set the private data members to the test data value
+            mClaimID = 4;
+            mLocation = "Leicester";
+            mStatus = "Pending";
+            mDateOfClaim = Convert.ToDateTime("22/04/2022");
+            mDateOfInjury = Convert.ToDateTime("10/04/2022");
+            mEvidenceProvided = true;
+            //always return true
+            return true;
+        }
+
         /*public string Valid(string status)
         {
             string Error = "";

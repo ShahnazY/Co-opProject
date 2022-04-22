@@ -102,6 +102,138 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(TestData, AClaim.EvidenceProvided);
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the claim ID
+            if (AClaim.ClaimID != 4)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLocationFound()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the property
+            if (AClaim.Location != "Leicester")
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStatusFound()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the property
+            if (AClaim.Status != "Pending")
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateOfClaimFound()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the property
+            if (AClaim.DateOfClaim != Convert.ToDateTime("22/04/2022"))
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateOfInjuryFound()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the property
+            if (AClaim.DateOfInjury != Convert.ToDateTime("10/04/2022"))
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEvidenceProvidedFound()
+        {
+            //create an instance of the class clsTrainers
+            clsClaim AClaim = new clsClaim();
+            //boolean variable to store the result of the search
+            Boolean Found = true;
+            //boolean variable to record if the data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ClaimID = 4;
+            //invoke the method
+            Found = AClaim.Find(ClaimID);
+            //check the property
+            if (AClaim.EvidenceProvided != true)
+            {
+                OK = false;
+            }
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
         /*[TestMethod]
         public void ValidMethodOK()
         {
