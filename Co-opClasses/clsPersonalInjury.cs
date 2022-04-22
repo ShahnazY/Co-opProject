@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -56,13 +57,28 @@ namespace Co_opClasses
 
         public bool Find(int PersonalInjuryID)
         {
-            //set the private data members to the test data value
-            mPersonalInjuryID = 2;
-            mTypeOfInjury = "Head";
-            mSeverity = "High";
-            mCompensation = 2000M;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the personal injury ID to search for
+            DB.AddParameter("@PersonalInjuryID", PersonalInjuryID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblPersonalInjury_FilterByPersonalInjuryID");
+            //if record is found
+            if (DB.Count == 1)
+            {
+                //copy data from database to private data member
+                mPersonalInjuryID = Convert.ToInt32(DB.DataTable.Rows[0]["PersonalInjuryID"]);
+                mTypeOfInjury = Convert.ToString(DB.DataTable.Rows[0]["TypeOfInjury"]);
+                mSeverity = Convert.ToString(DB.DataTable.Rows[0]["Severity"]);
+                mCompensation = Convert.ToDecimal(DB.DataTable.Rows[0]["Compensation"]);
+                //return true if everything is ok
+                return true;
+            }
+            else
+            {
+                //if there's problems
+                return false;
+            }
         }
 
         /*public string Valid(string somePersonalInjury, string someSeverity)

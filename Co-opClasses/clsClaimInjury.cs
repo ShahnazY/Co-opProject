@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -45,9 +46,20 @@ namespace Co_opClasses
 
         public bool Find(int ClaimInjuryID)
         {
-            mClaimID = 5;
-            mInjuryID = 8;
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ClaimInjuryID", ClaimInjuryID);
+            DB.Execute("sproc_tblClaimInjury_FilterByClaimInjuryID");
+            if (DB.Count == 1)
+            {
+                mClaimInjuryID = Convert.ToInt32(DB.DataTable.Rows[0]["ClaimInjuryID"]);
+                mClaimID = Convert.ToInt32(DB.DataTable.Rows[0]["ClaimID"]);
+                mInjuryID = Convert.ToInt32(DB.DataTable.Rows[0]["InjuryID"]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /*public string Valid(string someClaimInjury)

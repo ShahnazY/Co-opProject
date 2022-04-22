@@ -118,7 +118,7 @@ namespace PersonalInjuryTesting
             //invoke the method
             Found = APersonalInjury.Find(PersonalInjuryID);
             //check the personal injury ID
-            if (APersonalInjury.TypeOfInjury != ("Head"))
+            if (APersonalInjury.TypeOfInjury != ("Orthopaedic"))
             {
                 OK = false;
             }
@@ -140,7 +140,7 @@ namespace PersonalInjuryTesting
             //invoke the method
             Found = APersonalInjury.Find(PersonalInjuryID);
             //check the personal injury ID
-            if (APersonalInjury.Severity != ("High"))
+            if (APersonalInjury.Severity != ("Serious"))
             {
                 OK = false;
             }
@@ -162,7 +162,7 @@ namespace PersonalInjuryTesting
             //invoke the method
             Found = APersonalInjury.Find(PersonalInjuryID);
             //check the personal injury ID
-            if (APersonalInjury.Compensation != 2000M)
+            if (APersonalInjury.Compensation != 115000M)
             {
                 OK = false;
             }

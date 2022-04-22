@@ -84,7 +84,7 @@ namespace PersonalInjuryTesting
             //invoke the method
             Found = AClaimInjury.Find(ClaimInjuryID);
             //check the property
-            if (AClaimInjury.ClaimID != 5)
+            if (AClaimInjury.ClaimID != 1)
             {
                 OK = false;
             }
@@ -106,7 +106,7 @@ namespace PersonalInjuryTesting
             //invoke the method
             Found = AClaimInjury.Find(ClaimInjuryID);
             //check the property
-            if (AClaimInjury.InjuryID != 8)
+            if (AClaimInjury.InjuryID != 2)
             {
                 OK = false;
             }
