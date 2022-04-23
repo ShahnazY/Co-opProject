@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddClient.aspx.cs" Inherits="Co_op_Front_Office.AddClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddingClient.aspx.cs" Inherits="AddingClient" %>
 
 <!DOCTYPE html>
 
@@ -58,7 +58,7 @@
         
        
         
-        <asp:Button ID="btnContinue" runat="server" style="z-index: 1; left: 1000px; top: 322px; position: absolute; width: 304px;" Text="CONTINUE WITH REGISTRATION" Font-Names="Yu Gothic" OnClick="btnContinue_Click"  />
+        <asp:Button ID="btnContinue" runat="server" style="z-index: 1; left: 1000px; top: 322px; position: absolute; width: 304px;" Text="CONTINUE WITH REGISTRATION" Font-Names="Yu Gothic"   />
         
        
         
@@ -70,7 +70,7 @@
         
        
         
-         <asp:Button ID="Submitbtn" runat="server" style="z-index: 1; left: 294px; top: 342px; position: absolute" Text="SUBMIT" Font-Names="Yu Gothic" OnClick="Submitbtn_Click"  />
+         <asp:Button ID="Submitbtn" runat="server" style="z-index: 1; left: 294px; top: 342px; position: absolute" Text="SUBMIT" Font-Names="Yu Gothic"   />
         
        
         

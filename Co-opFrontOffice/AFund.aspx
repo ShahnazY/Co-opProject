@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Fund.aspx.cs" Inherits="Co_op_Front_Office.Fund" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AFund.aspx.cs" Inherits="AFund" %>
 
 <!DOCTYPE html>
 
@@ -53,34 +53,7 @@
         
         <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 961px; top: 425px; position: absolute; width: 343px;" Text="GO BACK TO MAIN PAGE" Font-Names="Yu Gothic"  />
         
-       
-        
-         
-        
-       
-        
-         
-        
-       
-        
-         
-        
-       
-        
-         
-        
-       
-        
-         
-        
-       
-        
-         
-        
-       
-        
-         
-        
+
        
         
     </form>

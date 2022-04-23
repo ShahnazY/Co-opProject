@@ -151,7 +151,7 @@
                 <asp:TextBox ID="txtDogName" runat="server" CssClass="auto-style10" OnTextChanged="txtDogName_TextChanged"></asp:TextBox>
                 <asp:TextBox ID="txtDogAge" runat="server" CssClass="auto-style11"></asp:TextBox>
                 <asp:TextBox ID="txtBreed" runat="server" CssClass="auto-style12"></asp:TextBox>
-                <asp:TextBox ID="txtSize" runat="server" CssClass="auto-style13" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtSize" runat="server" CssClass="auto-style13" ></asp:TextBox>
                 <asp:ListBox ID="lstGender" runat="server" CssClass="auto-style14"></asp:ListBox>
                 <asp:Button ID="btnCancel" runat="server" BackColor="#FF3300" CssClass="auto-style15" Font-Bold="True" Text="Cancel" />
                 <asp:Button ID="btnAddDog" runat="server" BackColor="#00CC66" CssClass="auto-style16" Font-Bold="True" ForeColor="Black" OnClick="btnAddDog_Click" Text="ADD DOG" />

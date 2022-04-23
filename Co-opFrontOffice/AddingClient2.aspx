@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ContinueClient.aspx.cs" Inherits="Co_op_Front_Office.ContinueClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddingClient2.aspx.cs" Inherits="AddingClient2" %>
 
 <!DOCTYPE html>
 
@@ -57,3 +57,4 @@
     </form>
 </body>
 </html>
+
