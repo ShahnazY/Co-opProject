@@ -10,22 +10,24 @@ public partial class APersonalInjury : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack == false)
+        /*if (IsPostBack == false)
         {
             DisplayPersonalInjuries();
-        }
-            
+        }*/
+
+        
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsPersonalInjury APersonalInjury = new clsPersonalInjury();
-        string Error;
-        string Severity;
-        Severity = txtSeverity.Text;
-        Error = APersonalInjury.Valid(Severity);
-        lblError.Text = Error;
-        Response.Redirect("Default.aspx");
+        //capture the properties
+        APersonalInjury.TypeOfInjury = ddlTypeOfInjury.Text;
+        APersonalInjury.Severity = txtSeverity.Text;
+        APersonalInjury.Compensation = Convert.ToDecimal(txtCompensation.Text);
+        //store personal injury in the session object
+        Session["APersonalInjury"] = APersonalInjury;
+        Response.Redirect("PersonalInjuryViewer.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -33,12 +35,12 @@ public partial class APersonalInjury : System.Web.UI.Page
         Response.Redirect("Default.aspx");
     }
 
-    void DisplayPersonalInjuries()
+    /*void DisplayPersonalInjuries()
     {
         clsPersonalInjuryCollection TypeOfInjuries = new clsPersonalInjuryCollection();
         ddlTypeOfInjury.DataSource = TypeOfInjuries.AllPersonalInjuries;
         ddlTypeOfInjury.DataValueField = "PersonalInjuryID";
         ddlTypeOfInjury.DataTextField = "TypeOfInjury";
         ddlTypeOfInjury.DataBind();
-    }
+    }*/
 }
