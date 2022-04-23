@@ -30,6 +30,9 @@
         <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 294px; top: 368px; position: absolute"></asp:TextBox>
         <asp:DropDownList ID="ddlTown" runat="server" style="z-index: 1; left: 602px; top: 315px; position: absolute">
         </asp:DropDownList>
+        <asp:Label ID="lblGender" runat="server" style="z-index: 1; left: 207px; top: 415px; position: absolute" Text="Gender"></asp:Label>
+        <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 294px; top: 411px; position: absolute">
+        </asp:DropDownList>
     </form>
 </body>
 </html>

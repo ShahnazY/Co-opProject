@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -10,7 +11,7 @@ namespace Co_opClasses
         private string mLastName;
         private string mContactNo;
         private string mGender;
-        private Int32 mHouseNo;
+        private string mHouseNo;
         private string mStreet;
         private string mTown;
         private string mPostCode;
@@ -71,7 +72,7 @@ namespace Co_opClasses
                 mGender = value;
             }
         }
-        public int HouseNo
+        public string HouseNo
         {
             get
             {
@@ -138,7 +139,39 @@ namespace Co_opClasses
             }
         }
 
-        public string Valid(string firstName, string lastName, string dateOfBirth, string email, string houseNo, string street, string town, string postCode)
+        public bool Find(int CustomerID)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the customerID to search for
+            DB.AddParameter("@CustomerID", CustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByCustomerID");
+            //if a record is found
+            if (DB.Count == 1)
+            {
+                //copy the data from database to the private data mmembers
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mDateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mGender = Convert.ToString(DB.DataTable.Rows[0]["Gender"]);
+                mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
+                mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
+                mTown = Convert.ToString(DB.DataTable.Rows[0]["Town"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                //return everything worked
+                return true;
+            }
+            else
+            {
+                //return a problem
+                return false;
+
+            }
+        }
+
+            public string Valid(string firstName, string lastName, string dateOfBirth, string email, string houseNo, string street, string town, string postCode)
         {
             //string variable to store the error message
             string Error = "";
@@ -209,5 +242,7 @@ namespace Co_opClasses
             }
             return Error;
         }
+
+        
     }
 }

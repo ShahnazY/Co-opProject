@@ -107,21 +107,14 @@ namespace PersonalInjuryTesting
         {
             //create an instance of the class clsTrainers
             clsClaim AClaim = new clsClaim();
-            //boolean variable to store the result of the search
-            Boolean Found = true;
-            //boolean variable to record if the data is OK
-            Boolean OK = true;
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
             //create some test data to use with the method
             Int32 ClaimID = 1;
             //invoke the method
             Found = AClaim.Find(ClaimID);
-            //check the claim ID
-            if (AClaim.ClaimID != 1)
-            {
-                OK = false;
-            }
             //test to see if the result is true
-            Assert.IsTrue(OK);
+            Assert.IsTrue(Found);
         }
 
         [TestMethod]

@@ -15,7 +15,21 @@ public partial class ACustomer : System.Web.UI.Page
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        //create new instance of the class
+        clsCustomer ACustomer = new clsCustomer();
+        //capture the properties
+        ACustomer.FirstName = txtFirstName.Text;
+        ACustomer.LastName = txtLastName.Text;
+        ACustomer.Email = txtEmail.Text;
+        ACustomer.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
+        ACustomer.Gender = ddlGender.Text;
+        ACustomer.HouseNo = txtHouseNo.Text;
+        ACustomer.Street = txtStreet.Text;
+        ACustomer.Town = ddlTown.Text;
+        ACustomer.PostCode = txtPostCode.Text;
+        //store the customer in the session object
+        Session["ACustomer"] = ACustomer;
+        Response.Redirect("CustomerViewer.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
