@@ -227,15 +227,13 @@ namespace PersonalInjuryTesting
             Assert.IsTrue(OK);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
             clsClaim AClaim = new clsClaim();
             //create a string variable to store the result of validation
             String Error = "";
-            //create some test data to test the method
-            string Location = "Oadby";
             //invoke the method
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see it exists
@@ -376,7 +374,7 @@ namespace PersonalInjuryTesting
             Assert.AreNotEqual(Error, "");
         }
 
-
+        
         /// <summary>
         /// Status property tests for minimums, mid and maximums
         /// </summary>
@@ -396,6 +394,7 @@ namespace PersonalInjuryTesting
             Assert.AreNotEqual(Error, "");
         }
 
+        
         [TestMethod]
         public void StatusMinBoundary()
         {
@@ -444,7 +443,7 @@ namespace PersonalInjuryTesting
         }
 
         [TestMethod]
-        public void StatusnMaxBoundary()
+        public void StatusMaxBoundary()
         {
             //create an instance of the class
             clsClaim AClaim = new clsClaim();
@@ -510,7 +509,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
-
+        
         [TestMethod]
         public void DateOfClaimExtremeMin()
         {
@@ -532,6 +531,7 @@ namespace PersonalInjuryTesting
             Assert.AreNotEqual(Error, "");
         }
 
+        
         [TestMethod]
         public void DateOfClaimMinLessOne()
         {
@@ -552,8 +552,9 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
         [TestMethod]
-        public void DateOfClaimMin()
+        public void DateOfClaimMinandMax()
         {
             //create an instance of the class we want to create
             clsClaim AClaim = new clsClaim();
@@ -570,6 +571,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+
         [TestMethod]
         public void DateOfClaimMinPlusOne()
         {
@@ -590,6 +592,50 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void DateOfClaimMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is + 1 day
+            TestData = TestData.AddDays(-1);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfClaimMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsClaim AClaim = new clsClaim();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            DateTime TestData;
+            //set the date to todays date
+            TestData = DateTime.Now.Date;
+            //change the date to whatever the date is + 1 day
+            TestData = TestData.AddDays(+1);
+            //convert the date variable to a string variable 
+            string DateOfClaim = TestData.ToString();
+            //invoke the method
+            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
         [TestMethod]
         public void DateOfClaimExtremeMax()
         {
@@ -610,6 +656,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
         [TestMethod]
         public void DateOfClaimInvalidData()
         {
@@ -625,7 +672,8 @@ namespace PersonalInjuryTesting
             Assert.AreNotEqual(Error, "");
         }
 
-       /* [TestMethod]
+        /*
+        [TestMethod]
         public void DateOfInjuryExtremeMin()
         {
             //create an instance of the class we want to create
@@ -666,6 +714,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+        
         [TestMethod]
         public void DateOfInjuryMin()
         {
@@ -686,6 +735,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+        
         [TestMethod]
         public void DateOfInjuryMinPlusOne()
         {
@@ -739,6 +789,6 @@ namespace PersonalInjuryTesting
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
-        }*/
+        } */
     }
 }

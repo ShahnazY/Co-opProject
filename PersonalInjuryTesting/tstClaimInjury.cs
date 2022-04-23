@@ -7,6 +7,9 @@ namespace PersonalInjuryTesting
     [TestClass]
     public class tstClaimInjury
     {
+        string ClaimID = "1";
+        string InjuryID = "5";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -114,19 +117,186 @@ namespace PersonalInjuryTesting
             Assert.IsTrue(OK);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
             clsClaimInjury AClaimInjury = new clsClaimInjury();
             //create a string variable to store the result of validation
             String Error = "";
-            //create some test data to test the method
-            string SomeClaimInjury = "TestData";
             //invoke the method
-            Error = AClaimInjury.Valid(SomeClaimInjury);
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
             //test to see it exists
             Assert.AreEqual(Error, "");
-        }*/
+        }
+
+        [TestMethod]
+        public void ClaimIDMinLess()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ClaimIDMin()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "1";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ClaimIDMinPlusOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "12";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ClaimIDMaxLessOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "999";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ClaimIDMax()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "1000";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ClaimIDMaxPlusOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string ClaimID = "1001";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMinLessOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMin()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "1";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMinPlusOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "12";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMaxLessOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "999";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMax()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "1000";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDMaxPlusOne()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            string InjuryID = "1001";
+            //invoke the method
+            Error = AClaimInjury.Valid(ClaimID, InjuryID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }

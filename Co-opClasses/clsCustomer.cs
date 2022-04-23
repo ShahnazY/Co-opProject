@@ -171,7 +171,7 @@ namespace Co_opClasses
             }
         }
 
-            public string Valid(string firstName, string lastName, string dateOfBirth, string email, string houseNo, string street, string town, string postCode)
+            public string Valid(string firstName, string lastName, string dateOfBirth, string gender, string email, string houseNo, string street, string town, string postCode)
         {
             //string variable to store the error message
             string Error = "";
@@ -197,6 +197,14 @@ namespace Co_opClasses
             {
                 //return an error message
                 Error = "The last name must not be blank";
+            }
+            if (gender.Length == 0)
+            {
+                Error = Error + "The gender cannot be blank : ";
+            }
+            if (gender.Length > 7)
+            {
+                Error = Error + "The gender cannot be more than 7 characters : ";
             }
             if (street.Length > 50)
             {

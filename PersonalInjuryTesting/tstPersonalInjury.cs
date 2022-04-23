@@ -7,6 +7,11 @@ namespace PersonalInjuryTesting
     [TestClass]
     public class tstPersonalInjury
     {
+        //good test data
+        string TypeOfInjury = "Head";
+        string Severity = "Moderate";
+        string Compensation = "15000";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -171,18 +176,15 @@ namespace PersonalInjuryTesting
         }
 
 
-        /*[TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of validation
             String Error = "";
-            //create some test data to test the method
-            string SomePersonalInjury = "Head";
-            string SomeSeverity = "Moderate";
             //invoke the method
-            Error = APersonalInjury.Valid(SomePersonalInjury, SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see it exists
             Assert.AreEqual(Error, "");
         }
@@ -190,7 +192,7 @@ namespace PersonalInjuryTesting
         /// <summary>
         /// Personal Injury property tests for minimums, mid and maximums
         /// </summary>
-
+        
         [TestMethod]
         public void TypeOfInjuryMinLessOne()
         {
@@ -199,9 +201,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
+            string TypeOfInjury = "";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -214,9 +216,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeTypeOfInjury = "h";
+            string TypeOfInjury = "h";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -229,9 +231,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeTypeOfInjury = "he";
+            string TypeOfInjury = "he";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -243,12 +245,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
             //pad the string with characters
-            SomeTypeOfInjury = SomeTypeOfInjury.PadRight(49, 'a');
+            TypeOfInjury = TypeOfInjury.PadRight(49, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -260,12 +260,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
             //pad the string with characters
-            SomeTypeOfInjury = SomeTypeOfInjury.PadRight(50, 'a');
+            TypeOfInjury = TypeOfInjury.PadRight(50, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -277,12 +275,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
             //pad the string with characters
-            SomeTypeOfInjury = SomeTypeOfInjury.PadRight(51, 'a');
+            TypeOfInjury = TypeOfInjury.PadRight(51, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -294,12 +290,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
             //pad the string with characters
-            SomeTypeOfInjury = SomeTypeOfInjury.PadRight(25, 'a');
+            TypeOfInjury = TypeOfInjury.PadRight(25, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -311,12 +305,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeTypeOfInjury = "";
             //pad the string with characters
-            SomeTypeOfInjury = SomeTypeOfInjury.PadRight(500, 'a');
+            TypeOfInjury = TypeOfInjury.PadRight(500, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeTypeOfInjury);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -325,7 +317,7 @@ namespace PersonalInjuryTesting
         ///Severity property tests for minimum, mid, maximums
         ///</summary>
         ///
-
+        
         [TestMethod]
         public void SeverityMinLessOne()
         {
@@ -334,9 +326,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeSeverity = "";
+            Severity = "";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -348,10 +340,9 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "h";
+            Severity = "M";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -364,9 +355,9 @@ namespace PersonalInjuryTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string SomeSeverity = "he";
+            Severity = "Mo";
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -378,12 +369,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "";
             //pad the string with characters
-            SomeSeverity = SomeSeverity.PadRight(49, 'a');
+            Severity = Severity.PadRight(49, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -395,12 +384,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "";
             //pad the string with characters
-            SomeSeverity = SomeSeverity.PadRight(50, 'a');
+            Severity = Severity.PadRight(50, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -412,12 +399,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "";
             //pad the string with characters
-            SomeSeverity = SomeSeverity.PadRight(51, 'a');
+            Severity = Severity.PadRight(51, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -429,12 +414,10 @@ namespace PersonalInjuryTesting
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
             String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "";
             //pad the string with characters
-            SomeSeverity = SomeSeverity.PadRight(25, 'a');
+            Severity = Severity.PadRight(25, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -445,17 +428,16 @@ namespace PersonalInjuryTesting
             //create an instance of the class
             clsPersonalInjury APersonalInjury = new clsPersonalInjury();
             //create a string variable to store the result of the validation
-            String Error = "";
-            //create some test data to assign to the property
-            string SomeSeverity = "";
+            String Error = ""; 
             //pad the string with characters
-            SomeSeverity = SomeSeverity.PadRight(500, 'a');
+            Severity = Severity.PadRight(500, 'a');
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeSeverity);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
 
+        /*
         ///<summary>
         ///Compensation property tests for minimums, mid and maximums
         ///</summary>
@@ -473,7 +455,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -490,7 +472,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -507,7 +489,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -524,7 +506,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -541,7 +523,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -558,7 +540,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -575,7 +557,7 @@ namespace PersonalInjuryTesting
             //convert the compensation variable to a string
             string Compensation = SomeCompensation.ToString();
             //invoke the method 
-            Error = APersonalInjury.Valid(SomeCompensation);
+            Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }

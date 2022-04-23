@@ -108,107 +108,78 @@ namespace Co_opClasses
             }
         }
 
-        /*public string Valid(string status)
-        {
-            string Error = "";
-            if (status.Length > 50)
-            {
-                //return a blank string
-                Error = "The Status cannot have more than 50 characters";
-            }
-            if (status.Length == 0)
-            {
-                //return an error message
-                Error = "The Status must not be blank";
-            }
-
-            return Error;
-        }
-
-
         public string Valid(string location, string status, string dateOfClaim, string dateOfInjury)
         {
-            //string variable to store the error message
-            string Error = "";
-            //create a temp variable to store date values
-            DateTime DateTemp;
-            //if the name of the personal injury is more than 50 characters
-            if (location.Length > 50)
-            {
-                //return a blank string
-                Error = "The Location cannot have more than 50 characters";
-            }
+            String Error = "";
+            //create a temp variable to store date values for dateofClaim
+            DateTime DateCTemp;
+            //create a temp variable to store date values for dateofInjury
+            DateTime DateITemp;
+            //if the location is blank
             if (location.Length == 0)
             {
                 //return an error message
-                Error = "The Location must not be blank";
+                Error = Error + "The Location must not be blank";
             }
-            if (status.Length > 50)
+            if (location.Length > 50)
             {
-                //return a blank string
-                Error = "The Status cannot have more than 50 characters";
+                //record an error message
+                Error = Error + "The Location must not exceed 50 characters :";
             }
             if (status.Length == 0)
             {
                 //return an error message
-                Error = "The Status must not be blank";
+                Error = Error + "The status must not be blank";
             }
-
+            if (status.Length > 50)
+            {
+                Error = Error + "The status must not exceed 50 characters :";
+            }
             try
             {
                 //cope the dateOfClaim value to the DateTemp variable
-                DateTemp = Convert.ToDateTime(dateOfClaim);
-                if (DateTemp < DateTime.Now.Date)
+                DateCTemp = Convert.ToDateTime(dateOfClaim);
+                if (DateCTemp < DateTime.Now.Date)
                 {
                     //record the error
-                    Error = Error + "The date cannot be in the past : ";
+                    Error = Error + "The date of claim cannot be in the past : ";
                 }
-                DateTemp = Convert.ToDateTime(dateOfClaim);
-                if (DateTemp > DateTime.Now.Date)
+                if (DateCTemp > DateTime.Now.Date)
                 {
                     //record the error
-                    Error = Error + "The date cannot be in the future : ";
+                    Error = Error + "The date of claim cannot be in the future : ";
                 }
+                
             }
             catch
             {
                 //record the error
-                Error = Error + "The date entered is not in the valid format : ";
+                Error = Error + "The date is not a valid date : ";
             }
-
-            try
+            /*try
             {
-                //cope the dateOfInjury value to the DateTemp variable
-                DateTemp = Convert.ToDateTime(dateOfInjury);
-                if (DateTemp > DateTime.Now.Date)
+                DateITemp = Convert.ToDateTime(dateOfInjury);
+                if (DateITemp < DateTime.Now.Date.AddDays(-365))
                 {
                     //record the error
-                    Error = Error + "The date cannot be in the future : ";
+                    Error = Error + "The date of injury cannot be more than a year ago :";
+                }
+                if (DateITemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The injury date cannot be in the future : ";
                 }
             }
             catch
             {
-                //record the error
-                Error = Error + "The date entered is not in the valid format : ";
-            }
-
-            try
-            {
-                //cope the dateOfInjury value to the DateTemp variable
-                DateTemp = Convert.ToDateTime(dateOfInjury);
-                if (DateTemp > DateTime.Now.Date)
-                {
-                    //record the error
-                    Error = Error + "The date cannot be in the future : ";
-                }
-            }
-            catch
-            {
-                //record the error
-                Error = Error + "The date entered is not in the valid format : ";
-            }
-
+                Error = Error + "The data of injury is not in a valid format : ";
+            }*/
             return Error;
-        }*/
+        }
+
+        
+
+
+            
+           
     }
 }

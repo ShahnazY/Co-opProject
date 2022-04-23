@@ -62,6 +62,55 @@ namespace Co_opClasses
             }
         }
 
+        public string Valid(string claimID, string injuryID)
+        {
+            String Error = "";
+            Int32 ClaimTemp;
+            Int32 InjuryTemp;
+            try
+            {
+              ClaimTemp = Convert.ToInt32(claimID);
+                    if (ClaimTemp == 0)
+                    {
+                        //record the error
+                        Error = Error + "The claim ID cannot be blank : ";
+                    }
+                    if (ClaimTemp > 1000)
+                    {
+                        //record the error
+                        Error = Error + "The claim ID cannot be greater than 1000 : ";
+                    }
+            }
+            catch
+                {
+                    //record the error
+                    Error = Error + "The value entered is not a number : ";
+                }
+
+            try
+            {
+                InjuryTemp = Convert.ToInt32(injuryID);
+                if (InjuryTemp == 0)
+                {
+                    //record the error
+                    Error = Error + "The injury ID cannot be blank : ";
+                }
+                if (InjuryTemp > 1000)
+                {
+                    //record the error
+                    Error = Error + "The injury ID cannot be greater than 1000 : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The value entered is not a number : ";
+            }
+
+            return Error;
+            
+        }
+
         /*public string Valid(string someClaimInjury)
         {
             //if the name of the personal injury is not blank
@@ -75,6 +124,26 @@ namespace Co_opClasses
                 //otherwise return an error message
                 return "The Claim Injury must not be blank";
             }
+
+        try
+            {
+                SizeTemp = Convert.ToInt32(size);
+                if (SizeTemp == 0)
+                {
+                    //record the error
+                    Error = Error + "The size cannot be blank : ";
+                }
+                if (SizeTemp > 12)
+                {
+                    //record the error
+                    Error = Error + "The size cannot be greater than 12 : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The value entered is not a number : ";
+            } 
         }*/
     }
 }
