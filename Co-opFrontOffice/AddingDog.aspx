@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ADog.aspx.cs" Inherits="ADog" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddingDog.aspx.cs" Inherits="ADog" %>
 
 <!DOCTYPE html>
 
