@@ -1,13 +1,17 @@
 ﻿using System;
 
-
-
 namespace Co_opClasses
 {
     public class clsDog
     {
-        //private data member for the dog ID propert
+        //private data members for all properties
         private Int32 mDogID;
+        private Int32 mAge;
+        private string mBreed;
+        private string mGender;
+        private string mName;
+        private string mSize;
+        private DateTime mDateAdded;
         //public propert for the dog ID
         public int DogID
         {
@@ -24,8 +28,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data member for the age property
-        public Int32 mAge;
         //public property for the age
         public int Age
         {
@@ -41,8 +43,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data member for breed
-        private string mBreed;
         //public property for breed
         public string Breed
         {
@@ -59,8 +59,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data member for gender
-        private string mGender;
         //public data meber for gender
         public string Gender
         {
@@ -77,8 +75,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data member for name
-        private string mName;
         //public data member for name
         public string Name
         {
@@ -95,8 +91,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data member for size
-        private string mSize;
         //public data member for size
         public string Size
         {
@@ -112,8 +106,6 @@ namespace Co_opClasses
             }
         }
 
-        //private data added data memebr
-        private DateTime mDateAdded;
         //public property for data added
         public DateTime DateAdded
         {

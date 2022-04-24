@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="tstDog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstInsurance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
