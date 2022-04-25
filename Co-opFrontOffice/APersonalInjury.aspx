@@ -20,6 +20,9 @@
         <asp:TextBox ID="txtCompensation" runat="server" style="z-index: 1; left: 754px; top: 143px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblCompensation" runat="server" style="z-index: 1; left: 637px; top: 145px; position: absolute" Text="Compensation"></asp:Label>
         <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 492px; top: 326px; position: absolute" Text="Cancel" />
+        <asp:TextBox ID="txtInjuryID" runat="server" style="z-index: 1; left: 432px; top: 93px; position: absolute"></asp:TextBox>
+        <asp:Label ID="lblInjuryID" runat="server" style="z-index: 1; left: 295px; top: 97px; position: absolute" Text="Personal Injury ID"></asp:Label>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 592px; top: 91px; position: absolute" Text="Find" />
     </form>
 </body>
 </html>
