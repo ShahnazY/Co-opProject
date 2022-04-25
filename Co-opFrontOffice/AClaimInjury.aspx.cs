@@ -25,4 +25,29 @@ public partial class AClaimInjury : System.Web.UI.Page
         //redirect to the viewer page
         Response.Redirect("ClaimInjuryViewer.aspx");
     }
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        //create an instance of the class
+        clsClaimInjury AClaimInjury = new clsClaimInjury();
+        //variable to store the primary key
+        Int32 ClaimInjuryID;
+        //variable to store the result of the find operation
+        Boolean Found = false;
+        //get the primary key entered by the user
+        ClaimInjuryID = Convert.ToInt32(txtClaimInjuryID.Text);
+        //find the record 
+        Found = AClaimInjury.Find(ClaimInjuryID);
+        //if found 
+        if (Found == true)
+        {
+            //display the values in the textboxes
+            txtClaimID.Text = AClaimInjury.ClaimID.ToString();
+            txtPersonalInjuryID.Text = AClaimInjury.InjuryID.ToString();
+        }
+        else
+        {
+            lblError.Text = "Claim Injury not found";
+        }
+    }
 }
