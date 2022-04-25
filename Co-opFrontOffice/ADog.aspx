@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddingDog.aspx.cs" Inherits="ADog" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ADog.aspx.cs" Inherits="ADog" %>
 
 <!DOCTYPE html>
 
@@ -91,14 +91,6 @@
             top: 122px;
             position: absolute;
         }
-        .auto-style14 {
-            z-index: 1;
-            left: 116px;
-            top: 155px;
-            position: absolute;
-            width: 130px;
-            height: 26px;
-        }
         .auto-style15 {
             z-index: 1;
             left: 129px;
@@ -138,13 +130,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 112px; top: 586px; position: absolute"></asp:Label>
         </div>
         <asp:Label ID="lblAdd" runat="server" CssClass="auto-style1" Font-Bold="True" Font-Size="X-Large" ForeColor="#FF9933" Text="ADD A NEW FURRY FRIEND"></asp:Label>
         <asp:Panel ID="PanelDog" runat="server" BackColor="#FF9933" CssClass="auto-style2">
             <asp:Label ID="lblDog" runat="server" CssClass="auto-style3" Text="DOG DETAILS" Font-Bold="True" Font-Size="X-Large" Font-Underline="False" ForeColor="#623202"></asp:Label>
             <asp:Panel ID="PanelDetails" runat="server" BackColor="#FDC995" CssClass="auto-style4">
-                <asp:Label ID="lblName" runat="server" CssClass="auto-style5" Font-Size="Large" Text="Dog's Name"></asp:Label>
-                <asp:Label ID="lblAge" runat="server" CssClass="auto-style6" Font-Size="Large" Text="Dog's Age"></asp:Label>
+                <asp:Label ID="lblDogsName" runat="server" CssClass="auto-style5" Font-Size="Large" Text="Dog's Name"></asp:Label>
+                <asp:Label ID="lblDogsAge" runat="server" CssClass="auto-style6" Font-Size="Large" Text="Dog's Age"></asp:Label>
+                <asp:Label ID="lblDogID" runat="server" style="z-index: 1; left: 480px; top: 346px; position: absolute"></asp:Label>
                 <asp:Label ID="lblBreed" runat="server" CssClass="auto-style7" Font-Size="Large" Text="Breed"></asp:Label>
                 <asp:Label ID="lblSize" runat="server" CssClass="auto-style8" Font-Size="Large" Text="Size"></asp:Label>
                 <asp:Label ID="lblGender" runat="server" CssClass="auto-style9" Font-Size="Large" Text="Gender"></asp:Label>
@@ -152,7 +146,8 @@
                 <asp:TextBox ID="txtDogAge" runat="server" CssClass="auto-style11"></asp:TextBox>
                 <asp:TextBox ID="txtBreed" runat="server" CssClass="auto-style12"></asp:TextBox>
                 <asp:TextBox ID="txtSize" runat="server" CssClass="auto-style13" ></asp:TextBox>
-                <asp:ListBox ID="lstGender" runat="server" CssClass="auto-style14"></asp:ListBox>
+                <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 117px; top: 157px; position: absolute">
+                </asp:DropDownList>
                 <asp:Button ID="btnCancel" runat="server" BackColor="#FF3300" CssClass="auto-style15" Font-Bold="True" Text="Cancel" />
                 <asp:Button ID="btnAddDog" runat="server" BackColor="#00CC66" CssClass="auto-style16" Font-Bold="True" ForeColor="Black" OnClick="btnAddDog_Click" Text="ADD DOG" />
                 <asp:TextBox ID="txtDateAdded" runat="server" CssClass="auto-style18"></asp:TextBox>

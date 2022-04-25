@@ -1,11 +1,10 @@
-﻿using ClassLibrary;
-using Co_opClasses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Co_opClasses;
 
 public partial class ADog : System.Web.UI.Page
 {
@@ -24,7 +23,7 @@ public partial class ADog : System.Web.UI.Page
         //store the name in the session object
         Session["ADog"] = ADog;
         //redirect to the viewer page
-        Response.Redirect("InsuranceCoverage.aspx");
+        Response.Redirect("DogViewer.aspx");
 
     }
 
