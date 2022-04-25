@@ -14,8 +14,7 @@
         <asp:TextBox ID="txtSeverity" runat="server" style="z-index: 1; left: 431px; top: 193px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 352px; top: 248px; position: absolute"></asp:Label>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 391px; top: 324px; position: absolute" Text="OK" />
-        <asp:DropDownList ID="ddlTypeOfInjury" runat="server" style="z-index: 1; left: 431px; top: 145px; position: absolute" OnSelectedIndexChanged="ddlTypeOfInjury_SelectedIndexChanged">
-        </asp:DropDownList>
+        <asp:DropDownList ID="ddlTypeOfInjury" runat="server" style="z-index: 1; left: 431px; top: 145px; position: absolute"></asp:DropDownList>
         <asp:Label ID="lblTypeOfInjury" runat="server" style="z-index: 1; left: 323px; top: 145px; position: absolute" Text="Type of Injury"></asp:Label>
         <asp:TextBox ID="txtCompensation" runat="server" style="z-index: 1; left: 754px; top: 143px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblCompensation" runat="server" style="z-index: 1; left: 637px; top: 145px; position: absolute" Text="Compensation"></asp:Label>

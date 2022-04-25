@@ -22,12 +22,26 @@ public partial class APersonalInjury : System.Web.UI.Page
     {
         clsPersonalInjury APersonalInjury = new clsPersonalInjury();
         //capture the properties
-        APersonalInjury.TypeOfInjury = ddlTypeOfInjury.Text;
-        APersonalInjury.Severity = txtSeverity.Text;
-        APersonalInjury.Compensation = Convert.ToDecimal(txtCompensation.Text);
-        //store personal injury in the session object
-        Session["APersonalInjury"] = APersonalInjury;
-        Response.Redirect("PersonalInjuryViewer.aspx");
+        string TypeOfInjury = ddlTypeOfInjury.Text;
+        string Severity = txtSeverity.Text;
+        string Compensation = txtCompensation.Text;
+        string Error = "";
+        //validate the data
+        Error = APersonalInjury.Valid(TypeOfInjury, Severity, Compensation);
+        if (Error == "")
+        {
+            APersonalInjury.TypeOfInjury = TypeOfInjury;
+            APersonalInjury.Severity = txtSeverity.Text;
+            APersonalInjury.Compensation = Convert.ToDecimal(Compensation);
+            //store personal injury in the session object
+            Session["APersonalInjury"] = APersonalInjury;
+            Response.Write("PersonalInjuryViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)

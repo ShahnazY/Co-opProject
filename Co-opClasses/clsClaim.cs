@@ -120,22 +120,22 @@ namespace Co_opClasses
             if (location.Length > 50)
             {
                 //return a blank string
-                Error = "The Location cannot have more than 50 characters";
+                Error = Error + "The Location cannot have more than 50 characters : ";
             }
             if (location.Length == 0)
             {
                 //return an error message
-                Error = "The Location must not be blank";
+                Error = Error + "The Location must not be blank : ";
             }
             if (status.Length > 50)
             {
                 //return a blank string
-                Error = "The Status cannot have more than 50 characters";
+                Error = Error + "The Status cannot have more than 50 characters : ";
             }
             if (status.Length == 0)
             {
                 //return an error message
-                Error = "The Status must not be blank";
+                Error = Error +"The Status must not be blank : ";
             }
 
             try
@@ -168,7 +168,7 @@ namespace Co_opClasses
             catch
             {
                 //record the error
-                Error = Error + "The date entered is not in the valid format : ";
+                Error = Error + "The date entered is blank or not in the valid format : ";
             }  
 
             return Error;

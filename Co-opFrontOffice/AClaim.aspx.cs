@@ -20,13 +20,29 @@ public partial class AClaim : System.Web.UI.Page
     {
         clsClaim AClaim = new clsClaim();
         //capture the properties
-        AClaim.Location = txtLocation.Text;
-        AClaim.Status = ddlStatus.Text;
-        AClaim.DateOfClaim = Convert.ToDateTime(txtDateOfClaim.Text);
-        AClaim.DateOfInjury = Convert.ToDateTime(txtDateOfInjury.Text);
-        //store the claim in the session object
-        Session["AClaim"] = AClaim;
-        Response.Redirect("ClaimViewer.aspx");
+        string Location = txtLocation.Text;
+        string Status = ddlStatus.Text;
+        string DateOfClaim = txtDateOfClaim.Text;
+        string DateOfInjury = txtDateOfInjury.Text;
+        //variable to store the error 
+        string Error = "";
+        //validate the data 
+        Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+        if (Error == "")
+        {
+            AClaim.Location = Location;
+            AClaim.Status = Status;
+            AClaim.DateOfClaim = Convert.ToDateTime(DateOfClaim);
+            AClaim.DateOfInjury = Convert.ToDateTime(DateOfInjury);
+            //store the claim in the session object
+            Session["AClaim"] = AClaim;
+            Response.Write("ClaimViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)

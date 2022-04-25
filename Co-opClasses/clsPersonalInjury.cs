@@ -124,7 +124,7 @@ namespace Co_opClasses
             catch
             {
                 //record the error 
-                Error = Error + "The value entered is not in the correct format : ";
+                Error = Error + "The value entered is blank or not in the correct format : ";
             }
 
             return Error;
