@@ -18,12 +18,24 @@ public partial class AClaimInjury : System.Web.UI.Page
         //new instance of clsClaimInjury
         clsClaimInjury AClaimInjury = new clsClaimInjury();
         //capture the properties
-        AClaimInjury.ClaimID = Convert.ToInt32(txtClaimID.Text);
-        AClaimInjury.InjuryID = Convert.ToInt32(txtPersonalInjuryID.Text);
-        //store the claiminjury in the session object
-        Session["AClaimInjury"] = AClaimInjury;
-        //redirect to the viewer page
-        Response.Redirect("ClaimInjuryViewer.aspx");
+        string ClaimID = txtClaimID.Text;
+        string InjuryID = txtPersonalInjuryID.Text;
+        string Error = "";
+        Error = AClaimInjury.Valid(InjuryID, ClaimID);
+        if (Error == "")
+        {
+            AClaimInjury.ClaimID = Convert.ToInt32(ClaimID);
+            AClaimInjury.InjuryID = Convert.ToInt32(InjuryID);
+            //store the claiminjury in the session object
+            Session["AClaimInjury"] = AClaimInjury;
+            //redirect to the viewer page
+            Response.Write("ClaimInjuryViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
