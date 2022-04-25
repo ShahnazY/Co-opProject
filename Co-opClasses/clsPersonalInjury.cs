@@ -81,55 +81,55 @@ namespace Co_opClasses
             }
         }
 
-        /*public string Valid(string somePersonalInjury, string someSeverity)
+        public string Valid(string typeOfInjury, string severity, string compensation)
         {
             //string variable to store the error message
             string Error = "";
+            //temp variable to store the compensation value
+            Decimal CompensationTemp;
             //if the name of the personal injury is more than 50 characters
-            if (somePersonalInjury.Length > 50)
+            if (typeOfInjury.Length == 0)
             {
-                //return a blank string
-                Error = "The Personal Injury cannot have more than 50 characters";
+                //return the error
+                Error = "The type of injury must not be blank :";
             }
-            if (somePersonalInjury.Length == 0)
+            if (typeOfInjury.Length > 50)
             {
                 //return an error message
-                Error = "The Personal Injury must not be blank";
+                Error = "The type of injury must not exceed 50 characters :";
+            }
+            if (severity.Length == 0)
+            {
+                Error = Error + "The severity must not be blank :";
+            }
+            if (severity.Length > 50)
+            {
+                Error = Error + "The severity must not exceed 50 characters :";
+            }
+            try
+            {
+                CompensationTemp = Convert.ToDecimal(compensation);
+                if (CompensationTemp < 0.01M)
+                {
+                    //record an error
+                    Error = Error + "The compensation amount cannot be negative or less than £0.01 : ";
+                }
+                if (CompensationTemp > 100000M)
+                {
+                    //record an error
+                    Error = Error + "The compensation amount cannot be more than £100,000 : ";
+                }
+                
+            }
+            catch
+            {
+                //record the error 
+                Error = Error + "The value entered is not in the correct format : ";
             }
 
             return Error;
         }
 
-        public string Valid(string someSeverity)
-        {
-            string Error = "";
-            if (someSeverity.Length > 50)
-            {
-                Error = "The Severity cannot have more than 50 characters";
-            }
-            if (someSeverity.Length == 0)
-            {
-                Error = "The Severity must not be blank";
-            }
-            return Error;
-        }
-
-        public string Valid(Decimal someCompensation)
-        {
-            string Error = "";
-            Decimal PriceTemp;
-            {
-                PriceTemp = Convert.ToDecimal(someCompensation);
-                if (PriceTemp < 0.01M)
-                {
-                    Error = "Compensation cannot be negative or 0";
-                }
-                if (PriceTemp > 30000.00M)
-                {
-                    Error = "Compensation cannot be more than £30,000";
-                }
-            }
-            return Error;
-        }*/
+        
     }
 }

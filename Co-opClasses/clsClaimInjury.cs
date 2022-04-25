@@ -62,19 +62,36 @@ namespace Co_opClasses
             }
         }
 
-        /*public string Valid(string someClaimInjury)
+        public string Valid(string injuryID, string claimID)
         {
-            //if the name of the personal injury is not blank
-            if (someClaimInjury != "")
+            String Error = "";
+            //temp variable to store claimID
+            Int32 ValueCTemp;
+            //temp variable to store injuryID
+            Int32 ValueITemp;
+            try
             {
-                //return a blank string
-                return "";
+                ValueCTemp = Convert.ToInt32(claimID);
+                ValueITemp = Convert.ToInt32(injuryID);
+                //if the value is 0 
+                if (ValueCTemp == 0)
+                {
+                    Error = Error + "The claim ID cannot be 0 : ";
+                }
+                if (ValueITemp == 0)
+                {
+                    Error = Error + "The injury ID cannot be 0 : ";
+                }
             }
-            else
+            catch
             {
-                //otherwise return an error message
-                return "The Claim Injury must not be blank";
+                Error = Error + "The ID must be a number : ";
             }
-        }*/
+
+            //return an error message
+            return Error;
+        }
+
+        
     }
 }

@@ -227,7 +227,7 @@ namespace PersonalInjuryTesting
             Assert.IsTrue(OK);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
@@ -625,7 +625,7 @@ namespace PersonalInjuryTesting
             Assert.AreNotEqual(Error, "");
         }
 
-       /* [TestMethod]
+        [TestMethod]
         public void DateOfInjuryExtremeMin()
         {
             //create an instance of the class we want to create
@@ -657,8 +657,6 @@ namespace PersonalInjuryTesting
             DateTime TestData;
             //set the date to todays date
             TestData = DateTime.Now.Date;
-            //change the date to whatever the date is - 366 days
-            TestData = TestData.AddDays(-366);
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
@@ -666,6 +664,8 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+       
         [TestMethod]
         public void DateOfInjuryMin()
         {
@@ -677,8 +677,8 @@ namespace PersonalInjuryTesting
             DateTime TestData;
             //set the date to todays date
             TestData = DateTime.Now.Date;
-            //change the date to whatever the date is -365 days
-            TestData = TestData.AddDays(-365);
+            //change the date to whatever the date is -1 days
+            TestData = TestData.AddDays(-1);
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
@@ -686,6 +686,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+
         [TestMethod]
         public void DateOfInjuryMinPlusOne()
         {
@@ -698,14 +699,15 @@ namespace PersonalInjuryTesting
             //set the date to todays date
             TestData = DateTime.Now.Date;
             //change the date to whatever the date is -364days
-            TestData = TestData.AddDays(-364);
+            TestData = TestData.AddDays(-2);
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         } 
+
         [TestMethod]
         public void DatOfInjuryExtremeMax()
         {
@@ -726,6 +728,7 @@ namespace PersonalInjuryTesting
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
         [TestMethod]
         public void DateOfInjuryInvalidData()
         {
@@ -739,6 +742,6 @@ namespace PersonalInjuryTesting
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
-        }*/
+        }
     }
 }

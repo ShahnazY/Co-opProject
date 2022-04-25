@@ -7,6 +7,9 @@ namespace PersonalInjuryTesting
     [TestClass]
     public class tstClaimInjury
     {
+        string ClaimID = "1";
+        string InjuryID = "2";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -114,19 +117,52 @@ namespace PersonalInjuryTesting
             Assert.IsTrue(OK);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
             clsClaimInjury AClaimInjury = new clsClaimInjury();
             //create a string variable to store the result of validation
             String Error = "";
-            //create some test data to test the method
-            string SomeClaimInjury = "TestData";
             //invoke the method
-            Error = AClaimInjury.Valid(SomeClaimInjury);
+            Error = AClaimInjury.Valid(InjuryID, ClaimID);
             //test to see it exists
             Assert.AreEqual(Error, "");
-        }*/
+        }
+
+        [TestMethod]
+        public void ClaimIDValid()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            //0 should fail
+            Int32 TestValue;
+            TestValue = 0;
+            String ClaimID = TestValue.ToString();
+            //invoke the method
+            Error = AClaimInjury.Valid(InjuryID, ClaimID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InjuryIDValid()
+        {
+            //create an instance of the class
+            clsClaimInjury AClaimInjury = new clsClaimInjury();
+            //create a string variable to store the result of validation
+            String Error = "";
+            //0 should fail
+            Int32 TestValue;
+            TestValue = 0;
+            String InjuryID = TestValue.ToString();
+            //invoke the method
+            Error = AClaimInjury.Valid(InjuryID, ClaimID);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }
