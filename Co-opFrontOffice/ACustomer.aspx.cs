@@ -17,19 +17,38 @@ public partial class ACustomer : System.Web.UI.Page
     {
         //create new instance of the class
         clsCustomer ACustomer = new clsCustomer();
-        //capture the properties
-        ACustomer.FirstName = txtFirstName.Text;
-        ACustomer.LastName = txtLastName.Text;
-        ACustomer.Email = txtEmail.Text;
-        ACustomer.DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text);
-        ACustomer.Gender = ddlGender.Text;
-        ACustomer.HouseNo = txtHouseNo.Text;
-        ACustomer.Street = txtStreet.Text;
-        ACustomer.Town = ddlTown.Text;
-        ACustomer.PostCode = txtPostCode.Text;
-        //store the customer in the session object
-        Session["ACustomer"] = ACustomer;
-        Response.Redirect("CustomerViewer.aspx");
+        string FirstName = txtFirstName.Text;
+        string LastName = txtLastName.Text;
+        string Email = txtEmail.Text;
+        string DateOfBirth = txtDateOfBirth.Text;
+        string Gender = ddlGender.Text;
+        string HouseNo = txtHouseNo.Text;
+        string Street = txtStreet.Text;
+        string Town = ddlTown.Text;
+        string PostCode = txtPostCode.Text;
+        string Error = "";
+        //validate the data
+        Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+        if (Error == "")
+        {
+            //capture the properties
+            ACustomer.FirstName = FirstName;
+            ACustomer.LastName = LastName;
+            ACustomer.Email = Email;
+            ACustomer.DateOfBirth = Convert.ToDateTime(DateOfBirth);
+            ACustomer.Gender = Gender;
+            ACustomer.HouseNo = HouseNo;
+            ACustomer.Street = Street;
+            ACustomer.Town = Town;
+            ACustomer.PostCode = PostCode;
+            //store the customer in the session object
+            Session["ACustomer"] = ACustomer;
+            Response.Write("CustomerViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
