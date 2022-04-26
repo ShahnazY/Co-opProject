@@ -37,5 +37,28 @@ public partial class ACustomer : System.Web.UI.Page
         Response.Redirect("Default.aspx");
     }
 
-  
+
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        clsCustomer ACustomer = new clsCustomer();
+        Int32 CustomerID;
+        Boolean Found = false;
+        CustomerID = Convert.ToInt32(txtCustomerID.Text);
+        Found = ACustomer.Find(CustomerID);
+        if(Found == true)
+        {
+            txtFirstName.Text = ACustomer.FirstName;
+            txtLastName.Text = ACustomer.LastName;
+            txtEmail.Text = ACustomer.Email;
+            txtDateOfBirth.Text = ACustomer.DateOfBirth.ToString();
+            txtHouseNo.Text = ACustomer.HouseNo;
+            txtStreet.Text = ACustomer.Street;
+            txtPostCode.Text = ACustomer.PostCode;
+        }
+        else
+        {
+            lblError.Text = "Customer not found";
+        }
+    }
 }
