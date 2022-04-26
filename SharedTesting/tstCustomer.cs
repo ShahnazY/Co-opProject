@@ -10,6 +10,7 @@ namespace SharedTesting
         string FirstName = "John";
         string LastName = "Smith";
         string DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
+        string Gender = "Male";
         string Email = "john.smith@gmail.com";
         string HouseNo = "23";
         string Street = "Oxford Street";
@@ -412,7 +413,7 @@ namespace SharedTesting
             //string variable to store any error message
             String Error = "";
             //invoke method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -431,7 +432,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string FirstName = "";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -446,7 +447,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string FirstName = "J";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -461,7 +462,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string FirstName = "Jo";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -478,7 +479,7 @@ namespace SharedTesting
             //pad the string with characters
             FirstName = FirstName.PadRight(49, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -495,7 +496,7 @@ namespace SharedTesting
             //pad the string with characters
             FirstName = FirstName.PadRight(50, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -512,7 +513,7 @@ namespace SharedTesting
             //pad the string with characters
             FirstName = FirstName.PadRight(51, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -529,7 +530,7 @@ namespace SharedTesting
             //pad the string with characters
             FirstName = FirstName.PadRight(25, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -546,7 +547,7 @@ namespace SharedTesting
             //pad the string with characters
             FirstName = FirstName.PadRight(500, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -554,6 +555,7 @@ namespace SharedTesting
         /// <summary>
         /// Lastname property tests for minimums, mid and maximums
         /// </summary>
+
 
         [TestMethod]
         public void LastNameMinLessOne()
@@ -565,7 +567,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string LastName = "";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -580,7 +582,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string LastName = "J";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -595,7 +597,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string LastName = "Jo";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -612,7 +614,7 @@ namespace SharedTesting
             //pad the string with characters
             LastName = LastName.PadRight(49, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -629,7 +631,7 @@ namespace SharedTesting
             //pad the string with characters
             LastName = LastName.PadRight(50, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -646,7 +648,7 @@ namespace SharedTesting
             //pad the string with characters
             LastName = LastName.PadRight(51, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -663,7 +665,7 @@ namespace SharedTesting
             //pad the string with characters
             LastName = LastName.PadRight(25, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -680,10 +682,425 @@ namespace SharedTesting
             //pad the string with characters
             LastName = LastName.PadRight(500, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
+
+
+        [TestMethod]
+        public void DateOfBirthExtremeMin()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //change the date 
+            TestDate = TestDate.AddYears(-18).AddDays(1);
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthMin()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 18 years (18th birthday today)  
+            TestDate = TestDate.AddYears(-18);
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 16 years and 1 day (16 birthday yesterday)
+            TestDate = TestDate.AddYears(-18).AddDays(-1);
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 years
+            TestDate = TestDate.AddYears(-100);
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create a variable to store the test data
+            DateTime TestDate;
+            //set the date to today's date 
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 250 years
+            TestDate = TestDate.AddYears(-250);
+            //convert the data variable to a string variable
+            string DateOfBirth = TestDate.ToString();
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateOfBirthInvalidData()
+        {
+            //create an instance of the class 
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any error message
+            String Error = "";
+            //set the DateOfBirth to non date value
+            string DateOfBirth = "This is not a date!";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void GenderMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMinBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "M";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "Ma";
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "";
+            //pad the string with characters
+            Gender = Gender.PadRight(5, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMaxBoundary()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "";
+            //pad the string with characters
+            Gender = Gender.PadRight(6, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "";
+            //pad the string with characters
+            Gender = Gender.PadRight(7, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Gender = "";
+            //pad the string with characters
+            Gender = Gender.PadRight(3, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Street = "";
+            //pad the string with characters
+            Street = Street.PadRight(100, 'a');
+            //invoke the method 
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void EmailMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string Email = ""; // should trigger an error
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void HouseNoMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "";// should trigger an error 
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+
+        }
+
+        [TestMethod]
+        public void HouseNoMin()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "a";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);            
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+
+
+        }
+
+        [TestMethod]
+        public void HouseNoMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aa";// should pass
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaaaa";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaaaaa";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaa";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaaaaaa";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "";
+            HouseNo = HouseNo.PadRight(200, 'a');// should fail (200 characters)
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
 
         /// <summary>
         /// Street property tests for minimums, mid and maximums
@@ -699,7 +1116,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Street = "";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -714,7 +1131,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Street = "O";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -729,7 +1146,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Street = "Ox";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -746,7 +1163,7 @@ namespace SharedTesting
             //pad the string with characters
             Street = Street.PadRight(49, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -763,7 +1180,7 @@ namespace SharedTesting
             //pad the string with characters
             Street = Street.PadRight(50, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -780,7 +1197,7 @@ namespace SharedTesting
             //pad the string with characters
             Street = Street.PadRight(51, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -797,7 +1214,7 @@ namespace SharedTesting
             //pad the string with characters
             Street = Street.PadRight(25, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -814,7 +1231,7 @@ namespace SharedTesting
             //pad the string with characters
             Street = Street.PadRight(500, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -833,7 +1250,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Town = "";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -848,7 +1265,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Street = "L";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -863,7 +1280,7 @@ namespace SharedTesting
             //create some test data to assign to the property
             string Street = "Le";
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -880,7 +1297,7 @@ namespace SharedTesting
             //pad the string with characters
             Town = Town.PadRight(49, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -897,7 +1314,7 @@ namespace SharedTesting
             //pad the string with characters
             Town = Town.PadRight(50, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -914,7 +1331,7 @@ namespace SharedTesting
             //pad the string with characters
             Town = Town.PadRight(51, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -931,7 +1348,7 @@ namespace SharedTesting
             //pad the string with characters
             Town = Town.PadRight(25, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -948,12 +1365,141 @@ namespace SharedTesting
             //pad the string with characters
             Town = Town.PadRight(500, 'a');
             //invoke the method 
-            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Email, HouseNo, Street, Town, PostCode);
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
 
-        
+        [TestMethod]
+        public void PostCodedMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+
+
+        }
+
+        [TestMethod]
+        public void PostCodeMin()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(1, 'a'); // should pass
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+
+
+        }
+
+        [TestMethod]
+        public void PostCodeMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(2, 'a');// should pass
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCod = "";
+            PostCod = PostCod.PadRight(7, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(8, 'a');// should pass 
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(4, 'a');// should pass (25 characters)
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(9, 'a');// should fail 
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //string var to store any Error  message
+            String Error = "";
+            //create some test data to pass to the method
+            string PostCode = "";
+            PostCode = PostCode.PadRight(200, 'a');// should fail (200 characters)
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using ClassLibrary;
 
 namespace Co_opClasses
@@ -171,52 +172,86 @@ namespace Co_opClasses
             }
         }
 
-            public string Valid(string firstName, string lastName, string dateOfBirth, string email, string houseNo, string street, string town, string postCode)
+            public string Valid(string firstName, string lastName, string dateOfBirth, string gender, string email, string houseNo, string street, string town, string postCode)
         {
             //string variable to store the error message
             string Error = "";
+            //string pattern to validate email 
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             //create a temp variable to store date values
             DateTime DateTemp;
             //if the name of the personal injury is more than 50 characters
             if (firstName.Length > 50)
             {
                 //return a blank string
-                Error = "The first name cannot have more than 50 characters";
+                Error = Error + "The first name cannot have more than 50 characters :";
             }
             if (firstName.Length == 0)
             {
                 //return an error message
-                Error = "The first name must not be blank";
+                Error = Error + "The first name must not be blank : ";
             }
             if (lastName.Length > 50)
             {
                 //return a blank string
-                Error = "The last name cannot have more than 50 characters";
+                Error = Error + "The last name cannot have more than 50 characters : ";
             }
             if (lastName.Length == 0)
             {
                 //return an error message
-                Error = "The last name must not be blank";
+                Error = Error + "The last name must not be blank : ";
             }
+            if (gender.Length == 0)
+            {
+                Error = Error + "Gender cannot be blank : ";
+            }
+            if (gender.Length > 6)
+            {
+                Error = Error + "Gender should not exceed 6 characters : ";
+            }
+            if (email.Length == 0)
+            {
+                Error = Error + "The Email may not be blank : ";
+            }
+            else if (Regex.IsMatch(email, pattern) == false)
+            {
+                Error = Error + "Email is not valid. The correct format is 'example@example.uk' : ";
+            }
+            if (houseNo.Length == 0)
+            {
+                Error = Error + "The house number may not be  blank : ";
+            }
+            if (houseNo.Length > 6)
+            {
+                Error = Error + "The house number must not exceed 6 characters : ";
+            }
+            if (postCode.Length == 0)
+            {
+                Error = Error + "The postcode must not be blank : ";
+            }
+            if (postCode.Length > 8)
+            {
+                Error = Error + "The postcode must not exceed 8 characters : ";
+            }    
             if (street.Length > 50)
             {
                 //return a blank string
-                Error = "The street cannot have more than 50 characters";
+                Error = Error + "The street cannot have more than 50 characters : ";
             }
             if (street.Length == 0)
             {
                 //return an error message
-                Error = "The street must not be blank";
+                Error = Error + "The street must not be blank : ";
             }
             if (town.Length > 50)
             {
                 //return a blank string
-                Error = "The town cannot have more than 50 characters";
+                Error = Error + "The town cannot have more than 50 characters : ";
             }
             if (town.Length == 0)
             {
                 //return an error message
-                Error = "The town must not be blank";
+                Error = Error + "The town must not be blank : ";
             }
 
             try
