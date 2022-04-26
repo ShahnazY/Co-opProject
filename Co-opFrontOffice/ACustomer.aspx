@@ -33,6 +33,9 @@
         <asp:Label ID="lblGender" runat="server" style="z-index: 1; left: 207px; top: 415px; position: absolute" Text="Gender"></asp:Label>
         <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 294px; top: 411px; position: absolute">
         </asp:DropDownList>
+        <asp:TextBox ID="txtCustomerID" runat="server" style="z-index: 1; left: 294px; top: 158px; position: absolute"></asp:TextBox>
+        <asp:Label ID="lblCustomerID" runat="server" style="z-index: 1; left: 164px; top: 162px; position: absolute" Text="Customer ID"></asp:Label>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 466px; top: 148px; position: absolute" Text="Find" />
     </form>
 </body>
 </html>
