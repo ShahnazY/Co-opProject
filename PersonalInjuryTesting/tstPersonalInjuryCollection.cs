@@ -11,71 +11,70 @@ namespace PersonalInjuryTesting
         [TestMethod]
         public void InstanceOK()
         {
-            //create an instance of the class
             clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
-            //test to see it exists
             Assert.IsNotNull(AllPersonalInjuries);
-        }
-
-        [TestMethod]
-        public void CountOK()
-        {
-            //create an instance of the class
-            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign the data to the property
-            AllPersonalInjuries.Count = SomeCount;
-            //test to see it exists
-            Assert.AreEqual(AllPersonalInjuries.Count, SomeCount);
-        }
-
-        [TestMethod]
-        public void AllPersonalInjuriesOK()
-        {
-            //create an instance of the class
-            clsPersonalInjuryCollection PersonalInjuries = new clsPersonalInjuryCollection();
-            //create some test data to assign to the property
-            List<clsPersonalInjury> TestList = new List<clsPersonalInjury>();
-            //create the item of test data
-            clsPersonalInjury TestItem = new clsPersonalInjury();
-            //set its properties
-            TestItem.PersonalInjuryID = 1;
-            TestItem.TypeOfInjury = "Head";
-            //add the item to the test list
-            TestList.Add(TestItem);
-            //assign the data to the property
-            PersonalInjuries.AllPersonalInjuries = TestList;
-            //test to see it exists
-            Assert.AreEqual(PersonalInjuries.AllPersonalInjuries, TestList);
         }
 
         [TestMethod]
         public void PersonalInjuriesListOK()
         {
             //create an instance of the class
-            clsPersonalInjuryCollection PersonalInjuries = new clsPersonalInjuryCollection();
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
             //create some test data to assign to the property
             List<clsPersonalInjury> TestList = new List<clsPersonalInjury>();
             //create the item of test data
             clsPersonalInjury TestItem = new clsPersonalInjury();
             //set its properties
-            TestItem.PersonalInjuryID = 1;
+            TestItem.Severity = "Moderate";
             TestItem.TypeOfInjury = "Head";
+            TestItem.Compensation = 15000M;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
-            PersonalInjuries.AllPersonalInjuries = TestList;
+            AllPersonalInjuries.PersonalInjuriesList = TestList;
             //test to see it exists
-            Assert.AreEqual(PersonalInjuries.Count, TestList.Count);
+            Assert.AreEqual(AllPersonalInjuries.PersonalInjuriesList, TestList);
         }
 
         [TestMethod]
-        public void TwoPersonalInjuriesPresent()
+        public void ThisPersonalInjuryyOK()
         {
-            clsPersonalInjuryCollection PersonalInjuries = new clsPersonalInjuryCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(PersonalInjuries.Count, 2);
+            //create an instance of the class 
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
+            //create some test data to assign to the property
+            clsPersonalInjury TestPersonalInjury = new clsPersonalInjury();
+            //set the properties of the test object
+            TestPersonalInjury.TypeOfInjury = "Head";
+            TestPersonalInjury.Severity = "Moderate";
+            TestPersonalInjury.Compensation = 15000M;
+
+            //assign the data to the property
+            AllPersonalInjuries.ThisPersonalInjury = TestPersonalInjury;
+            //test to see that it exists
+            Assert.AreEqual(AllPersonalInjuries.ThisPersonalInjury, TestPersonalInjury);
         }
+
+        [TestMethod]
+        public void ListAndCountOK()
+        {
+            //create an instance of the class 
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
+            //create some test data to assign to the property
+            List<clsPersonalInjury> TestList = new List<clsPersonalInjury>();
+            //add an item to the list
+            //create the item of test data
+            clsPersonalInjury TestItem = new clsPersonalInjury();
+            //set the properties of the test object
+            TestItem.TypeOfInjury = "Head";
+            TestItem.Severity = "Moderate";
+            TestItem.Compensation = 15000M;
+            //add the item to the test list
+            TestList.Add(TestItem);
+            //assign the data to the property
+            AllPersonalInjuries.PersonalInjuriesList = TestList;
+            //test to see that it exists
+            Assert.AreEqual(AllPersonalInjuries.Count, TestList.Count);
+        }
+
     }
 }

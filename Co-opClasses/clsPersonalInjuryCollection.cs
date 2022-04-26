@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -6,20 +8,50 @@ namespace Co_opClasses
     {
         public clsPersonalInjuryCollection()
         {
-            //create an instance of the personal injury class to store a type of injury
-            clsPersonalInjury APersonalInjury = new clsPersonalInjury();
-            APersonalInjury.TypeOfInjury = "Head";
-            mAllPersonalInjuries.Add(APersonalInjury);
-            APersonalInjury = new clsPersonalInjury();
-            APersonalInjury.TypeOfInjury = "Orthopaedic";
-            mAllPersonalInjuries.Add(APersonalInjury);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //object for data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure 
+            DB.Execute("sproc_tblPersonalInjury_SelectAll");
+            //get the count of records 
+            RecordCount = DB.Count;
+            //While there are records to process 
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+                //read in the fields from the current record 
+                APersonalInjury.TypeOfInjury = Convert.ToString(DB.DataTable.Rows[Index]["TypeOfInjury"]);
+                APersonalInjury.Severity = Convert.ToString(DB.DataTable.Rows[Index]["Severity"]);
+                APersonalInjury.Compensation = Convert.ToDecimal(DB.DataTable.Rows[Index]["Compensation"]);
+                
+                //add the record to the private data member
+                mPersonalInjuriesList.Add(APersonalInjury);
+                //point to the next record 
+                Index++;
+            }
         }
-        private List<clsPersonalInjury> mAllPersonalInjuries = new List<clsPersonalInjury>();
+
+        List<clsPersonalInjury> mPersonalInjuriesList = new List<clsPersonalInjury>();
+        public List<clsPersonalInjury> PersonalInjuriesList
+        {
+            get
+            {
+                return mPersonalInjuriesList;
+            }
+            set
+            {
+                mPersonalInjuriesList = value;
+            }
+        }
         public int Count
         {
             get
             {
-                return mAllPersonalInjuries.Count;
+                return mPersonalInjuriesList.Count;
             }
             set
             {
@@ -27,16 +59,6 @@ namespace Co_opClasses
             }
         }
 
-        public List<clsPersonalInjury> AllPersonalInjuries
-        {
-            get
-            {
-                return mAllPersonalInjuries;
-            }
-            set
-            {
-                mAllPersonalInjuries = value;
-            }
-        }
+        public clsPersonalInjury ThisPersonalInjury { get; set; }
     }
 }

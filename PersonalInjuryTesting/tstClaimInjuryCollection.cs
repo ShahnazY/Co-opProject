@@ -8,7 +8,6 @@ namespace PersonalInjuryTesting
     [TestClass]
     public class tstClaimInjuryCollection
     {
-        public object AllClaimInjuries { get; private set; }
 
         [TestMethod]
         public void InstanceOK()
@@ -20,43 +19,10 @@ namespace PersonalInjuryTesting
         }
 
         [TestMethod]
-        public void CountOK()
-        {
-            //create an instance of the class
-            clsClaimInjuryCollection AllClaimInjuries = new clsClaimInjuryCollection();
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign the data to the property
-            AllClaimInjuries.Count = SomeCount;
-            //test to see it exists
-            Assert.AreEqual(AllClaimInjuries.Count, SomeCount);
-        }
-
-        [TestMethod]
-        public void AllClaimInjuriesOK()
-        {
-            //create an instance of the class
-            clsClaimInjuryCollection ClaimInjuries = new clsClaimInjuryCollection();
-            //create some test data to assign to the property
-            List<clsClaimInjury> TestList = new List<clsClaimInjury>();
-            //create the item of test data
-            clsClaimInjury TestItem = new clsClaimInjury();
-            //set its properties
-            TestItem.ClaimID = 1;
-            TestItem.InjuryID = 5;
-            //add the item to the test list
-            TestList.Add(TestItem);
-            //assign the data to the property
-            ClaimInjuries.AllClaimInjuries = TestList;
-            //test to see it exists
-            Assert.AreEqual(ClaimInjuries.AllClaimInjuries, TestList);
-        }
-
-        [TestMethod]
         public void ClaimInjuriesListOK()
         {
             //create an instance of the class
-            clsClaimInjuryCollection ClaimInjuries = new clsClaimInjuryCollection();
+            clsClaimInjuryCollection AllClaimInjuries = new clsClaimInjuryCollection();
             //create some test data to assign to the property
             List<clsClaimInjury> TestList = new List<clsClaimInjury>();
             //create the item of test data
@@ -67,17 +33,46 @@ namespace PersonalInjuryTesting
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
-            ClaimInjuries.AllClaimInjuries = TestList;
+            AllClaimInjuries.ClaimInjuryList = TestList;
             //test to see it exists
-            Assert.AreEqual(ClaimInjuries.Count, TestList.Count);
+            Assert.AreEqual(AllClaimInjuries.ClaimInjuryList, TestList);
         }
 
         [TestMethod]
-        public void TwoClaimInjuriesPresent()
+        public void ThisClaimInjuryOK()
         {
-            clsClaimInjuryCollection ClaimInjuries = new clsClaimInjuryCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(ClaimInjuries.Count, 2);
+            //create an instance of the class 
+            clsClaimInjuryCollection AllClaimInjuries = new clsClaimInjuryCollection();
+            //create some test data to assign to the property
+            clsClaimInjury TestClaimInjuries = new clsClaimInjury();
+            //set the properties of the test object
+            TestClaimInjuries.ClaimID = 2;
+            TestClaimInjuries.InjuryID = 1;
+            //assign the data to the property
+            AllClaimInjuries.ThisClaimInjury = TestClaimInjuries;
+            //test to see that it exists
+            Assert.AreEqual(AllClaimInjuries.ThisClaimInjury, TestClaimInjuries);
         }
+
+        [TestMethod]
+        public void ListAndCountOK()
+        {
+            //create an instance of the class 
+            clsClaimInjuryCollection AllClaimInjuries = new clsClaimInjuryCollection();
+            //create some test data to assign to the property
+            List<clsClaimInjury> TestList = new List<clsClaimInjury>();
+            clsClaimInjury TestClaimInjury = new clsClaimInjury();
+            //set the properties of the test object
+            TestClaimInjury.ClaimID = 2;
+            TestClaimInjury.InjuryID = 1;
+            //add the item to the test list
+            TestList.Add(TestClaimInjury);
+            //assign the data to the property
+            AllClaimInjuries.ClaimInjuryList = TestList;
+            //test to see that it exists
+            Assert.AreEqual(AllClaimInjuries.Count, TestList.Count);
+        }
+
+
     }
 }

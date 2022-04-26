@@ -1,42 +1,67 @@
 ﻿using System.Collections.Generic;
+using System;
+using ClassLibrary;
+
 
 namespace Co_opClasses
 {
     public class clsClaimCollection
     {
+        //constructor for the class
         public clsClaimCollection()
         {
-            //create an instance of the personal injury class to store a type of injury
-            clsClaim AClaim = new clsClaim();
-            AClaim.Location = "Leicester";
-            mAllClaims.Add(AClaim);
-            AClaim = new clsClaim();
-            AClaim.Location = "Derby";
-            mAllClaims.Add(AClaim);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //object for data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure 
+            DB.Execute("sproc_tblClaim_SelectAll");
+            //get the count of records 
+            RecordCount = DB.Count;
+            //While there are records to process 
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsClaim AClaim = new clsClaim();
+                //read in the fields from the current record 
+                AClaim.Location = Convert.ToString(DB.DataTable.Rows[Index]["Location"]);
+                AClaim.Status = Convert.ToString(DB.DataTable.Rows[Index]["Status"]);
+                AClaim.DateOfClaim = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfClaim"]);
+                AClaim.DateOfInjury = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfInjury"]);
+                AClaim.EvidenceProvided = Convert.ToBoolean(DB.DataTable.Rows[Index]["EvidenceProvided"]);
+                //add the record to the private data member
+                mClaimList.Add(AClaim);
+                //point to the next record 
+                Index++;
+            }
+        } 
+
+
+        List<clsClaim> mClaimList = new List<clsClaim>();
+        public List<clsClaim> ClaimsList
+        {
+            get
+            {
+                return mClaimList;
+            }
+            set
+            {
+                mClaimList = value;
+            }
         }
-        private List<clsClaim> mAllClaims = new List<clsClaim>();
         public int Count
         {
             get
             {
-                return mAllClaims.Count;
+                return mClaimList.Count;
             }
             set
             {
-
+                
             }
         }
-
-        public List<clsClaim> AllClaims
-        {
-            get
-            {
-                return mAllClaims;
-            }
-            set
-            {
-                mAllClaims = value;
-            }
-        }
+        public clsClaim ThisClaim { get; set; }
     }
 }
