@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -6,37 +8,56 @@ namespace Co_opClasses
     {
         public clsClaimInjuryCollection()
         {
-            //create an instance of the personal injury class to store a type of injury
-            clsClaimInjury AClaimInjury = new clsClaimInjury();
-            AClaimInjury.ClaimID = 1;
-            mAllClaimInjuries.Add(AClaimInjury);
-            AClaimInjury = new clsClaimInjury();
-            AClaimInjury.ClaimID = 5;
-            mAllClaimInjuries.Add(AClaimInjury);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //object for data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure 
+            DB.Execute("sproc_tblClaimInjury_SelectAll");
+            //get the count of records 
+            RecordCount = DB.Count;
+            //While there are records to process 
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsClaimInjury AClaimInjury = new clsClaimInjury();
+                //read in the fields from the current record 
+                AClaimInjury.InjuryID = Convert.ToInt32(DB.DataTable.Rows[Index]["InjuryID"]);
+                AClaimInjury.ClaimID = Convert.ToInt32(DB.DataTable.Rows[Index]["ClaimID"]);
+                //add the record to the private data member
+                mClaimInjuryList.Add(AClaimInjury);
+                //point to the next record 
+                Index++;
+            }
         }
-        private List<clsClaimInjury> mAllClaimInjuries = new List<clsClaimInjury>();
+        //private member for the list 
+        List<clsClaimInjury> mClaimInjuryList = new List<clsClaimInjury>();
+        public List<clsClaimInjury> ClaimInjuryList
+        {
+            get
+            {
+                return mClaimInjuryList;
+            }
+            set
+            {
+                mClaimInjuryList = value;
+            }
+        }
+        
         public int Count
         {
             get
             {
-                return mAllClaimInjuries.Count;
+                return mClaimInjuryList.Count;
             }
             set
             {
-                 
+
             }
         }
 
-        public List<clsClaimInjury> AllClaimInjuries
-        {
-            get
-            {
-                return mAllClaimInjuries;
-            }
-            set
-            {
-                mAllClaimInjuries = value;
-            }
-        }
+        public clsClaimInjury ThisClaimInjury { get; set; }
     }
 }
