@@ -1,6 +1,7 @@
 ﻿using Co_opClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using ClassLibrary;
 
 namespace InsuranceTesting
 {
@@ -117,7 +118,7 @@ namespace InsuranceTesting
             //Bollean variable to store the resutlts of the validation
             Boolean Found = false;
             //create some test data to use with method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoke the method
             Found = ADog.Find(DogID);
             //test to see if the result is true
@@ -136,11 +137,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
-            if (ADog.DogID != 8)
+            if (ADog.DogID != 2)
             {
                 OK = false;
             }
@@ -158,11 +159,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
-            if (ADog.Age != 1)
+            if (ADog.Age != 2)
             {
                 OK = false;
             }
@@ -180,11 +181,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
-            if (ADog.Breed != "German Shepherd")
+            if (ADog.Breed != "Bulldog")
             {
                 OK = false;
             }
@@ -202,7 +203,7 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
@@ -224,11 +225,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
-            if (ADog.Name != "Bruno")
+            if (ADog.Name != "Rex")
             {
                 OK = false;
             }
@@ -246,11 +247,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoe the method
             Found = ADog.Find(DogID);
             //check the dog no
-            if (ADog.Size != "Large")
+            if (ADog.Size != "Small")
             {
                 OK = false;
             }
@@ -268,11 +269,11 @@ namespace InsuranceTesting
             //bollean variable to record if sata is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DogID = 8;
+            Int32 DogID = 2;
             //invoke the method
             Found = ADog.Find(DogID);
             //check the property
-            if (ADog.DateAdded != Convert.ToDateTime("23/04/2022"))
+            if (ADog.DateAdded != Convert.ToDateTime("06/03/2022"))
             {
                 OK = false;
             }

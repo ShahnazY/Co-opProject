@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 namespace Co_opClasses
 {
     public class clsInsurance
@@ -8,6 +9,7 @@ namespace Co_opClasses
         private Boolean mDentalTreatment;
         private string mCover;
         private string mVetFees;
+        private decimal mPrice;
         //public property for the dog ID
         public int InsuranceID
         {
@@ -71,15 +73,47 @@ namespace Co_opClasses
             }
         }
 
+        public decimal Price
+        {
+            get
+            {
+                //send data out of the property
+                return mPrice;
+            }
+            set
+            {
+                //send data into the property
+                mPrice = value;
+            }
+        }
+
         public bool Find(int InsuranceID)
         {
-            //set the private data members to the test data value
-            mInsuranceID = 6;
-            mDentalTreatment = true;
-            mCover = "Accident Only";
-            mVetFees = "Up to £3000";
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the insurance id to search for
+            DB.AddParameter("@InsuranceID", InsuranceID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblInsurance_FilterByInsuranceID");
+            //if one record is found
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mInsuranceID = Convert.ToInt32(DB.DataTable.Rows[0]["InsuranceID"]);
+                mDentalTreatment = Convert.ToBoolean(DB.DataTable.Rows[0]["DentalTreatment"]);
+                mCover = Convert.ToString(DB.DataTable.Rows[0]["Cover"]);
+                mVetFees = Convert.ToString(DB.DataTable.Rows[0]["VetFees"]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
+                //return that everything worked fine
+                return true;
+            }
+            //if no record found
+            else
+            {
+                //return false indicatiing a problem
+                return false;
+            }
+
         }
 
     }

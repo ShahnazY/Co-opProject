@@ -1,6 +1,7 @@
 ﻿using Co_opClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using ClassLibrary;
 
 namespace InsuranceTesting
 {
@@ -67,6 +68,16 @@ namespace InsuranceTesting
             //test to see that the two values are the same
             Assert.AreEqual(AnInsurance.VetFees, TestData);
         }
+        [TestMethod]
+        public void PriceOK()
+        {
+            //create an instance of the class clsTrainers
+            clsInsurance AInsurance = new clsInsurance();
+            //test data to assign to the property
+            Decimal TestData = 4;
+            //test to see the two values are the same
+            Assert.AreNotEqual(TestData, AInsurance.Price);
+        }
 
         [TestMethod]
         public void FindMethodOK()
@@ -76,7 +87,7 @@ namespace InsuranceTesting
             //Bollean variable to store the resutlts of the validation
             Boolean Found = false;
             //create some test data to use with method
-            Int32 InsuranceID = 6;
+            Int32 InsuranceID = 1;
             //invoke the method
             Found = AnInsurance.Find(InsuranceID);
             //test to see if the result is true
@@ -94,11 +105,11 @@ namespace InsuranceTesting
             //Bolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 InsuranceID = 6;
+            Int32 InsuranceID = 1;
             //invoe the method
             Found = AnInsurance.Find(InsuranceID);
             //check the dog no
-            if (AnInsurance.InsuranceID != 6)
+            if (AnInsurance.InsuranceID != 1)
             {
                 OK = false;
             }
@@ -116,7 +127,7 @@ namespace InsuranceTesting
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 InsuranceID = 6;
+            Int32 InsuranceID = 1;
             //invoke the method
             Found = AnInsurance.Find(InsuranceID);
             //check the property
@@ -137,11 +148,11 @@ namespace InsuranceTesting
             //bollean varibale to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 InsuranceID = 6;
+            Int32 InsuranceID = 1;
             //invoke the method
             Found = AnInsurance.Find(InsuranceID);
             //check the property
-            if (AnInsurance.Cover != "Accident Only")
+            if (AnInsurance.Cover != "Accidents Only")
             {
                 OK = false;
             }
@@ -159,11 +170,32 @@ namespace InsuranceTesting
             //bollean varibale to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 InsuranceID = 6;
+            Int32 InsuranceID = 1;
             //invoke the method
             Found = AnInsurance.Find(InsuranceID);
             //check the property
-            if (AnInsurance.VetFees != "Up to £3000")
+            if (AnInsurance.VetFees != "Up to £2000")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPriceFound()
+        {
+            //create an instance of the class clsisnurance
+            clsInsurance AInsurance = new clsInsurance();
+            //test data to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 InsuranceID = 1;
+            //invoke the method
+            Found = AInsurance.Find(InsuranceID);
+            //check the property
+            if (AInsurance.Price != Convert.ToDecimal(5.99))
             {
                 OK = false;
             }
