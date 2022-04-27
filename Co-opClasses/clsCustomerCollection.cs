@@ -1,41 +1,68 @@
 ﻿using System.Collections.Generic;
+using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
     public class clsCustomerCollection
     {
+        //constructor for the class
         public clsCustomerCollection()
         {
-            //create an instance of the personal injury class to store a type of injury
-            clsCustomer ACustomer = new clsCustomer();
-            ACustomer.FirstName = "John";
-            mAllCustomers.Add(ACustomer);
-            ACustomer = new clsCustomer();
-            ACustomer.FirstName = "Mark";
-            mAllCustomers.Add(ACustomer);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //object for data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure 
+            DB.Execute("sproc_tblCustomer_SelectAll");
+            //get the count of records 
+            RecordCount = DB.Count;
+            //While there are records to process 
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsCustomer ACustomer = new clsCustomer();
+                //read in the fields from the current record 
+                ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                ACustomer.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
+                ACustomer.HouseNo= Convert.ToString(DB.DataTable.Rows[Index]["HouseNo"]);
+                ACustomer.Street = Convert.ToString(DB.DataTable.Rows[Index]["Street"]);
+                ACustomer.Town = Convert.ToString(DB.DataTable.Rows[Index]["Town"]);
+                ACustomer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
+                ACustomer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
+                //add the record to the private data member
+                mCustomersList.Add(ACustomer);
+                //point to the next record 
+                Index++;
+            }
         }
-        private List<clsCustomer> mAllCustomers = new List<clsCustomer>();
+
+        List<clsCustomer> mCustomersList = new List<clsCustomer>();
+        public List<clsCustomer> CustomersList
+        {
+            get
+            {
+                return mCustomersList;
+            }
+            set
+            {
+                mCustomersList = value;
+            }
+        }
+        public clsCustomer ThisCustomer { get; set; }
         public int Count
         {
             get
             {
-                return mAllCustomers.Count;
+                return mCustomersList.Count;
             }
             set
             {
 
-            }
-        }
-
-        public List<clsCustomer> AllCustomers
-        {
-            get
-            {
-                return mAllCustomers;
-            }
-            set
-            {
-                mAllCustomers = value;
             }
         }
     }

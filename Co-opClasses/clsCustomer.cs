@@ -273,7 +273,7 @@ namespace Co_opClasses
             catch
             {
                 //record the error
-                Error = Error + "The date entered is not in the valid format : ";
+                Error = Error + "The date entered is blank or not in the valid format : ";
             }
             return Error;
         }
