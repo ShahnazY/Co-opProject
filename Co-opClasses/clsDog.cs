@@ -1,5 +1,6 @@
 ﻿using System;
 using ClassLibrary;
+using Co_opClasses;
 
 namespace Co_opClasses
 {
