@@ -109,7 +109,7 @@ namespace Co_opClasses
         }
 
 
-        public string Valid(string location, string status, string dateOfClaim, string dateOfInjury)
+        public string Valid(string location, string dateOfClaim, string dateOfInjury)
         {
             //string variable to store the error message
             string Error = "";
@@ -127,16 +127,7 @@ namespace Co_opClasses
                 //return an error message
                 Error = Error + "The Location must not be blank : ";
             }
-            if (status.Length > 50)
-            {
-                //return a blank string
-                Error = Error + "The Status cannot have more than 50 characters : ";
-            }
-            if (status.Length == 0)
-            {
-                //return an error message
-                Error = Error +"The Status must not be blank : ";
-            }
+            
 
             try
             {
@@ -172,6 +163,14 @@ namespace Co_opClasses
             }  
 
             return Error;
+        }
+        
+        public string AllDetails
+        {
+            get
+            {
+                return Location + " " + DateOfClaim + " " + Status;
+            }
         }
     }
 }

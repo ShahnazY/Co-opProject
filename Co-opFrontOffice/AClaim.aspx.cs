@@ -8,16 +8,19 @@ using Co_opClasses;
 
 public partial class AClaim : System.Web.UI.Page
 {
+    Int32 ClaimID;
     protected void Page_Load(object sender, EventArgs e)
     {
+        ClaimID = Convert.ToInt32(Session["ClaimID"]);
         /*if (IsPostBack == false)
         {
-            DisplayLocations();
+            DisplayClaims();
         }*/
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
+        /*Add();
         clsClaim AClaim = new clsClaim();
         //capture the properties
         string Location = txtLocation.Text;
@@ -27,7 +30,7 @@ public partial class AClaim : System.Web.UI.Page
         //variable to store the error 
         string Error = "";
         //validate the data 
-        Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+        Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
         if (Error == "")
         {
             AClaim.Location = Location;
@@ -36,13 +39,24 @@ public partial class AClaim : System.Web.UI.Page
             AClaim.DateOfInjury = Convert.ToDateTime(DateOfInjury);
             //store the claim in the session object
             Session["AClaim"] = AClaim;
-            Response.Write("ClaimViewer.aspx");
+            Response.Redirect("ClaimList.aspx");
         }
         else
         {
             //display the error message
             lblError.Text = Error;
         }
+        */
+        if (ClaimID == -1)
+        {
+            Add();
+        }
+        else
+        {
+            Update();
+        }
+        
+        //
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -83,6 +97,54 @@ public partial class AClaim : System.Web.UI.Page
         else
         {
             lblError.Text = "Claim not found";
+        }
+    }
+
+    void Add()
+    {
+        clsClaimCollection Claims = new clsClaimCollection();
+        String Error = Claims.ThisClaim.Valid(txtLocation.Text, txtDateOfClaim.Text, txtDateOfInjury.Text);
+        if (Error == "")
+        {
+            //get the data entered by the user
+            Claims.ThisClaim.Location = txtLocation.Text;
+            Claims.ThisClaim.DateOfClaim = Convert.ToDateTime(txtDateOfClaim.Text);
+            Claims.ThisClaim.DateOfInjury = Convert.ToDateTime(txtDateOfInjury.Text);
+            Claims.ThisClaim.Status = Convert.ToString(ddlStatus.SelectedValue);
+            Claims.ThisClaim.EvidenceProvided = rbYes.Checked;
+            //add the record
+            Claims.Add();
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered  " + Error;
+        }
+    }
+
+    void Update()
+    {
+        clsClaimCollection Claims = new clsClaimCollection();
+        //validate the data on the form
+        String Error = Claims.ThisClaim.Valid(txtLocation.Text, txtDateOfClaim.Text, txtDateOfInjury.Text);
+        //if data is OK then add it to the object
+        if (Error == "")
+        {
+            Claims.ThisClaim.Find(ClaimID);
+            //get the data entered by user
+            Claims.ThisClaim.Location = txtLocation.Text;
+            Claims.ThisClaim.DateOfClaim = Convert.ToDateTime(txtDateOfClaim.Text);
+            Claims.ThisClaim.DateOfInjury = Convert.ToDateTime(txtDateOfInjury.Text);
+            Claims.ThisClaim.Status = ddlStatus.SelectedValue;
+            Claims.ThisClaim.EvidenceProvided = rbYes.Checked;
+            //update the record
+            Claims.Update();
+            //redirect to list
+            Response.Redirect("ClaimList.aspx");
+        }
+        else
+        {
+            lblError.Text = "There were problems with the data entered  " + Error;
         }
     }
 }
