@@ -237,7 +237,7 @@ namespace PersonalInjuryTesting
             //create some test data to test the method
             string Location = "Oadby";
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see it exists
             Assert.AreEqual(Error, "");
         }
@@ -256,7 +256,7 @@ namespace PersonalInjuryTesting
             //create some test data to assign to the property
             string Location = "";
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -271,7 +271,7 @@ namespace PersonalInjuryTesting
             //create some test data to assign to the property
             string Location = "O";
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -286,7 +286,7 @@ namespace PersonalInjuryTesting
             //create some test data to assign to the property
             string Location = "Oa";
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -303,7 +303,7 @@ namespace PersonalInjuryTesting
             //pad the string with characters
             Location = Location.PadRight(49, 'a');
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -320,7 +320,7 @@ namespace PersonalInjuryTesting
             //pad the string with characters
             Location = Location.PadRight(50, 'a');
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -337,7 +337,7 @@ namespace PersonalInjuryTesting
             //pad the string with characters
             Location = Location.PadRight(51, 'a');
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -354,7 +354,7 @@ namespace PersonalInjuryTesting
             //pad the string with characters
             Location = Location.PadRight(25, 'a');
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -371,7 +371,7 @@ namespace PersonalInjuryTesting
             //pad the string with characters
             Location = Location.PadRight(500, 'a');
             //invoke the method 
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -380,7 +380,7 @@ namespace PersonalInjuryTesting
         /// <summary>
         /// Status property tests for minimums, mid and maximums
         /// </summary>
-
+        /*
         [TestMethod]
         public void StatusMinLessOne()
         {
@@ -509,7 +509,7 @@ namespace PersonalInjuryTesting
             Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
-        }
+        } */
 
         [TestMethod]
         public void DateOfClaimExtremeMin()
@@ -527,7 +527,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfClaim = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -548,7 +548,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfClaim = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -566,7 +566,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfClaim = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -586,7 +586,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfClaim = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -606,7 +606,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfClaim = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -620,7 +620,7 @@ namespace PersonalInjuryTesting
             //set the dateOfClaim to a non date value
             string DateOfClaim = "This is not a date";
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -641,7 +641,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -660,7 +660,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -682,7 +682,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -703,7 +703,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         } 
@@ -724,7 +724,7 @@ namespace PersonalInjuryTesting
             //convert the date variable to a string variable 
             string DateOfInjury = TestData.ToString();
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -739,9 +739,11 @@ namespace PersonalInjuryTesting
             //set the dateOfInjury to a non date value
             string DateOfInjury = "This is not in a date format";
             //invoke the method
-            Error = AClaim.Valid(Location, Status, DateOfClaim, DateOfInjury);
+            Error = AClaim.Valid(Location, DateOfClaim, DateOfInjury);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        
     }
 }

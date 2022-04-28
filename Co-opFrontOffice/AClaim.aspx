@@ -17,8 +17,8 @@
         <asp:Label ID="lblDateOfClaim" runat="server" style="z-index: 1; left: 512px; top: 129px; position: absolute" Text="Date of Claim"></asp:Label>
         <asp:Label ID="lblDateOfInjury" runat="server" style="z-index: 1; left: 512px; top: 173px; position: absolute" Text="Date of Injury"></asp:Label>
         <asp:Label ID="lblEvidenceProvided" runat="server" style="z-index: 1; left: 514px; top: 232px; position: absolute" Text="Evidence Provided"></asp:Label>
-        <asp:RadioButton ID="Yes" runat="server" style="z-index: 1; left: 651px; top: 232px; position: absolute; right: 586px" Text="Yes" />
-        <asp:RadioButton ID="No" runat="server" style="z-index: 1; left: 715px; top: 232px; position: absolute" Text="No" />
+        <asp:RadioButton ID="rbYes" runat="server" style="z-index: 1; left: 651px; top: 232px; position: absolute; right: 881px" Text="Yes" />
+        <asp:RadioButton ID="rbNo" runat="server" style="z-index: 1; left: 715px; top: 232px; position: absolute" Text="No" />
         <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 398px; top: 298px; position: absolute" Text="Cancel" />
         <asp:TextBox ID="txtDateOfClaim" runat="server" style="z-index: 1; left: 635px; top: 123px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtDateOfInjury" runat="server" style="z-index: 1; left: 632px; top: 174px; position: absolute"></asp:TextBox>
@@ -27,6 +27,10 @@
         <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 491px; top: 76px; position: absolute" Text="Find" />
         <asp:TextBox ID="txtLocation" runat="server" style="z-index: 1; left: 331px; top: 130px; position: absolute"></asp:TextBox>
         <asp:DropDownList ID="ddlStatus" runat="server" style="z-index: 1; left: 331px; top: 175px; position: absolute">
+            <asp:ListItem>In Progress</asp:ListItem>
+            <asp:ListItem>Pending</asp:ListItem>
+            <asp:ListItem>Submitted</asp:ListItem>
+            <asp:ListItem>Accepted</asp:ListItem>
         </asp:DropDownList>
     </form>
 </body>

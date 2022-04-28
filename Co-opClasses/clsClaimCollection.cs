@@ -7,6 +7,23 @@ namespace Co_opClasses
 {
     public class clsClaimCollection
     {
+        //private data member for the list 
+        List<clsClaim> mClaimList = new List<clsClaim>();
+        //private data member thisClaim
+        clsClaim mThisClaim = new clsClaim();
+
+        //public property for ThisClaim
+        public clsClaim ThisClaim
+        {
+            get
+            {
+                return mThisClaim;
+            }
+            set
+            {
+                mThisClaim = value;
+            }
+        }
         //constructor for the class
         public clsClaimCollection()
         {
@@ -39,7 +56,6 @@ namespace Co_opClasses
         } 
 
 
-        List<clsClaim> mClaimList = new List<clsClaim>();
         public List<clsClaim> ClaimsList
         {
             get
@@ -62,6 +78,36 @@ namespace Co_opClasses
                 
             }
         }
-        public clsClaim ThisClaim { get; set; }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Location", mThisClaim.Location);
+            DB.AddParameter("@Status", mThisClaim.Status);
+            DB.AddParameter("@DateOfClaim", mThisClaim.DateOfClaim);
+            DB.AddParameter("@DateOfInjury", mThisClaim.DateOfInjury);
+            DB.AddParameter("@EvidenceProvided", mThisClaim.EvidenceProvided);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblClaim_Insert");
+        }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ClaimID", mThisClaim.ClaimID);
+            DB.Execute("sproc_tblClaim_Delete");
+        }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Location", mThisClaim.Location);
+            DB.AddParameter("@Status", mThisClaim.Status);
+            DB.AddParameter("@DateOfClaim", mThisClaim.DateOfClaim);
+            DB.AddParameter("@DateOfInjury", mThisClaim.DateOfInjury);
+            DB.AddParameter("@EvidenceProvided", mThisClaim.EvidenceProvided);
+            //execute the stored procedure
+            DB.Execute("sproc_tblClaim_Update");
+        }
     }
 }
