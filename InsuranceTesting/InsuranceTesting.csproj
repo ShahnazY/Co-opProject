@@ -49,8 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DogCollection.cs" />
-    <Compile Include="InsuranceCollection.cs" />
+    <Compile Include="tstDogCollection.cs" />
+    <Compile Include="tstInsuranceCollection.cs" />
     <Compile Include="tstDog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstInsurance.cs" />
