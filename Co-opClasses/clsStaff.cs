@@ -122,5 +122,82 @@ namespace Co_opClasses
 
             }
         }
+
+        public string Valid(string firstName, string lastName, string gender, string dateOfBirth, string email, string department)
+        {
+            //string variable to store the error message
+            string Error = "";
+            //string pattern to validate email 
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            //create a temp variable to store date values
+            DateTime DateTemp;
+            //if the name of staff is more than 50 characters
+            if (firstName.Length > 50)
+            {
+                //return a blank string
+                Error = Error + "The first name cannot have more than 50 characters long :";
+            }
+            if (firstName.Length == 0)
+            {
+                //return an error message
+                Error = Error + "The first name cannot be blank : ";
+            }
+            if (lastName.Length > 50)
+            {
+                //return a blank string
+                Error = Error + "The last name cannot have more than 50 characters : ";
+            }
+            if (lastName.Length == 0)
+            {
+                //return an error message
+                Error = Error + "The last name cannot be blank : ";
+            }
+            if (gender.Length == 0)
+            {
+                Error = Error + "Gender cannot be blank : ";
+            }
+            if (gender.Length > 6)
+            {
+                Error = Error + "Gender should not have more than 6 characters : ";
+            }
+            if (email.Length == 0)
+            {
+                Error = Error + "The Email cannot be blank : ";
+            }
+            else if (Regex.IsMatch(email, pattern) == false)
+            {
+                Error = Error + "Email is not in the correct format : ";
+            }
+            if (department.Length == 0)
+            {
+                Error = Error + "The department may not be  blank : ";
+            }
+            if (department.Length > 50)
+            {
+                Error = Error + "The department must not exceed 50 characters : ";
+            }
+            try
+            {
+                //cope the dateOfBirth value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateOfBirth);
+                if (DateTemp > DateTime.Now.Date.AddYears(-18))
+                {
+                    //record the error
+                    Error = Error + "You must be at least 18 years old : ";
+                }
+                DateTemp = Convert.ToDateTime(dateOfBirth);
+                if (DateTemp < DateTime.Now.Date.AddYears(-100))
+                {
+                    //record the error
+                    Error = Error + "The age is too old : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The entered date is not a valid format : ";
+            }
+            return Error;
+        }
     }
 }
