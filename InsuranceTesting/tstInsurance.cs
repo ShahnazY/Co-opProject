@@ -8,7 +8,9 @@ namespace InsuranceTesting
     [TestClass]
     public class tstInsurance
     {
-
+        //test data to pass methods for an insurance
+        string DogID = "1";
+        string Price = "1";
 
         [TestMethod]
         public void InstanceOK()
@@ -29,6 +31,19 @@ namespace InsuranceTesting
             AnInsurance.InsuranceID = TestData;
             //test to see the two values are the same
             Assert.AreEqual(TestData, AnInsurance.InsuranceID);
+        }
+
+        [TestMethod]
+        public void DogIDOK()
+        {
+            //create an insatnce of the class we want to create
+            clsInsurance AnInsurance = new clsInsurance();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign the data to the property
+            AnInsurance.DogID = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AnInsurance.DogID, TestData);
         }
 
         [TestMethod]
@@ -116,7 +131,29 @@ namespace InsuranceTesting
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
-        
+
+        [TestMethod]
+        public void TestDogIDFound()
+        {
+            //create an instance of the class we want to create
+            clsInsurance AnInsurance = new clsInsurance();
+            //Bollean variable to store the reult of the search
+            Boolean Found = false;
+            //Bolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DogID = 1;
+            //invoe the method
+            Found = AnInsurance.Find(DogID);
+            //check the dog no
+            if (AnInsurance.DogID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
         [TestMethod]
         public void TestDentalTreatmentFound()
         {
@@ -201,6 +238,174 @@ namespace InsuranceTesting
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of validation
+            String Error = "";
+            //invoke the method
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see it exists
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DogIDValid()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of validation
+            String Error = "";
+            //value of 0 should fail
+            Int32 TestValue;
+            TestValue = 0;
+            String DogID = TestValue.ToString();
+            //invoke the method
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMinLessOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal TestPrice = 0.00M;
+            //convert the price variable to a string
+            string Price = TestPrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void PriceMin()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal TestPrice = 0.01M;
+            //convert the price variable to a string
+            string Price = TestPrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void PriceMinPlusOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal TestPrice = 0.02M;
+            //convert the price variable to a string
+            string Price = TestPrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMid()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal SomePrice = 25000.00M;
+            //convert the price variable to a string
+            string Price = SomePrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void PriceMaxLessOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal SomePrice = 49999.00M;
+            //convert the price variable to a string
+            string Price = SomePrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMax()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal SomePrice = 50000.00M;
+            //convert the price variable to a string
+            string Price = SomePrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMaxPlusOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            Decimal SomePrice = 50000.01M;
+            //convert the price variable to a string
+            string Price = SomePrice.ToString();
+            //invoke the method 
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void PriceInvalidData()
+        {
+            //create instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //string to store error message
+            String Error = "";
+            //set the price to non money value
+            String Price = "The value entered has to be money!";
+            //invoke the method
+            Error = AnInsurance.Valid(DogID, Price);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
     }
 }

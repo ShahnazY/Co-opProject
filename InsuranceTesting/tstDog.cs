@@ -288,7 +288,19 @@ namespace InsuranceTesting
         }
 
         [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsDog ADog = new clsDog();
+            //string variable to store any error message
+            String Error = "";
+            //invoke method
+            Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
 
+        [TestMethod]
         public void AgeMinLessOne()
         {
             //create an instance of the class we want to create
