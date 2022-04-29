@@ -46,6 +46,9 @@ namespace Co_opBackOffice
             this.txtSymbol = new System.Windows.Forms.TextBox();
             this.lblManage = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFilterFundNo = new System.Windows.Forms.Button();
+            this.txtFilterFundNo = new System.Windows.Forms.TextBox();
+            this.lblFilterFundNo = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnPopulate = new System.Windows.Forms.Button();
@@ -56,9 +59,6 @@ namespace Co_opBackOffice
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
-            this.lblFilterFundNo = new System.Windows.Forms.Label();
-            this.txtFilterFundNo = new System.Windows.Forms.TextBox();
-            this.btnFilterFundNo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -230,6 +230,33 @@ namespace Co_opBackOffice
             this.panel2.Size = new System.Drawing.Size(419, 452);
             this.panel2.TabIndex = 2;
             // 
+            // btnFilterFundNo
+            // 
+            this.btnFilterFundNo.Location = new System.Drawing.Point(309, 275);
+            this.btnFilterFundNo.Name = "btnFilterFundNo";
+            this.btnFilterFundNo.Size = new System.Drawing.Size(81, 29);
+            this.btnFilterFundNo.TabIndex = 7;
+            this.btnFilterFundNo.Text = "Filter";
+            this.btnFilterFundNo.UseVisualStyleBackColor = true;
+            this.btnFilterFundNo.Click += new System.EventHandler(this.btnFilterFundNo_Click);
+            // 
+            // txtFilterFundNo
+            // 
+            this.txtFilterFundNo.Location = new System.Drawing.Point(190, 280);
+            this.txtFilterFundNo.Name = "txtFilterFundNo";
+            this.txtFilterFundNo.Size = new System.Drawing.Size(100, 20);
+            this.txtFilterFundNo.TabIndex = 6;
+            // 
+            // lblFilterFundNo
+            // 
+            this.lblFilterFundNo.AutoSize = true;
+            this.lblFilterFundNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F);
+            this.lblFilterFundNo.Location = new System.Drawing.Point(18, 280);
+            this.lblFilterFundNo.Name = "lblFilterFundNo";
+            this.lblFilterFundNo.Size = new System.Drawing.Size(157, 18);
+            this.lblFilterFundNo.TabIndex = 4;
+            this.lblFilterFundNo.Text = "Filter by Fund Number:";
+            // 
             // lblError
             // 
             this.lblError.AutoSize = true;
@@ -265,6 +292,7 @@ namespace Co_opBackOffice
             this.lstFunds.Name = "lstFunds";
             this.lstFunds.Size = new System.Drawing.Size(369, 121);
             this.lstFunds.TabIndex = 0;
+     
             // 
             // lblError1
             // 
@@ -324,33 +352,6 @@ namespace Co_opBackOffice
             this.btnNo.Text = "NO";
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
-            // 
-            // lblFilterFundNo
-            // 
-            this.lblFilterFundNo.AutoSize = true;
-            this.lblFilterFundNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F);
-            this.lblFilterFundNo.Location = new System.Drawing.Point(18, 280);
-            this.lblFilterFundNo.Name = "lblFilterFundNo";
-            this.lblFilterFundNo.Size = new System.Drawing.Size(157, 18);
-            this.lblFilterFundNo.TabIndex = 4;
-            this.lblFilterFundNo.Text = "Filter by Fund Number:";
-            // 
-            // txtFilterFundNo
-            // 
-            this.txtFilterFundNo.Location = new System.Drawing.Point(190, 280);
-            this.txtFilterFundNo.Name = "txtFilterFundNo";
-            this.txtFilterFundNo.Size = new System.Drawing.Size(100, 20);
-            this.txtFilterFundNo.TabIndex = 6;
-            // 
-            // btnFilterFundNo
-            // 
-            this.btnFilterFundNo.Location = new System.Drawing.Point(309, 275);
-            this.btnFilterFundNo.Name = "btnFilterFundNo";
-            this.btnFilterFundNo.Size = new System.Drawing.Size(81, 29);
-            this.btnFilterFundNo.TabIndex = 7;
-            this.btnFilterFundNo.Text = "Filter";
-            this.btnFilterFundNo.UseVisualStyleBackColor = true;
-            this.btnFilterFundNo.Click += new System.EventHandler(this.btnFilterFundNo_Click);
             // 
             // frmFunds
             // 
