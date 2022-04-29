@@ -8,6 +8,7 @@ namespace Co_opClasses
     {
         //private data members of all properties
         private Int32 mInsuranceID;
+        private Int32 mDogID;
         private Boolean mDentalTreatment;
         private string mCover;
         private string mVetFees;
@@ -25,6 +26,20 @@ namespace Co_opClasses
             {
                 //set the value of the private data member
                 mInsuranceID = value;
+            }
+        }
+
+        public Int32 DogID
+        {
+            get
+            {
+                //this line allows data out of the property
+                return mDogID;
+            }
+            set
+            {
+                //this line allows data into property
+                mDogID = value;
             }
         }
 
@@ -102,6 +117,7 @@ namespace Co_opClasses
             {
                 //copy the data from the database to the private data members
                 mInsuranceID = Convert.ToInt32(DB.DataTable.Rows[0]["InsuranceID"]);
+                mDogID = Convert.ToInt32(DB.DataTable.Rows[0]["DogID"]);
                 mDentalTreatment = Convert.ToBoolean(DB.DataTable.Rows[0]["DentalTreatment"]);
                 mCover = Convert.ToString(DB.DataTable.Rows[0]["Cover"]);
                 mVetFees = Convert.ToString(DB.DataTable.Rows[0]["VetFees"]);
@@ -118,6 +134,52 @@ namespace Co_opClasses
 
         }
 
+        public string Valid(string dogID, string price)
+        {
+            //string variable to store the error message
+            string Error = "";
+            Int32 ValueTemp;
+            //temp variable to store the price value
+            Decimal PriceTemp;
+            try
+            {
+                ValueTemp = Convert.ToInt32(dogID);
+                //if the value is 0
+                if (ValueTemp == 0)
+                {
+                    Error = Error + "Dog ID cannot be 0 :  ";
+                }
+                //if the value is too big
+                if (ValueTemp > 50000)
+                {
+                    Error = Error + "Dog ID is too big : ";
+                }
+            }
+            catch
+            {
+                Error = Error + "Dog ID  must be a number!  ";
+            }
+            try
+            {
+                PriceTemp = Convert.ToDecimal(price);
+                if (PriceTemp < 0.01M)
+                {
+                    //record an error
+                    Error = Error + "The price amount cannot be less than £0.01 : ";
+                }
+                if (PriceTemp > 50000M)
+                {
+                    //record an error
+                    Error = Error + "The price amount cannot be more than £50,000 : ";
+                }
+            }
+            catch
+            {
+                //record the error 
+                Error = Error + "The value cannot be blank or in the format entered : ";
+            }
+            return Error;
+        }
     }
 }
     
