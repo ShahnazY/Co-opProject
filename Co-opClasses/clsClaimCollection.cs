@@ -101,6 +101,7 @@ namespace Co_opClasses
         public void Update()
         {
             clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("ClaimID", mThisClaim.ClaimID);
             DB.AddParameter("@Location", mThisClaim.Location);
             DB.AddParameter("@Status", mThisClaim.Status);
             DB.AddParameter("@DateOfClaim", mThisClaim.DateOfClaim);
