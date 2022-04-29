@@ -97,6 +97,7 @@ namespace PersonalInjuryTesting
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
+            TestItem.ClaimID = 1;
             TestItem.Location = "Leicester";
             TestItem.Status = "In Progress";
             TestItem.DateOfClaim = DateTime.Now.Date;
@@ -124,6 +125,7 @@ namespace PersonalInjuryTesting
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
+            TestItem.ClaimID = 1;
             TestItem.Location = "Leicester";
             TestItem.Status = "In Progress";
             TestItem.DateOfClaim = DateTime.Now.Date;
