@@ -194,6 +194,18 @@ namespace Co_opClasses
                 Error = Error + "The symbol must be less than 10 characters!  ";
             }
 
+            //if the symbol is blank
+            if (change.Length == 0)
+            {
+                Error = Error + "The change may not be blank!  ";
+            }
+
+            //if the symbol is too long
+            if (change.Length > 10)
+            {
+                Error = Error + "The change must be less than 10 characters!  ";
+            }
+
             //if the fund name is blank
             if (fundName.Length == 0)
             {

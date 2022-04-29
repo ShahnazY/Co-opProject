@@ -59,6 +59,8 @@
     <Compile Include="clsInsuranceCollection.cs" />
     <Compile Include="clsPersonalInjury.cs" />
     <Compile Include="clsPersonalInjuryCollection.cs" />
+    <Compile Include="clsShare.cs" />
+    <Compile Include="clsSharesCollection.cs" />
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsStaffCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
