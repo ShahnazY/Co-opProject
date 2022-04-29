@@ -46,16 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmClaims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaims.Designer.cs">
+      <DependentUpon>frmClaims.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFunds.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFunds.Designer.cs">
       <DependentUpon>frmFunds.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainPage.Designer.cs">
+      <DependentUpon>frmMainPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClaims.resx">
+      <DependentUpon>frmClaims.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFunds.resx">
       <DependentUpon>frmFunds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainPage.resx">
+      <DependentUpon>frmMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

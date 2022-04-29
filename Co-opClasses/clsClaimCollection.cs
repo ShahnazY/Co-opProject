@@ -110,5 +110,32 @@ namespace Co_opClasses
             //execute the stored procedure
             DB.Execute("sproc_tblClaim_Update");
         }
+
+        public void ReportByStatus(string Status)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Status", Status);
+            DB.Execute("sproc_tblClaim_FilterByStatus");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mClaimList = new List<clsClaim>();
+            while (Index < RecordCount)
+            {
+                clsClaim AClaim = new clsClaim();
+                AClaim.Location = Convert.ToString(DB.DataTable.Rows[Index]["Location"]);
+                AClaim.Status = Convert.ToString(DB.DataTable.Rows[Index]["Status"]);
+                AClaim.DateOfClaim = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfClaim"]);
+                AClaim.DateOfInjury = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfInjury"]);
+                AClaim.EvidenceProvided = Convert.ToBoolean(DB.DataTable.Rows[Index]["EvidenceProvided"]);
+                mClaimList.Add(AClaim);
+                Index++;
+            }
+        }
     }
 }
