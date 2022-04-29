@@ -16,7 +16,7 @@ namespace Co_opBackOffice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmFunds());
+            Application.Run(new frmMainPage());
         }
     }
 }
