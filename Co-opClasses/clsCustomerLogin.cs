@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Co_opClasses
 {
@@ -55,11 +56,22 @@ namespace Co_opClasses
 
         public bool Find(int CustomerLoginID)
         {
-            mCustomerLoginID = 2;
-            mCustomerID = 5;
-            mEmail = "Mark.12@gmail.com";
-            mPassword = "password";
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("CustomerLoginID", CustomerLoginID);
+            DB.Execute("sproc_tblCustomerLogin_FilterByCustomerLoginID");
+            
+            if (DB.Count == 1)
+            {
+                mCustomerLoginID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerLoginID"]);
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]); ;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
