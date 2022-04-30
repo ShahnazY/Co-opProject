@@ -32,7 +32,7 @@ namespace SharedTesting
         {
             //create an instance of the class we want to create
             clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
-            //create som test data to assign to the property 
+            //create some test data to assign to the property 
             Int32 TestData = 23;
             //assign the data to the property
             ACustomerLogin.CustomerID = TestData;
@@ -45,7 +45,7 @@ namespace SharedTesting
         {
             //create an instance of the class we want to create
             clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
-            //create som test data to assign to the property 
+            //create some test data to assign to the property 
             string TestData = "John.Smith@gmail.com";
             //assign the data to the property
             ACustomerLogin.Email = TestData;
@@ -58,12 +58,114 @@ namespace SharedTesting
         {
             //create an instance of the class we want to create
             clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
-            //create som test data to assign to the property 
+            //create some test data to assign to the property 
             string TestData = "JohnS123";
             //assign the data to the property
             ACustomerLogin.Password = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(ACustomerLogin.Password, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
+            //boolean variable to store the results of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 CustomerLoginID = 2;
+            //invoke method
+            Found = ACustomerLogin.Find(CustomerLoginID);
+            //test to see that the two values are the same
+            Assert.IsTrue(Found);
+        }
+
+
+        [TestMethod]
+        public void CustomerLoginIDFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
+            //boolean variable to store the results of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerLoginID = 2;
+            //invoke method
+            Found = ACustomerLogin.Find(CustomerLoginID);
+            if (ACustomerLogin.CustomerLoginID != 2)
+            {
+                OK = false;
+            }
+            //test to see that the two values are the same
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void CustomerIDFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
+            //boolean variable to store the results of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerLoginID = 2;
+            //invoke method
+            Found = ACustomerLogin.Find(CustomerLoginID);
+            if (ACustomerLogin.CustomerID != 5)
+            {
+                OK = false;
+            }
+            //test to see that the two values are the same
+            Assert.IsTrue(OK);
+        }
+
+
+        [TestMethod]
+        public void EmailFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
+            //boolean variable to store the results of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerLoginID = 2;
+            //invoke method
+            Found = ACustomerLogin.Find(CustomerLoginID);
+            if (ACustomerLogin.Email != Convert.ToString("Mark.12@gmail.com"))
+            {
+                OK = false;
+            }
+            //test to see that the two values are the same
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void PasswordFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
+            //boolean variable to store the results of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerLoginID = 2;
+            //invoke method
+            Found = ACustomerLogin.Find(CustomerLoginID);
+            if (ACustomerLogin.Password != Convert.ToString("password"))
+            {
+                OK = false;
+            }
+            //test to see that the two values are the same
+            Assert.IsTrue(OK);
+        }
+
     }
 }
