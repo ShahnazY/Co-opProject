@@ -20,7 +20,7 @@ namespace SharedTesting
             //create an instance of the class
             clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
             //create some test data to assign to the property
-            Int32 CustomerLoginID = 1;
+            Int32 CustomerLoginID = 2;
             //assign the data to the property
             ACustomerLogin.CustomerLoginID = CustomerLoginID;
             //test to see it exists
@@ -116,7 +116,7 @@ namespace SharedTesting
             Int32 CustomerLoginID = 2;
             //invoke method
             Found = ACustomerLogin.Find(CustomerLoginID);
-            if (ACustomerLogin.CustomerID != 5)
+            if (ACustomerLogin.CustomerID != 1)
             {
                 OK = false;
             }
@@ -138,7 +138,7 @@ namespace SharedTesting
             Int32 CustomerLoginID = 2;
             //invoke method
             Found = ACustomerLogin.Find(CustomerLoginID);
-            if (ACustomerLogin.Email != Convert.ToString("Mark.12@gmail.com"))
+            if (ACustomerLogin.Email != Convert.ToString("matt12@gmail.com"))
             {
                 OK = false;
             }
@@ -159,7 +159,7 @@ namespace SharedTesting
             Int32 CustomerLoginID = 2;
             //invoke method
             Found = ACustomerLogin.Find(CustomerLoginID);
-            if (ACustomerLogin.Password != Convert.ToString("password"))
+            if (ACustomerLogin.Password != Convert.ToString("password12"))
             {
                 OK = false;
             }
