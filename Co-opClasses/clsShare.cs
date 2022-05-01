@@ -147,7 +147,8 @@ namespace Co_opClasses
             }
         }//end of find function
 
-        //fuction for the public validation method
+       
+
         public string Valid(string clientID, string shares, string orderType, string duration, string symbol, string fundID)
         {
             //this function accepts 5 parameters for validation
@@ -208,12 +209,12 @@ namespace Co_opClasses
                     Error = Error + "The date cannot be in the past.  ";
                 }
             }
-            catch 
+            catch
             {
                 Error = Error + "The date is not valid";
             }
 
-           
+
 
 
             //if the order type is blank
@@ -266,8 +267,7 @@ namespace Co_opClasses
 
             //return any error message
             return Error;
-
-        }//end of function for validation
+        }// end of validation
 
         public bool FindThePurchaseNo()
         {
