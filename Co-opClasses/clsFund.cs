@@ -295,5 +295,20 @@ namespace Co_opClasses
             }
 
         }
+
+        public string AllDetails
+        {
+            get
+            {
+                return FundNo + ", " + FundName + ", " + Symbol + ", " + MarketPrice + ", " + Change;
+            }
+        }
+
+        public string FullDescription
+        {
+            get {
+                return Objective;
+            }
+        }
     }
 }

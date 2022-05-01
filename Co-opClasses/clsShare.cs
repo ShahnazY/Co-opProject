@@ -288,6 +288,14 @@ namespace Co_opClasses
             }
 
         }
+
+        public string AllPurchases
+        {
+            get
+            {
+                return PurchaseNo + ", " + Symbol + ", " + Duration + ", " + Shares ;
+            }
+        }
     }
 }
     
