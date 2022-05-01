@@ -240,7 +240,7 @@ namespace Co_opClasses
                 }
 
                 //if the risk value is too big
-                if (ValueTemp > 50000)
+                if (ValueTemp > 7)
                 {
                     Error = Error + "The risk value is too big! Maximum risk value is 7. ";
                 }

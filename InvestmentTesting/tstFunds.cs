@@ -63,7 +63,7 @@ namespace InvestmentTesting
             Found = AFund.Find(FundNo);
 
             //check the property
-            if (AFund.Change != "VFEM")
+            if (AFund.Symbol != "VFEM")
             {
                 OK = false;
             }
@@ -699,7 +699,7 @@ namespace InvestmentTesting
             String Error = "";
             //this should pass
             string Change = "";
-            Objective = Change.PadRight(9, 'a');
+            Change = Change.PadRight(9, 'a');
             //invoke the method
             Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
             //test to see that the result is correct
@@ -1005,7 +1005,7 @@ namespace InvestmentTesting
             String Error = "";
             //this should fail
             Int32 TestValue;
-            TestValue = 1000001;
+            TestValue = 50000001;
             String Stocks = TestValue.ToString();
             Error = AFund.Valid(Symbol, FundName, Risk, Objective, Change, Stocks, MarketPrice);
             //test to see that the result is correct

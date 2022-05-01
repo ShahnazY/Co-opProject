@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstClient.cs" />
     <Compile Include="tstFunds.cs" />
+    <Compile Include="tstShares.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
