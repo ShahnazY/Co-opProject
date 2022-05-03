@@ -1,5 +1,6 @@
 ﻿using System;
 using ClassLibrary;
+using System.Text.RegularExpressions;
 using Co_opClasses;
 
 namespace Co_opClasses
@@ -92,7 +93,45 @@ namespace Co_opClasses
                 //return false indicating a problem 
                 return false;
             }
+        }
+            public string Valid(string staffID, string email, string password)
+            {
+                String Error = "";
+                //Temp variable to store the staff ID
+                Int32 IDTemp;
+                //string pattern to validate email 
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                try
+                {
+                    IDTemp = Convert.ToInt32(staffID);
+                    if (IDTemp == 0)
+                    {
+                        Error = Error + "You must enter Staff ID : ";
+                    }
 
+                }
+                catch
+                {
+                    Error = Error + "Staff ID must be a number : ";
+                }
+                if (email.Length == 0)
+                {
+                    Error = Error + "You must enter an email : ";
+                }
+                else if (Regex.IsMatch(email, pattern) == false)
+                {
+                    Error = Error + "Email is in the wrong format : ";
+                }
+                if (password.Length < 5)
+                {
+                    Error = Error + "The Password cannot be less than 5 characters : ";
+                }
+                if (password.Length > 20)
+                {
+                    Error = Error + "The Password may not be more than 20 characters : ";
+                }
+
+                return Error;          
         }
     }
 }
