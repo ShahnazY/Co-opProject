@@ -78,15 +78,22 @@ namespace Co_opClasses
         public string Valid(string customerID, string email, string password)
         {
             String Error = "";
+            //Temp variable to store the customer ID
+            Int32 IDTemp;
             //string pattern to validate email 
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (password.Length < 7)
+            try
             {
-                Error = Error + "The Password cannot be less than 7 characters : ";
+                IDTemp = Convert.ToInt32(customerID);
+                if (IDTemp == 0)
+                {
+                    Error = Error + "The CustomerID cannot be blank : ";
+                }
+                
             }
-            if (password.Length > 15)
+            catch
             {
-                Error = Error + "The Password may not be more than 15 characters : ";
+                Error = Error + "The data entered in the customerID is not a number : ";
             }
             if (email.Length == 0)
             {
@@ -96,10 +103,15 @@ namespace Co_opClasses
             {
                 Error = Error + "Email is not valid. The correct format is 'example@example.uk' : ";
             }
-            if (customerID.Length == 0)
+            if (password.Length < 7)
             {
-                Error = Error + "The Customer ID may not be blank :";
+                Error = Error + "The Password cannot be less than 7 characters : ";
             }
+            if (password.Length > 15)
+            {
+                Error = Error + "The Password may not be more than 15 characters : ";
+            }
+            
             return Error;
         }
     }
