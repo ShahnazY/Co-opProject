@@ -19,6 +19,9 @@
         <asp:TextBox ID="txtCustomerID" runat="server" style="z-index: 1; left: 299px; top: 127px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 191px; top: 387px; position: absolute" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 378px; top: 390px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 503px; top: 77px; position: absolute" Text="Find" />
+        <asp:TextBox ID="txtLoginID" runat="server" style="z-index: 1; left: 300px; top: 83px; position: absolute"></asp:TextBox>
+        <asp:Label ID="lblLoginID" runat="server" style="z-index: 1; left: 161px; top: 83px; position: absolute" Text="Customer Login ID"></asp:Label>
     </form>
 </body>
 </html>
