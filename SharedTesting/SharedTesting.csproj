@@ -53,6 +53,7 @@
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstCustomerCollection.cs" />
     <Compile Include="tstCustomerLogin.cs" />
+    <Compile Include="tstCustomerLoginCollection.cs" />
     <Compile Include="tstStaffCollection.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="tstStaffLogin.cs" />
