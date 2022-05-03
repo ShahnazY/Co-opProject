@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using ClassLibrary;
 
 namespace Co_opClasses
@@ -72,6 +73,34 @@ namespace Co_opClasses
             {
                 return false;
             }
+        }
+
+        public string Valid(string customerID, string email, string password)
+        {
+            String Error = "";
+            //string pattern to validate email 
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (password.Length < 7)
+            {
+                Error = Error + "The Password cannot be less than 7 characters : ";
+            }
+            if (password.Length > 15)
+            {
+                Error = Error + "The Password may not be more than 15 characters : ";
+            }
+            if (email.Length == 0)
+            {
+                Error = Error + "The Email may not be blank : ";
+            }
+            else if (Regex.IsMatch(email, pattern) == false)
+            {
+                Error = Error + "Email is not valid. The correct format is 'example@example.uk' : ";
+            }
+            if (customerID.Length == 0)
+            {
+                Error = Error + "The Customer ID may not be blank :";
+            }
+            return Error;
         }
     }
 }

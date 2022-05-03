@@ -949,9 +949,9 @@ namespace SharedTesting
             //create a string variable to store the result of the validation
             String Error = "";
             //create some test data to assign to the property
-            string Street = "";
+            string Gender = "";
             //pad the string with characters
-            Street = Street.PadRight(100, 'a');
+            Gender = Gender.PadRight(100, 'a');
             //invoke the method 
             Error = ACustomer.Valid(FirstName, LastName, DateOfBirth, Gender, Email, HouseNo, Street, Town, PostCode);
             //test to see that the result is not ok
