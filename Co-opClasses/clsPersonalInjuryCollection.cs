@@ -6,6 +6,8 @@ namespace Co_opClasses
 {
     public class clsPersonalInjuryCollection
     {
+        List<clsPersonalInjury> mPersonalInjuriesList = new List<clsPersonalInjury>();
+        clsPersonalInjury mThisPersonalInjury = new clsPersonalInjury();
         public clsPersonalInjuryCollection()
         {
             //var for the index
@@ -35,7 +37,7 @@ namespace Co_opClasses
             }
         }
 
-        List<clsPersonalInjury> mPersonalInjuriesList = new List<clsPersonalInjury>();
+        
         public List<clsPersonalInjury> PersonalInjuriesList
         {
             get
@@ -59,6 +61,26 @@ namespace Co_opClasses
             }
         }
 
-        public clsPersonalInjury ThisPersonalInjury { get; set; }
+        public clsPersonalInjury ThisPersonalInjury
+        {
+            get
+            {
+                return mThisPersonalInjury;
+            }
+            set
+            {
+                mThisPersonalInjury = value;
+            }
+        }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@TypeOfInjury", mThisPersonalInjury.TypeOfInjury);
+            DB.AddParameter("@Severity", mThisPersonalInjury.Severity);
+            DB.AddParameter("@Compensation", mThisPersonalInjury.Compensation);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblPersonalInjury_Insert");
+        }
     }
 }

@@ -70,5 +70,31 @@ namespace SharedTesting
             Assert.AreEqual(AllCustomerLogins.Count, TestList.Count);
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class
+            clsCustomerLoginCollection AllCustomerLogins = new clsCustomerLoginCollection();
+            //create the item of test data
+            clsCustomerLogin TestItem = new clsCustomerLogin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.CustomerLoginID = 1;
+            TestItem.CustomerID = 2;
+            TestItem.Email = "John123@gmail.com";
+            TestItem.Password = "Password123";
+            //set ThisClaim to the test data;
+            AllCustomerLogins.ThisCustomerLogin = TestItem;
+            //add the record
+            PrimaryKey = AllCustomerLogins.Add();
+            //set the primary key of the test data
+            TestItem.CustomerLoginID = PrimaryKey;
+            //find the record
+            AllCustomerLogins.ThisCustomerLogin.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomerLogins.ThisCustomerLogin, TestItem);
+        }
+
     }
 }

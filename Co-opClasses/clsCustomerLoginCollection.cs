@@ -72,5 +72,15 @@ namespace Co_opClasses
                 mThisCustomerLogin = value;
             }
         }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerID", mThisCustomerLogin.CustomerID);
+            DB.AddParameter("@Email", mThisCustomerLogin.Email);
+            DB.AddParameter("@Password", mThisCustomerLogin.Password);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblCustomerLogin_Insert");      
+        }
     }
 }

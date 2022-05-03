@@ -6,6 +6,10 @@ namespace Co_opClasses
 {
     public class clsCustomerCollection
     {
+        //private data member for the list 
+        List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        //private data member thisClaim
+        clsCustomer mThisCustomer = new clsCustomer();
         //constructor for the class
         public clsCustomerCollection()
         {
@@ -64,6 +68,23 @@ namespace Co_opClasses
             {
 
             }
+        }
+
+        public int Add()
+        {   
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@Gender", mThisCustomer.Gender);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            DB.AddParameter("@DateOfBirth", mThisCustomer.DateOfBirth);
+            DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
+            DB.AddParameter("@Street", mThisCustomer.Street);
+            DB.AddParameter("@Town", mThisCustomer.Town);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblCustomer_Insert");
+            
         }
     }
 }
