@@ -237,9 +237,9 @@ namespace Co_opClasses
             }
 
             //if the symbol is too long
-            if (symbol.Length > 50)
+            if (symbol.Length > 10)
             {
-                Error = Error + "The symbol must be less than 50 characters!  ";
+                Error = Error + "The symbol must be less than 10 characters!  ";
             }
 
 
