@@ -16,11 +16,25 @@ public partial class CustomerLogin : System.Web.UI.Page
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsCustomerLogin ACustomerLogin = new clsCustomerLogin();
-        ACustomerLogin.CustomerID = Convert.ToInt32(txtCustomerID.Text);
-        ACustomerLogin.Email = txtEmail.Text;
-        ACustomerLogin.Password = txtPassword.Text;
-        Session["ACustomerLogin"] = ACustomerLogin;
-        Response.Redirect("CustomerLoginViewer.aspx");
+        //capture the properties
+        string CustomerID = txtCustomerID.Text;
+        string Email = txtEmail.Text;
+        string Password = txtPassword.Text;
+        //validate the data
+        String Error = "";
+        Error = ACustomerLogin.Valid(CustomerID, Email, Password);
+        if (Error == "")
+        {
+            ACustomerLogin.CustomerID = Convert.ToInt32(CustomerID);
+            ACustomerLogin.Email = Email;
+            ACustomerLogin.Password = Password;
+            Session["ACustomerLogin"] = ACustomerLogin;
+            Response.Write("CustomerLoginViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
