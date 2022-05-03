@@ -73,6 +73,30 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(AllClaimInjuries.Count, TestList.Count);
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class
+            clsClaimInjuryCollection AllClaimInjuries = new clsClaimInjuryCollection();
+            //create the item of test data
+            clsClaimInjury TestItem = new clsClaimInjury();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ClaimInjuryID = 1;
+            TestItem.ClaimID = 2;
+            TestItem.InjuryID = 1;
+            //set ThisClaim to the test data;
+            AllClaimInjuries.ThisClaimInjury = TestItem;
+            //add the record
+            PrimaryKey = AllClaimInjuries.Add();
+            //set the primary key of the test data
+            TestItem.ClaimInjuryID = PrimaryKey;
+            //find the record
+            AllClaimInjuries.ThisClaimInjury.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllClaimInjuries.ThisClaimInjury, TestItem);
+        }
 
     }
 }
