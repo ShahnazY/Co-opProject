@@ -9,7 +9,7 @@ namespace PersonalInjuryTesting
     {
         //good test data to pass to the method
         string Location = "Oadby";
-        string Status = "In Progress";
+        //string Status = "In Progress";
         string DateOfClaim = DateTime.Now.Date.ToString();
         string DateOfInjury = DateTime.Now.Date.AddYears(-3).ToString();
         
