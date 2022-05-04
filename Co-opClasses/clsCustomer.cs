@@ -278,6 +278,14 @@ namespace Co_opClasses
             return Error;
         }
 
-        
+        public string AllDetails
+        {
+            get
+            {
+                return FirstName + " " + LastName + " " + Town;
+            }
+        }
+
+
     }
 }

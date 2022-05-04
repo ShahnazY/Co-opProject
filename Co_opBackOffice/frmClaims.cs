@@ -160,7 +160,7 @@ namespace Co_opBackOffice
                 //update the record
                 ClaimsCollection.Update();
                 ClearTextBoxes();                
-                lblError.Text = DisplayClaims() + "  trainers found";
+                lblError.Text = DisplayClaims() + "  claims found";
                 lblConfirmation.Text = "The record has been updated.";
                 btnUpdate.Visible = false;
                 btnAdd.Visible = true;
@@ -207,6 +207,13 @@ namespace Co_opBackOffice
                 Index++;
             }
             return Count;
+        }
+
+        private void btnMainPage_Click(object sender, EventArgs e)
+        {
+            frmMainPage MainPage = new frmMainPage();
+            MainPage.Show();
+            this.Hide();
         }
     }
 }
