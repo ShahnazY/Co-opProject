@@ -67,6 +67,8 @@ namespace Co_opBackOffice
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnMainPage = new System.Windows.Forms.Button();
+            this.lblAddNewCustomer = new System.Windows.Forms.Label();
+            this.lblCustomerManagement = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +91,9 @@ namespace Co_opBackOffice
             this.panel2.Controls.Add(this.lblFilterLastName);
             this.panel2.Controls.Add(this.txtFilterLastName);
             this.panel2.Controls.Add(this.lstCustomers);
-            this.panel2.Location = new System.Drawing.Point(27, 103);
+            this.panel2.Location = new System.Drawing.Point(487, 168);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 491);
+            this.panel2.Size = new System.Drawing.Size(517, 491);
             this.panel2.TabIndex = 2;
             // 
             // lblFilterError
@@ -249,7 +251,7 @@ namespace Co_opBackOffice
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtLastName);
             this.panel1.Controls.Add(this.txtFirstName);
-            this.panel1.Location = new System.Drawing.Point(452, 103);
+            this.panel1.Location = new System.Drawing.Point(12, 168);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(337, 491);
             this.panel1.TabIndex = 3;
@@ -421,7 +423,7 @@ namespace Co_opBackOffice
             // 
             // btnMainPage
             // 
-            this.btnMainPage.Location = new System.Drawing.Point(714, 25);
+            this.btnMainPage.Location = new System.Drawing.Point(929, 29);
             this.btnMainPage.Name = "btnMainPage";
             this.btnMainPage.Size = new System.Drawing.Size(75, 23);
             this.btnMainPage.TabIndex = 4;
@@ -429,11 +431,33 @@ namespace Co_opBackOffice
             this.btnMainPage.UseVisualStyleBackColor = true;
             this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
             // 
+            // lblAddNewCustomer
+            // 
+            this.lblAddNewCustomer.AutoSize = true;
+            this.lblAddNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewCustomer.Location = new System.Drawing.Point(13, 112);
+            this.lblAddNewCustomer.Name = "lblAddNewCustomer";
+            this.lblAddNewCustomer.Size = new System.Drawing.Size(191, 24);
+            this.lblAddNewCustomer.TabIndex = 5;
+            this.lblAddNewCustomer.Text = "Add New Customer";
+            // 
+            // lblCustomerManagement
+            // 
+            this.lblCustomerManagement.AutoSize = true;
+            this.lblCustomerManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerManagement.Location = new System.Drawing.Point(259, 29);
+            this.lblCustomerManagement.Name = "lblCustomerManagement";
+            this.lblCustomerManagement.Size = new System.Drawing.Size(282, 29);
+            this.lblCustomerManagement.TabIndex = 6;
+            this.lblCustomerManagement.Text = "Customer Management";
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 650);
+            this.ClientSize = new System.Drawing.Size(1052, 690);
+            this.Controls.Add(this.lblCustomerManagement);
+            this.Controls.Add(this.lblAddNewCustomer);
             this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -444,6 +468,7 @@ namespace Co_opBackOffice
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -487,5 +512,7 @@ namespace Co_opBackOffice
         private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Button btnMainPage;
+        private System.Windows.Forms.Label lblAddNewCustomer;
+        private System.Windows.Forms.Label lblCustomerManagement;
     }
 }

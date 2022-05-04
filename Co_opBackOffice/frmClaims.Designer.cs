@@ -59,6 +59,8 @@ namespace Co_opBackOffice
             this.txtFilterStatus = new System.Windows.Forms.TextBox();
             this.lstClaims = new System.Windows.Forms.ListBox();
             this.btnMainPage = new System.Windows.Forms.Button();
+            this.lblClaimManagement = new System.Windows.Forms.Label();
+            this.lblAddNewClaim = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +80,7 @@ namespace Co_opBackOffice
             this.panel1.Controls.Add(this.txtDateOfClaim);
             this.panel1.Controls.Add(this.txtStatus);
             this.panel1.Controls.Add(this.txtLocation);
-            this.panel1.Location = new System.Drawing.Point(460, 146);
+            this.panel1.Location = new System.Drawing.Point(12, 241);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 365);
             this.panel1.TabIndex = 0;
@@ -206,9 +208,9 @@ namespace Co_opBackOffice
             this.panel2.Controls.Add(this.lblFilterStatus);
             this.panel2.Controls.Add(this.txtFilterStatus);
             this.panel2.Controls.Add(this.lstClaims);
-            this.panel2.Location = new System.Drawing.Point(24, 75);
+            this.panel2.Location = new System.Drawing.Point(408, 207);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 491);
+            this.panel2.Size = new System.Drawing.Size(534, 491);
             this.panel2.TabIndex = 1;
             // 
             // lblFilterError
@@ -346,7 +348,7 @@ namespace Co_opBackOffice
             // 
             // btnMainPage
             // 
-            this.btnMainPage.Location = new System.Drawing.Point(717, 23);
+            this.btnMainPage.Location = new System.Drawing.Point(867, 29);
             this.btnMainPage.Name = "btnMainPage";
             this.btnMainPage.Size = new System.Drawing.Size(75, 23);
             this.btnMainPage.TabIndex = 2;
@@ -354,11 +356,33 @@ namespace Co_opBackOffice
             this.btnMainPage.UseVisualStyleBackColor = true;
             this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
             // 
+            // lblClaimManagement
+            // 
+            this.lblClaimManagement.AutoSize = true;
+            this.lblClaimManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaimManagement.Location = new System.Drawing.Point(309, 46);
+            this.lblClaimManagement.Name = "lblClaimManagement";
+            this.lblClaimManagement.Size = new System.Drawing.Size(237, 29);
+            this.lblClaimManagement.TabIndex = 7;
+            this.lblClaimManagement.Text = "Claim Management";
+            // 
+            // lblAddNewClaim
+            // 
+            this.lblAddNewClaim.AutoSize = true;
+            this.lblAddNewClaim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewClaim.Location = new System.Drawing.Point(12, 179);
+            this.lblAddNewClaim.Name = "lblAddNewClaim";
+            this.lblAddNewClaim.Size = new System.Drawing.Size(154, 24);
+            this.lblAddNewClaim.TabIndex = 8;
+            this.lblAddNewClaim.Text = "Add New Claim";
+            // 
             // frmClaims
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 578);
+            this.ClientSize = new System.Drawing.Size(1012, 820);
+            this.Controls.Add(this.lblAddNewClaim);
+            this.Controls.Add(this.lblClaimManagement);
             this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -370,6 +394,7 @@ namespace Co_opBackOffice
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -405,5 +430,7 @@ namespace Co_opBackOffice
         private System.Windows.Forms.Label lblConfirmation;
         private System.Windows.Forms.Label lblFilterError;
         private System.Windows.Forms.Button btnMainPage;
+        private System.Windows.Forms.Label lblClaimManagement;
+        private System.Windows.Forms.Label lblAddNewClaim;
     }
 }
