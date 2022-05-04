@@ -130,6 +130,13 @@ namespace Co_opClasses
             return Error;
         }
 
-        
+        public string AllDetails
+        {
+            get
+            {
+                return TypeOfInjury + " " + Severity + " " + Compensation;
+            }
+        }
+
     }
 }

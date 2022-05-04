@@ -73,7 +73,7 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(AllClaimInjuries.Count, TestList.Count);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void AddMethodOK()
         {
             //create an instance of the class
@@ -96,7 +96,7 @@ namespace PersonalInjuryTesting
             AllClaimInjuries.ThisClaimInjury.Find(PrimaryKey);
             //test to see that the two values are the same
             Assert.AreEqual(AllClaimInjuries.ThisClaimInjury, TestItem);
-        }
+        }*/
 
     }
 }
