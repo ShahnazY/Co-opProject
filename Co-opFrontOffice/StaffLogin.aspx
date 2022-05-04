@@ -21,8 +21,10 @@
             <asp:Label ID="lblEmail" runat="server" Font-Bold="True" style="z-index: 1; left: 426px; top: 202px; position: absolute" Text="Email"></asp:Label>
             <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 579px; top: 272px; position: absolute"></asp:TextBox>
             <asp:Label ID="lblPassword" runat="server" Font-Bold="True" style="z-index: 1; left: 428px; top: 270px; position: absolute" Text="Password"></asp:Label>
-            <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 748px; top: 343px; position: absolute" Text="OK" />
+            <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 748px; top: 343px; position: absolute" Text="OK" OnClick="btnOK_Click" />
             <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 13px; top: 343px; position: absolute" Text="Cancel" />
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 159px; top: 46px; position: absolute" Text="Find" />
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 381px; top: 345px; position: absolute"></asp:Label>
         </asp:Panel>
         <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#0099FF" style="z-index: 1; left: 841px; top: 232px; position: absolute" Text="Staff Login"></asp:Label>
     </form>

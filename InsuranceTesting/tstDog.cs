@@ -573,7 +573,7 @@ namespace InsuranceTesting
             //create a string variable to store error message
             String Error = "";
             //create some test data to assign to the property
-            string Gender = "g"; //this should pass
+            string Gender = "M"; //this should pass
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
@@ -587,7 +587,7 @@ namespace InsuranceTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string Gender = "gg";//this should pass
+            string Gender = "Ma";//this should pass
             //invoke the method
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is correct
@@ -603,7 +603,7 @@ namespace InsuranceTesting
             //create some test data to pass to the method
             string Gender = "";
             //pad the string with characters
-            Gender = Gender.PadRight(5, 'g'); //this should pass
+            Gender = Gender.PadRight(5, 'a'); //this should pass
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
@@ -619,7 +619,7 @@ namespace InsuranceTesting
             //create some test data to assign to the property
             string Gender = "";
             //pad the string with characters
-            Gender = Gender.PadRight(6, 'g'); // this should pass
+            Gender = Gender.PadRight(6, 'a'); // this should pass
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
@@ -635,7 +635,7 @@ namespace InsuranceTesting
             //create some test data to assign to the property
             string Gender = "";
             //pad the string with characters
-            Gender = Gender.PadRight(3, 'g'); // this should pass
+            Gender = Gender.PadRight(3, 'a'); // this should pass
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
@@ -651,7 +651,7 @@ namespace InsuranceTesting
             //create some test data to assign to the property
             string Gender = "";
             //pad the string with characters
-            Gender = Gender.PadRight(7, 'g'); //this should fail
+            Gender = Gender.PadRight(7, 'a'); //this should fail
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
@@ -667,7 +667,7 @@ namespace InsuranceTesting
             //create some test data to assign to the property
             string Gender = "";
             //pad the string with characters
-            Gender = Gender.PadRight(200, 'g'); // this should fail
+            Gender = Gender.PadRight(200, 'a'); // this should fail
             //invoke the method 
             Error = ADog.Valid(Age, Breed, Gender, Name, Size, DateAdded);
             //test to see that the result is not ok
