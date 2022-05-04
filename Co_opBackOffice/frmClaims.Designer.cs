@@ -43,6 +43,7 @@ namespace Co_opBackOffice
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblFilterError = new System.Windows.Forms.Label();
             this.btnNO = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.lblConfirmation = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@ namespace Co_opBackOffice
             this.lblFilterStatus = new System.Windows.Forms.Label();
             this.txtFilterStatus = new System.Windows.Forms.TextBox();
             this.lstClaims = new System.Windows.Forms.ListBox();
-            this.lblFilterError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +210,14 @@ namespace Co_opBackOffice
             this.panel2.Size = new System.Drawing.Size(390, 491);
             this.panel2.TabIndex = 1;
             // 
+            // lblFilterError
+            // 
+            this.lblFilterError.AutoSize = true;
+            this.lblFilterError.Location = new System.Drawing.Point(256, 255);
+            this.lblFilterError.Name = "lblFilterError";
+            this.lblFilterError.Size = new System.Drawing.Size(0, 13);
+            this.lblFilterError.TabIndex = 14;
+            // 
             // btnNO
             // 
             this.btnNO.Location = new System.Drawing.Point(165, 445);
@@ -272,7 +280,7 @@ namespace Co_opBackOffice
             this.btnDisplayAll.Name = "btnDisplayAll";
             this.btnDisplayAll.Size = new System.Drawing.Size(116, 23);
             this.btnDisplayAll.TabIndex = 7;
-            this.btnDisplayAll.Text = "Display All Trainers";
+            this.btnDisplayAll.Text = "Display All Claims";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
             this.btnDisplayAll.Click += new System.EventHandler(this.btnDisplayAll_Click);
             // 
@@ -334,14 +342,6 @@ namespace Co_opBackOffice
             this.lstClaims.Name = "lstClaims";
             this.lstClaims.Size = new System.Drawing.Size(226, 251);
             this.lstClaims.TabIndex = 0;
-            // 
-            // lblFilterError
-            // 
-            this.lblFilterError.AutoSize = true;
-            this.lblFilterError.Location = new System.Drawing.Point(256, 255);
-            this.lblFilterError.Name = "lblFilterError";
-            this.lblFilterError.Size = new System.Drawing.Size(0, 13);
-            this.lblFilterError.TabIndex = 14;
             // 
             // frmClaims
             // 

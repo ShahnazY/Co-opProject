@@ -62,13 +62,13 @@ namespace Co_opClasses
 
         public clsClaimInjury ThisClaimInjury { get; set; }
 
-        public int Add()
+        /*public int Add()
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ClaimID", mThisClaimInjury.ClaimID);
             DB.AddParameter("@InjuryID", mThisClaimInjury.InjuryID);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblClaimInjury_Insert");
-        }
+        }*/
     }
 }

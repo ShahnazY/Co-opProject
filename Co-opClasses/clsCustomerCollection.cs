@@ -71,7 +71,7 @@ namespace Co_opClasses
         }
 
         public int Add()
-        {   
+        {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
@@ -84,7 +84,6 @@ namespace Co_opClasses
             DB.AddParameter("@PostCode", mThisCustomer.PostCode);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblCustomer_Insert");
-            
         }
     }
 }
