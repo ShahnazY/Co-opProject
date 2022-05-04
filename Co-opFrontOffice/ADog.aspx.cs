@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Co_opClasses;
+using ClassLibrary;
 
 public partial class ADog : System.Web.UI.Page
 {
@@ -13,22 +14,76 @@ public partial class ADog : System.Web.UI.Page
         
     }
 
-    protected void btnAddDog_Click(object sender, EventArgs e)
-    {
-
-        //create a new instace of clsDog
-        clsDog ADog = new clsDog();
-        //capture the dog's name
-        ADog.Name = txtDogName.Text;
-        //store the name in the session object
-        Session["ADog"] = ADog;
-        //redirect to the viewer page
-        Response.Redirect("DogViewer.aspx");
-
-    }
-
+    
     protected void txtDogName_TextChanged(object sender, EventArgs e)
     {
 
+    }
+
+    protected void btnAddDog_Click(object sender, EventArgs e)
+    {
+        Add();
+        //dispaly  added dog ID
+        //create an instance of the dog class
+        clsDog ADog = new clsDog();
+        //variable to store the primary key 
+        //variable to store the result of the find operation
+        Boolean Found = false;
+        //find the last  record
+        Found = ADog.FindLastDogID();
+
+        //if found
+
+        if (Found == true)
+
+        {
+
+            //display the values of the properties in the labels
+
+            lblDogID.Text = "Your Dog's ID is: " + Convert.ToString(ADog.DogID) + ". Remeber it to manage your account in the future";
+
+        }
+
+        else
+
+        {
+
+            lblDogID.Text = "";
+
+        }
+    }
+
+    private void Add()
+    {
+        //create an instance ofthe collection class
+        clsDogCollection DogCollection = new clsDogCollection();
+        clsDataConnection DB = new clsDataConnection();
+        //validate the data on the web form
+        String Error = DogCollection.ThisDog.Valid(txtDogName.Text, txtDogAge.Text, txtBreed.Text, txtSize.Text, txtGender.Text, txtDateAdded.Text);
+        //if the data is ok the add it to the object
+        if (Error == "")
+        {
+            //get the data entered by the user 
+            DogCollection.ThisDog.Name = txtDogName.Text;
+            DogCollection.ThisDog.Age = Convert.ToInt32(txtDogAge.Text);
+            DogCollection.ThisDog.Breed = txtBreed.Text;
+            DogCollection.ThisDog.Size = txtSize.Text;
+            DogCollection.ThisDog.Gender = txtGender.Text;
+            DogCollection.ThisDog.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
+            //add the record
+            DogCollection.Add();
+            lblError.Text = "Account for dog has been created.";
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered " + Error;
+        }
+
+    }
+
+    protected void btnAddInsurance_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("InsuranceCoverage.aspx");
     }
 }

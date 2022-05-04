@@ -181,11 +181,11 @@ namespace Co_opClasses
                 //record the error
                 Error = Error + "The gender of the dog cannot be blank : ";
             }
-            //if the gender is greater than 50 characters
+            //if the gender is greater than 6 characters
             if (gender.Length > 6)
             {
                 //record the error
-                Error = Error + "The gender must be more than 6 characters : ";
+                Error = Error + "The gender must be less than 6 characters : ";
             }
             if (name.Length == 0)
             {
@@ -252,6 +252,23 @@ namespace Co_opClasses
 
             //return any error message
             return Error;
+        }
+        public bool FindLastDogID()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            //DB.Execute("sproc_tblCustomer_SelectLAstID");
+            DB.Execute("sproc_tblDog_SelectLastID");
+            //if one record is found ( there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to private data member
+                mDogID = Convert.ToInt32(DB.DataTable.Rows[0]["DogID"]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

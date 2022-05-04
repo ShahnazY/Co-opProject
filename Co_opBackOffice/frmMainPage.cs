@@ -23,5 +23,12 @@ namespace Co_opBackOffice
             Claims.Show();
             this.Hide();
         }
+
+        private void btnDogInsurance_Click(object sender, EventArgs e)
+        {
+            frmDogs Dogs = new frmDogs();
+            Dogs.Show();
+            this.Hide();
+        }
     }
 }

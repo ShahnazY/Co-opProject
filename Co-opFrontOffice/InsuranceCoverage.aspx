@@ -28,7 +28,7 @@
         </asp:Panel>
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 139px; top: 591px; position: absolute; width: 140px; height: 54px" Text="Cancel" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 859px; top: 617px; position: absolute"></asp:Label>
-        <asp:Panel ID="PanelCoop" runat="server" BackImageUrl="~/coop-logo-png-16.png" style="z-index: 1; left: 806px; top: 123px; position: absolute; height: 254px; width: 823px">
+        <asp:Panel ID="PanelCoop" runat="server" BackImageUrl="~/coop-logo-png-16.png" style="z-index: 1; left: 570px; top: 83px; position: absolute; height: 254px; width: 823px">
         </asp:Panel>
     </form>
 </body>

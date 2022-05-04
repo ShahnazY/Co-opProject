@@ -17,8 +17,8 @@
             left: 97px;
             top: 115px;
             position: absolute;
-            height: 496px;
-            width: 469px;
+            height: 471px;
+            width: 1101px;
         }
         .auto-style3 {
             z-index: 1;
@@ -30,8 +30,8 @@
         }
         .auto-style4 {
             z-index: 1;
-            left: 116px;
-            top: 119px;
+            left: 24px;
+            top: 147px;
             position: absolute;
             height: 282px;
             width: 558px;
@@ -93,29 +93,16 @@
         }
         .auto-style15 {
             z-index: 1;
-            left: 129px;
-            top: 340px;
+            left: -20px;
+            top: 327px;
             position: absolute;
             width: 90px;
         }
         .auto-style16 {
             z-index: 1;
-            left: 249px;
-            top: 340px;
+            left: 87px;
+            top: 327px;
             position: absolute;
-        }
-        .auto-style17 {
-            z-index: 1;
-            left: 128px;
-            top: 313px;
-            position: absolute;
-        }
-        .auto-style18 {
-            z-index: 1;
-            left: 113px;
-            top: 195px;
-            position: absolute;
-            right: 317px;
         }
         .auto-style19 {
             z-index: 1;
@@ -130,7 +117,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 112px; top: 586px; position: absolute"></asp:Label>
         </div>
         <asp:Label ID="lblAdd" runat="server" CssClass="auto-style1" Font-Bold="True" Font-Size="X-Large" ForeColor="#FF9933" Text="ADD A NEW FURRY FRIEND"></asp:Label>
         <asp:Panel ID="PanelDog" runat="server" BackColor="#FF9933" CssClass="auto-style2">
@@ -138,7 +124,7 @@
             <asp:Panel ID="PanelDetails" runat="server" BackColor="#FDC995" CssClass="auto-style4">
                 <asp:Label ID="lblDogsName" runat="server" CssClass="auto-style5" Font-Size="Large" Text="Dog's Name"></asp:Label>
                 <asp:Label ID="lblDogsAge" runat="server" CssClass="auto-style6" Font-Size="Large" Text="Dog's Age"></asp:Label>
-                <asp:Label ID="lblDogID" runat="server" style="z-index: 1; left: 480px; top: 346px; position: absolute"></asp:Label>
+                <asp:Label ID="lblDogID" runat="server" style="z-index: 1; left: -11px; top: 288px; position: absolute; height: 47px; width: 565px;"></asp:Label>
                 <asp:Label ID="lblBreed" runat="server" CssClass="auto-style7" Font-Size="Large" Text="Breed"></asp:Label>
                 <asp:Label ID="lblSize" runat="server" CssClass="auto-style8" Font-Size="Large" Text="Size"></asp:Label>
                 <asp:Label ID="lblGender" runat="server" CssClass="auto-style9" Font-Size="Large" Text="Gender"></asp:Label>
@@ -146,16 +132,22 @@
                 <asp:TextBox ID="txtDogAge" runat="server" CssClass="auto-style11"></asp:TextBox>
                 <asp:TextBox ID="txtBreed" runat="server" CssClass="auto-style12"></asp:TextBox>
                 <asp:TextBox ID="txtSize" runat="server" CssClass="auto-style13" ></asp:TextBox>
-                <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 117px; top: 157px; position: absolute">
-                </asp:DropDownList>
                 <asp:Button ID="btnCancel" runat="server" BackColor="#FF3300" CssClass="auto-style15" Font-Bold="True" Text="Cancel" />
-                <asp:Button ID="btnAddDog" runat="server" BackColor="#00CC66" CssClass="auto-style16" Font-Bold="True" ForeColor="Black" OnClick="btnAddDog_Click" Text="ADD DOG" />
-                <asp:TextBox ID="txtDateAdded" runat="server" CssClass="auto-style18"></asp:TextBox>
+                <asp:Button ID="btnOK" runat="server" BackColor="#00CC66" CssClass="auto-style16" Font-Bold="True" ForeColor="Black" OnClick="btnAddDog_Click" Text="OK" />
                 <asp:Panel ID="PanelCoop" runat="server" BackImageUrl="~/coop-logo-png-16.png" CssClass="auto-style19">
                 </asp:Panel>
+                <asp:TextBox ID="txtGender" runat="server" style="z-index: 1; left: 118px; top: 159px; position: absolute"></asp:TextBox>
+                <asp:Label ID="lblDateAdded" runat="server" Font-Bold="True" Font-Size="Small" style="z-index: 1; left: 7px; top: 238px; position: absolute" Text="Date of Registration"></asp:Label>
+                <asp:TextBox ID="txtDateAdded" runat="server" style="z-index: 1; left: 220px; top: 236px; position: absolute"></asp:TextBox>
+                <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 563px; top: 217px; position: absolute; width: 381px;" Text="Please fill in the from to generate Dog ID before adding a cover"></asp:Label>
             </asp:Panel>
-            <asp:Label ID="lblDateAdded" runat="server" CssClass="auto-style17" Font-Size="Large" Text="Date "></asp:Label>
         </asp:Panel>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <asp:Button ID="btnAddInsurance" runat="server" OnClick="btnAddInsurance_Click" style="z-index: 1; left: 674px; top: 593px; position: absolute; right: 292px" Text="Add Insurance Cover" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 282px; top: 597px; position: absolute; width: 340px"></asp:Label>
     </form>
 </body>
 </html>
