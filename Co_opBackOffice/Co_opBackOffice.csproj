@@ -58,12 +58,6 @@
     <Compile Include="frmFunds.Designer.cs">
       <DependentUpon>frmFunds.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDogs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDogs.Designer.cs">
-      <DependentUpon>frmDogs.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,9 +71,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFunds.resx">
       <DependentUpon>frmFunds.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDogs.resx">
-      <DependentUpon>frmDogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainPage.resx">
       <DependentUpon>frmMainPage.cs</DependentUpon>
