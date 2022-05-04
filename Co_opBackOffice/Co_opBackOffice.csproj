@@ -81,6 +81,9 @@
     <EmbeddedResource Include="frmClaims.resx">
       <DependentUpon>frmClaims.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFunds.resx">
       <DependentUpon>frmFunds.cs</DependentUpon>
     </EmbeddedResource>

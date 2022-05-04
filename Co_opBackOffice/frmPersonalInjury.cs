@@ -66,9 +66,8 @@ namespace Co_opBackOffice
             txtCompensation.Text = string.Empty;
         }
 
-      
-
-        /*void DeletePersonalInjuries()
+   
+        void DeletePersonalInjuries()
         {
             Int32 PersonalInjuryID;
             clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
@@ -84,7 +83,7 @@ namespace Co_opBackOffice
             btnYes.Visible = false;
             btnNO.Visible = false;
             lblError.Text = DisplayPersonalInjuries() + "  personal injuries found";
-        }*/
+        }
        
 
         private void btnNO_Click(object sender, EventArgs e)
@@ -95,7 +94,7 @@ namespace Co_opBackOffice
         }
 
       
-        /*void Update()
+        void Update()
         {
             Int32 PersonalInjuryID;
             PersonalInjuryID = Convert.ToInt32(lstPersonalInjuries.SelectedValue);
@@ -120,7 +119,7 @@ namespace Co_opBackOffice
             {
                 lblConfirmation.Text = "There were problems with the data entered " + Error;
             }
-        }*/
+        }
 
 
         private void btnDisplayAll_Click(object sender, EventArgs e)
@@ -167,6 +166,13 @@ namespace Co_opBackOffice
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Update();
+        }
+
+        private void btnMainPage_Click(object sender, EventArgs e)
+        {
+            frmMainPage MainPage = new frmMainPage();
+            MainPage.Show();
+            this.Hide();
         }
 
         /*private void btnFilterStatus_Click(object sender, EventArgs e)

@@ -82,5 +82,23 @@ namespace Co_opClasses
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblPersonalInjury_Insert");
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@PersonalInjuryID", mThisPersonalInjury.PersonalInjuryID);
+            DB.Execute("sproc_tblPersonalInjury_Delete");
+        }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@PersonalInjuryID", mThisPersonalInjury.PersonalInjuryID);
+            DB.AddParameter("@TypeOfInjury", mThisPersonalInjury.TypeOfInjury);
+            DB.AddParameter("@Severity", mThisPersonalInjury.Severity);
+            DB.AddParameter("@Compensation", mThisPersonalInjury.Compensation);
+            //execute the stored procedure
+            DB.Execute("sproc_tblPersonalInjury_Update");
+        }
     }
 }

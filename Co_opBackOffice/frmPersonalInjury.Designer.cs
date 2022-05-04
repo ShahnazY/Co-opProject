@@ -51,6 +51,7 @@ namespace Co_opBackOffice
             this.txtCompensation = new System.Windows.Forms.TextBox();
             this.txtSeverity = new System.Windows.Forms.TextBox();
             this.txtTypeOfInjury = new System.Windows.Forms.TextBox();
+            this.btnMainPage = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +73,7 @@ namespace Co_opBackOffice
             this.panel2.Controls.Add(this.lstPersonalInjuries);
             this.panel2.Location = new System.Drawing.Point(12, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 491);
+            this.panel2.Size = new System.Drawing.Size(437, 493);
             this.panel2.TabIndex = 2;
             // 
             // lblFilterError
@@ -266,11 +267,22 @@ namespace Co_opBackOffice
             this.txtTypeOfInjury.Size = new System.Drawing.Size(100, 20);
             this.txtTypeOfInjury.TabIndex = 0;
             // 
+            // btnMainPage
+            // 
+            this.btnMainPage.Location = new System.Drawing.Point(710, 12);
+            this.btnMainPage.Name = "btnMainPage";
+            this.btnMainPage.Size = new System.Drawing.Size(75, 23);
+            this.btnMainPage.TabIndex = 4;
+            this.btnMainPage.Text = "Main Page";
+            this.btnMainPage.UseVisualStyleBackColor = true;
+            this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
+            // 
             // frmPersonalInjury
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 571);
+            this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmPersonalInjury";
@@ -307,5 +319,6 @@ namespace Co_opBackOffice
         private System.Windows.Forms.TextBox txtCompensation;
         private System.Windows.Forms.TextBox txtSeverity;
         private System.Windows.Forms.TextBox txtTypeOfInjury;
+        private System.Windows.Forms.Button btnMainPage;
     }
 }

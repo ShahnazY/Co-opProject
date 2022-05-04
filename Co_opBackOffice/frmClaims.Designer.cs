@@ -58,6 +58,7 @@ namespace Co_opBackOffice
             this.lblFilterStatus = new System.Windows.Forms.Label();
             this.txtFilterStatus = new System.Windows.Forms.TextBox();
             this.lstClaims = new System.Windows.Forms.ListBox();
+            this.btnMainPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -343,11 +344,22 @@ namespace Co_opBackOffice
             this.lstClaims.Size = new System.Drawing.Size(226, 251);
             this.lstClaims.TabIndex = 0;
             // 
+            // btnMainPage
+            // 
+            this.btnMainPage.Location = new System.Drawing.Point(717, 23);
+            this.btnMainPage.Name = "btnMainPage";
+            this.btnMainPage.Size = new System.Drawing.Size(75, 23);
+            this.btnMainPage.TabIndex = 2;
+            this.btnMainPage.Text = "Main Page";
+            this.btnMainPage.UseVisualStyleBackColor = true;
+            this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
+            // 
             // frmClaims
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 578);
+            this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmClaims";
@@ -392,5 +404,6 @@ namespace Co_opBackOffice
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Label lblConfirmation;
         private System.Windows.Forms.Label lblFilterError;
+        private System.Windows.Forms.Button btnMainPage;
     }
 }

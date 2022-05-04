@@ -102,5 +102,69 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(AllPersonalInjuries.ThisPersonalInjury, TestItem);
         }
 
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
+            //create the item of test data
+            clsPersonalInjury TestItem = new clsPersonalInjury();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.PersonalInjuryID = 1;
+            TestItem.TypeOfInjury = "Head";
+            TestItem.Severity = "Moderate";
+            TestItem.Compensation = 15000M;
+            //set ThisClaim to the test data;
+            AllPersonalInjuries.ThisPersonalInjury = TestItem;
+            //add the record
+            PrimaryKey = AllPersonalInjuries.Add();
+            //set the primary key of the test data
+            TestItem.PersonalInjuryID = PrimaryKey;
+            //find the record
+            AllPersonalInjuries.ThisPersonalInjury.Find(PrimaryKey);
+            //delete the record
+            AllPersonalInjuries.Delete();
+            //now find the record
+            Boolean Found = AllPersonalInjuries.ThisPersonalInjury.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
+            //create the item of test data
+            clsPersonalInjury TestItem = new clsPersonalInjury();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.TypeOfInjury = "Head";
+            TestItem.Severity = "Moderate";
+            TestItem.Compensation = 15000M;
+            //set ThisClaim to the test data;
+            AllPersonalInjuries.ThisPersonalInjury = TestItem;
+            //add the record
+            PrimaryKey = AllPersonalInjuries.Add();
+            //set the primary key of the test data
+            TestItem.PersonalInjuryID = PrimaryKey;
+            //modify the record
+            TestItem.TypeOfInjury = "Leg";
+            TestItem.Severity = "High";
+            TestItem.Compensation = 25000M;
+            //set the record based on new data
+            AllPersonalInjuries.ThisPersonalInjury = TestItem;
+            //update the record
+            AllPersonalInjuries.Update();
+            //find the record
+            AllPersonalInjuries.ThisPersonalInjury.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.AreEqual(AllPersonalInjuries.ThisPersonalInjury, TestItem);
+        }
+
+
     }
 }
