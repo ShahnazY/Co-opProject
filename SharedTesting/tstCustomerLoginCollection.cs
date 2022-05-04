@@ -96,5 +96,54 @@ namespace SharedTesting
             Assert.AreEqual(AllCustomerLogins.ThisCustomerLogin, TestItem);
         }
 
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsCustomerLoginCollection AllCustomerLogins = new clsCustomerLoginCollection();
+            clsCustomerLogin TestLogin = new clsCustomerLogin();
+            Int32 PrimaryKey = 0;
+            TestLogin.CustomerLoginID = 1;
+            TestLogin.CustomerID = 2;
+            TestLogin.Email = "John.c@outlook.com";
+            TestLogin.Password = "Password123";
+            AllCustomerLogins.ThisCustomerLogin = TestLogin;
+            PrimaryKey = AllCustomerLogins.Add();
+            TestLogin.CustomerLoginID = PrimaryKey;
+            AllCustomerLogins.ThisCustomerLogin.Find(PrimaryKey);
+            AllCustomerLogins.Delete();
+            Boolean Found = AllCustomerLogins.ThisCustomerLogin.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class
+            clsCustomerLoginCollection AllCustomerLogins = new clsCustomerLoginCollection();
+            //create the item of test data
+            clsCustomerLogin TestLogin = new clsCustomerLogin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestLogin.CustomerID = 2;
+            TestLogin.Email = "John123@gmail.com";
+            TestLogin.Password = "Password123";
+            //set ThisClaim to the test data;
+            AllCustomerLogins.ThisCustomerLogin = TestLogin;
+            //add the record
+            PrimaryKey = AllCustomerLogins.Add();
+            //set the primary key of the test data
+            TestLogin.CustomerLoginID = PrimaryKey;
+            //modify the record
+            TestLogin.CustomerID = 4;
+            TestLogin.Email = "John.123@gmail.com";
+            TestLogin.Password = "Password321";
+            AllCustomerLogins.ThisCustomerLogin = TestLogin;
+            AllCustomerLogins.Update();
+            AllCustomerLogins.ThisCustomerLogin.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomerLogins.ThisCustomerLogin, TestLogin);
+        }
+
     }
 }

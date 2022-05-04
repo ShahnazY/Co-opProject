@@ -82,5 +82,22 @@ namespace Co_opClasses
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblCustomerLogin_Insert");      
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerLoginID", mThisCustomerLogin.CustomerLoginID);
+            DB.Execute("sproc_tblCustomerLogin_Delete");
+        }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerLoginID", mThisCustomerLogin.CustomerLoginID);
+            DB.AddParameter("@CustomerID", mThisCustomerLogin.CustomerID);
+            DB.AddParameter("@Email", mThisCustomerLogin.Email);
+            DB.AddParameter("@Password", mThisCustomerLogin.Password);
+            DB.Execute("sproc_tblCustomerLogin_Update");
+        }
     }
 }

@@ -52,6 +52,8 @@ namespace Co_opBackOffice
             this.txtSeverity = new System.Windows.Forms.TextBox();
             this.txtTypeOfInjury = new System.Windows.Forms.TextBox();
             this.btnMainPage = new System.Windows.Forms.Button();
+            this.lblPersonalInjuryManagement = new System.Windows.Forms.Label();
+            this.lblAddNewPersonalInjury = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,9 +73,9 @@ namespace Co_opBackOffice
             this.panel2.Controls.Add(this.lblFilterTypeOfInjury);
             this.panel2.Controls.Add(this.txtFilterStatus);
             this.panel2.Controls.Add(this.lstPersonalInjuries);
-            this.panel2.Location = new System.Drawing.Point(12, 48);
+            this.panel2.Location = new System.Drawing.Point(536, 204);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 493);
+            this.panel2.Size = new System.Drawing.Size(523, 493);
             this.panel2.TabIndex = 2;
             // 
             // lblFilterError
@@ -192,7 +194,7 @@ namespace Co_opBackOffice
             this.panel1.Controls.Add(this.txtCompensation);
             this.panel1.Controls.Add(this.txtSeverity);
             this.panel1.Controls.Add(this.txtTypeOfInjury);
-            this.panel1.Location = new System.Drawing.Point(455, 150);
+            this.panel1.Location = new System.Drawing.Point(37, 345);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 281);
             this.panel1.TabIndex = 3;
@@ -269,7 +271,7 @@ namespace Co_opBackOffice
             // 
             // btnMainPage
             // 
-            this.btnMainPage.Location = new System.Drawing.Point(710, 12);
+            this.btnMainPage.Location = new System.Drawing.Point(984, 32);
             this.btnMainPage.Name = "btnMainPage";
             this.btnMainPage.Size = new System.Drawing.Size(75, 23);
             this.btnMainPage.TabIndex = 4;
@@ -277,11 +279,33 @@ namespace Co_opBackOffice
             this.btnMainPage.UseVisualStyleBackColor = true;
             this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
             // 
+            // lblPersonalInjuryManagement
+            // 
+            this.lblPersonalInjuryManagement.AutoSize = true;
+            this.lblPersonalInjuryManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonalInjuryManagement.Location = new System.Drawing.Point(308, 57);
+            this.lblPersonalInjuryManagement.Name = "lblPersonalInjuryManagement";
+            this.lblPersonalInjuryManagement.Size = new System.Drawing.Size(344, 29);
+            this.lblPersonalInjuryManagement.TabIndex = 7;
+            this.lblPersonalInjuryManagement.Text = "Personal Injury Management";
+            // 
+            // lblAddNewPersonalInjury
+            // 
+            this.lblAddNewPersonalInjury.AutoSize = true;
+            this.lblAddNewPersonalInjury.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewPersonalInjury.Location = new System.Drawing.Point(33, 286);
+            this.lblAddNewPersonalInjury.Name = "lblAddNewPersonalInjury";
+            this.lblAddNewPersonalInjury.Size = new System.Drawing.Size(241, 24);
+            this.lblAddNewPersonalInjury.TabIndex = 8;
+            this.lblAddNewPersonalInjury.Text = "Add New Personal Injury";
+            // 
             // frmPersonalInjury
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 571);
+            this.ClientSize = new System.Drawing.Size(1101, 791);
+            this.Controls.Add(this.lblAddNewPersonalInjury);
+            this.Controls.Add(this.lblPersonalInjuryManagement);
             this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -292,6 +316,7 @@ namespace Co_opBackOffice
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -320,5 +345,7 @@ namespace Co_opBackOffice
         private System.Windows.Forms.TextBox txtSeverity;
         private System.Windows.Forms.TextBox txtTypeOfInjury;
         private System.Windows.Forms.Button btnMainPage;
+        private System.Windows.Forms.Label lblPersonalInjuryManagement;
+        private System.Windows.Forms.Label lblAddNewPersonalInjury;
     }
 }
