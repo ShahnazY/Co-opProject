@@ -26,9 +26,9 @@ namespace Co_opBackOffice
 
         private void btnDogInsurance_Click(object sender, EventArgs e)
         {
-            frmDogs Dogs = new frmDogs();
-            Dogs.Show();
-            this.Hide();
+            //frmDogs Dogs = new frmDogs();
+           // Dogs.Show();
+           // this.Hide();
         }
     }
 }
