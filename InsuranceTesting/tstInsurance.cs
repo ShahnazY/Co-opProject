@@ -9,8 +9,11 @@ namespace InsuranceTesting
     public class tstInsurance
     {
         //test data to pass methods for an insurance
+        string InsuranceID = "1";
         string DogID = "1";
-        string Price = "1";
+        string Cover = "Accidents Only";
+        string VetFees = "Up to £2000";
+        string Price = "5.99";
 
         [TestMethod]
         public void InstanceOK()
@@ -248,9 +251,26 @@ namespace InsuranceTesting
             //create a string variable to store the result of validation
             String Error = "";
             //invoke the method
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see it exists
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]            
+        public void InsuranceIDValid()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of validation
+            String Error = "";
+            //value of 0 should fail
+            Int32 TestValue;
+            TestValue = 0;
+            String InsuranceID = TestValue.ToString();
+            //invoke the method
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
+            //test to see it exists
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -265,7 +285,7 @@ namespace InsuranceTesting
             TestValue = 0;
             String DogID = TestValue.ToString();
             //invoke the method
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see it exists
             Assert.AreNotEqual(Error, "");
         }
@@ -282,7 +302,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = TestPrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -300,7 +320,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = TestPrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -318,7 +338,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = TestPrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -335,7 +355,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = SomePrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -353,7 +373,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = SomePrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -370,7 +390,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = SomePrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreEqual(Error, "");
         }
@@ -387,7 +407,7 @@ namespace InsuranceTesting
             //convert the price variable to a string
             string Price = SomePrice.ToString();
             //invoke the method 
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
@@ -403,8 +423,137 @@ namespace InsuranceTesting
             //set the price to non money value
             String Price = "The value entered has to be money!";
             //invoke the method
-            Error = AnInsurance.Valid(DogID, Price);
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
             //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void CoverMinLessOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMinBoundary()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "A";
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMinPlusOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "Ac";
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMaxLessOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //pad the string with characters
+            Cover = Cover.PadRight(29, 'A');
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);            
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMaxBoundary()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //pad the string with characters
+            Cover = Cover.PadRight(30, 'A');
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);            
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMaxPlusOne()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //pad the string with characters
+            Cover = Cover.PadRight(31, 'A');
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);            
+            //test to see that the result is not ok
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverMid()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //pad the string with characters
+            Cover = Cover.PadRight(15, 'A');
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);            
+            //test to see that the result is not ok
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CoverExtremeMax()
+        {
+            //create an instance of the class
+            clsInsurance AnInsurance = new clsInsurance();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to assign to the property
+            string Cover = "";
+            //pad the string with characters
+            Cover = Cover.PadRight(50000, 'A');
+            //invoke the method 
+            Error = AnInsurance.Valid(InsuranceID, DogID, Cover, VetFees, Price);            
+            //test to see that the result is not ok
             Assert.AreNotEqual(Error, "");
         }
     }

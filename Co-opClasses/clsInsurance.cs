@@ -134,13 +134,43 @@ namespace Co_opClasses
 
         }
 
-        public string Valid(string dogID, string price)
+        public string Valid(string insuranceID,string dogID, string cover, string vetFees, string price)
         {
             //string variable to store the error message
             string Error = "";
             Int32 ValueTemp;
             //temp variable to store the price value
             Decimal PriceTemp;
+            if (cover.Length == 0)
+            {
+                Error = Error + "Cover may not be blank : ";
+            }
+            if (cover.Length > 30)
+            {
+                Error = Error + "The cover must be less than 30 characters";
+            }
+            if (vetFees.Length == 0)
+            {
+                Error = Error + "Vet Fees may not be blank : ";
+            }
+            try
+            {
+                ValueTemp = Convert.ToInt32(insuranceID);
+                //if the value is 0
+                if (ValueTemp == 0)
+                {
+                    Error = Error + "Insurance ID cannot be 0 : ";
+                }
+                //if the value is too big
+                if (ValueTemp > 50000)
+                {
+                    Error = Error + "Insurance ID is too big : ";
+                }          
+            }
+            catch
+            {
+                Error = Error + "Insurance ID must be a number : ";
+            }
             try
             {
                 ValueTemp = Convert.ToInt32(dogID);
@@ -179,6 +209,13 @@ namespace Co_opClasses
                 Error = Error + "The value cannot be blank or in the format entered : ";
             }
             return Error;
+        }
+        public string AllInsurances
+        {
+            get
+            {
+                return DogID + " " + Cover + " " + VetFees + " " + Price;
+            }
         }
     }
 }

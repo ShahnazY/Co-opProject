@@ -187,5 +187,29 @@ namespace DogTesting
             //test to see that the record was not found
             Assert.AreEqual(AllDogs.ThisDog, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByNameOK()
+        {
+            //create an instance of the class containing unfiltered results
+            clsDogCollection AllDogs = new clsDogCollection();
+            //create the item of the filtered data
+            clsDogCollection FilteredDogs = new clsDogCollection();
+            //apply a blank string returning all records
+            FilteredDogs.ReportByName("");
+            //test to see the two values are the same
+            Assert.AreEqual(AllDogs.Count, FilteredDogs.Count);
+        }
+
+        [TestMethod]
+        public void ReportByNameNoneFound()
+        {
+            //create the item of the filtered data
+            clsDogCollection FilteredDogs = new clsDogCollection();
+            //apply a brand that doesn't exist
+            FilteredDogs.ReportByName("xxxx");
+            //test to see there are no record 
+            Assert.AreEqual(0, FilteredDogs.Count);
+        }
     }
 }

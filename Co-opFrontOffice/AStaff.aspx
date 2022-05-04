@@ -28,9 +28,10 @@
             <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 835px; top: 66px; position: absolute"></asp:TextBox>
             <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 216px; top: 240px; position: absolute">
             </asp:DropDownList>
-            <asp:Label ID="lblStaff" runat="server" style="z-index: 1; left: 805px; top: 199px; position: absolute" Text="lblError"></asp:Label>
-            <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 1011px; top: 251px; position: absolute" Text="OK" />
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 805px; top: 199px; position: absolute"></asp:Label>
+            <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 1011px; top: 251px; position: absolute" Text="OK" OnClick="btnOK_Click" />
             <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 899px; top: 253px; position: absolute; right: 151px;" Text="Cancel" />
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 369px; top: 9px; position: absolute" Text="Find" />
         </asp:Panel>
         <asp:Label ID="lblStaffLogo" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#0066CC" style="z-index: 1; left: 846px; top: 206px; position: absolute; height: 65px; width: 143px" Text="Staff"></asp:Label>
     </form>

@@ -89,24 +89,24 @@ namespace InsuranceTesting
         public void AddMethodOK()
         {
             //create an instance of the class
-            clsInsuranceCollection AllInsurances = new clsInsuranceCollection();
+           clsInsuranceCollection AllInsurances = new clsInsuranceCollection();
             //create the item of test data
-            clsInsurance TestItem = new clsInsurance();
+           clsInsurance TestItem = new clsInsurance();
             //var to store the primary key
            Int32 PrimaryKey = 0;
            //set its properties
            TestItem.InsuranceID = 1;
-            TestItem.DogID = 1;
-         TestItem.DentalTreatment = true;
-       TestItem.Cover = "Accidents Only";
-     TestItem.VetFees = "Up to £2000";
-         TestItem.Price = 5.99M;
+           TestItem.DogID = 1;
+           TestItem.DentalTreatment = true;
+           TestItem.Cover = "Accidents Only";
+           TestItem.VetFees = "Up to £2000";
+           TestItem.Price = 5.99M;
            //set ThisInsurance to the test data;
            AllInsurances.ThisInsurance = TestItem;
            //add the record
-            PrimaryKey = AllInsurances.Add();
+           PrimaryKey = AllInsurances.Add();
             //set the primary key of the test data
-            TestItem.InsuranceID = PrimaryKey;
+           TestItem.InsuranceID = PrimaryKey;
             //find the record
             AllInsurances.ThisInsurance.Find(PrimaryKey);
             //test to see that the two values are the same
