@@ -1,15 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AFund.aspx.cs" Inherits="AFund" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Co_opProject.master" AutoEventWireup="true" CodeFile="AFund.aspx.cs" Inherits="AFund" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-     <form id="form1" runat="server">
-        <div>
-        </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <br />
         <asp:Panel ID="Panel4" runat="server" BackColor="#0492C2" style="z-index: 1; left: 466px; top: 70px; position: absolute; height: 431px; width: 308px">
             <asp:Button ID="Holdingsbtn" runat="server" style="z-index: 1; left: 76px; top: 361px; position: absolute; width: 150px;" Text="HOLDINGS" Font-Names="Yu Gothic" OnClick="Holdingsbtn_Click" />
             <asp:TextBox ID="txtFindID" runat="server" style="z-index: 1; left: 167px; top: 46px; position: absolute; width: 100px;"></asp:TextBox>
@@ -20,7 +12,7 @@
         <asp:Panel ID="Panel6" runat="server" BackColor="#757C88" style="z-index: 1; left: 17px; top: 136px; position: absolute; height: 388px; width: 438px">
             <asp:TextBox ID="txtShares" runat="server" style="z-index: 1; left: 166px; top: 194px; position: absolute; width: 170px;"></asp:TextBox>
             <asp:Label ID="Symbollbl" runat="server" style="z-index: 1; left: 46px; top: 96px; position: absolute" Text="Symbol:" Font-Italic="False" Font-Names="Yu Gothic"></asp:Label>
-            <asp:Panel ID="Panel10" runat="server" BackColor="#757C88" style="z-index: 1; left: 778px; top: -49px; position: absolute; height: 473px; width: 543px">
+            <asp:Panel ID="Panel10" runat="server" BackColor="#757C88" style="z-index: 1; left: 778px; top: -49px; position: absolute; height: 439px; width: 543px">
                 <asp:ListBox ID="lbFunds" runat="server" style="z-index: 1; left: 23px; top: 13px; position: absolute; height: 99px; width: 494px; right: 26px;"></asp:ListBox>
                 <asp:TextBox ID="txtFindSymbol" runat="server" style="z-index: 1; left: 38px; top: 392px; position: absolute; width: 157px; height: 24px"></asp:TextBox>
                 <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 93px; top: 352px;  position: absolute" Text="ENTER FUND NUMBER TO VIEW DESCRIPTION" Font-Names="Yu Gothic"></asp:Label>
@@ -45,14 +37,14 @@
             <asp:Label ID="lblFundID" runat="server" Font-Italic="False" Font-Names="Yu Gothic" style="z-index: 1; left: 41px; top: 282px; position: absolute" Text="Fund ID:"></asp:Label>
         </asp:Panel>
         <asp:Label ID="lblTrade" runat="server" style="z-index: 1; left: 21px; top: 95px; position: absolute; height: 22px; width: 445px;" Text="TRADE AN ETF OR STOCK" Font-Size="X-Large" ForeColor="#314367"></asp:Label>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 8px; top: 557px; position: absolute" Font-Names="Yu Gothic" ></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 8px; top: 549px; position: absolute" Font-Names="Yu Gothic" ></asp:Label>
         
         
         <asp:Panel ID="Panel7" runat="server" BackColor="#A3B6DA" style="z-index: 1; left: 1355px; top: -4px; position: absolute; height: 868px; width: 350px">
         </asp:Panel>
         <asp:Panel ID="Panel9" runat="server"  BackColor="#A3B6DA" style="z-index: 1; left: -1px; top: 595px; position: absolute; height: 270px; width: 1370px">
         </asp:Panel>
-        <asp:Panel ID="Panel8" runat="server" BackImageUrl="~/coop-logo-png-16.PNG" style="z-index: 1; left: 231px; top: 601px; position: absolute; height: 270px; width: 828px">
+        <asp:Panel ID="Panel8" runat="server" BackImageUrl="~/Coop_Sweden.PNG" style="z-index: 1; left: 266px; top: 559px; position: absolute; height: 186px; width: 640px; margin-top: 10px;">
         </asp:Panel>
        
         
@@ -61,7 +53,7 @@
 
        
         
-         <asp:Label ID="lblPurchaseNo" Font-Names="Yu Gothic" runat="server" style="z-index: 1; left: 501px; top: 508px; position: absolute"></asp:Label>
+         <asp:Label ID="lblPurchaseNo" Font-Names="Yu Gothic" runat="server" style="z-index: 1; left: 473px; top: 512px; position: absolute"></asp:Label>
         
 
        
@@ -75,6 +67,4 @@
 
        
         
-    </form>
-</body>
-</html>
+    </asp:Content>

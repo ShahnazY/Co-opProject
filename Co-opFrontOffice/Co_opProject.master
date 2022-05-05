@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Co_opProject.master.cs" Inherits="Co_opProject" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Cooperative Master  Page</title>
+    <link href="CooperativeSystem.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+         <header>
+                 Cooperative System <br />
+                 <asp:HyperLink ID="hypSignIn" runat="server" NavigateUrl="~/SignIn.aspx">  Sign In  </asp:HyperLink> &ensp;
+                 <asp:HyperLink ID="hypSignUp" runat="server" NavigateUrl="~/SignUp.aspx">   Sign Up   </asp:HyperLink> &ensp;
+                 <asp:HyperLink ID="hypChangePassword" runat="server" NavigateUrl="~/ChangePassword.aspx"> Change Password   </asp:HyperLink> &ensp;
+                 <asp:HyperLink ID="hypSignOut" runat="server" NavigateUrl="~/SignOut.aspx"> Sign Out   </asp:HyperLink> &ensp;
+                 <asp:HyperLink ID="hypReSet" runat="server" NavigateUrl="~/ReSet.aspx"> Re-Set Password   </asp:HyperLink> &ensp;
+             </header>
+    <article>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </article>
+        
+    </form>
+</body>
+</html>

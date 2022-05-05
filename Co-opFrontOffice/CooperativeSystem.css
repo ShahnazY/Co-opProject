@@ -1,0 +1,27 @@
+﻿
+body {
+    background-color: #e5dfdf;
+}
+
+header {
+    background-color: #e0d7d7;
+    height: 5%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    font-family: "Yu Gothic";
+    font-size: 15px;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+
+
+article {
+    position: fixed;
+    width: 100%;
+    top: 5%;
+    left: 0%;
+    height: 1000px;
+}
