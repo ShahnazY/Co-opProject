@@ -407,7 +407,7 @@ namespace InsuranceTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            Int32 TestAge = 19; //this should pass
+            Int32 TestAge = 19; //this should fail
             //convert the age variable to a string variable
             string Age = TestAge.ToString();
             //invoke the method

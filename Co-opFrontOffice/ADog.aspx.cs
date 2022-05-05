@@ -9,9 +9,10 @@ using ClassLibrary;
 
 public partial class ADog : System.Web.UI.Page
 {
+    Int32 DogID;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        DogID = Convert.ToInt32(Session["DogID"]);
     }
 
     protected void btnAddDog_Click(object sender, EventArgs e)
