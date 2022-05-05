@@ -111,7 +111,7 @@ public partial class AClaim : System.Web.UI.Page
             Claims.ThisClaim.DateOfClaim = Convert.ToDateTime(txtDateOfClaim.Text);
             Claims.ThisClaim.DateOfInjury = Convert.ToDateTime(txtDateOfInjury.Text);
             Claims.ThisClaim.Status = Convert.ToString(ddlStatus.SelectedValue);
-            Claims.ThisClaim.EvidenceProvided = rbYes.Checked;
+            Claims.ThisClaim.EvidenceProvided = chkYes.Checked;
             //add the record
             Claims.Add();
         }
@@ -136,7 +136,7 @@ public partial class AClaim : System.Web.UI.Page
             Claims.ThisClaim.DateOfClaim = Convert.ToDateTime(txtDateOfClaim.Text);
             Claims.ThisClaim.DateOfInjury = Convert.ToDateTime(txtDateOfInjury.Text);
             Claims.ThisClaim.Status = ddlStatus.SelectedValue;
-            Claims.ThisClaim.EvidenceProvided = rbYes.Checked;
+            Claims.ThisClaim.EvidenceProvided = chkYes.Checked;
             //update the record
             Claims.Update();
             //redirect to list
