@@ -60,13 +60,13 @@
     <Compile Include="clsInsuranceCollection.cs" />
     <Compile Include="clsPersonalInjury.cs" />
     <Compile Include="clsPersonalInjuryCollection.cs" />
+    <Compile Include="clsSecurity.cs" />
     <Compile Include="clsShare.cs" />
     <Compile Include="clsSharesCollection.cs" />
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsStaffCollection.cs" />
     <Compile Include="clsStaffLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
