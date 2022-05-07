@@ -12,7 +12,7 @@
                     <td style="width: 192px">
             <asp:Label ID="lblEMail" runat="server" Text="E-Mail Address" Font-Names="Yu Gothic"></asp:Label>
                     </td>
-                    <td><asp:TextBox ID="txtEMail" runat="server" Width="283px" Font-Names="Yu Gothic"></asp:TextBox>
+                    <td><asp:TextBox ID="txtEMail"  runat="server" Width="283px" Font-Names="Yu Gothic"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -27,6 +27,9 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
+                </asp:Panel>
+        <asp:Panel ID="Panel8" runat="server" BackImageUrl="~/Coop_Sweden.PNG" style="z-index: 1; left: 306px; top: 204px; position: absolute; height: 186px; width: 640px; margin-top: 10px;">
+        </asp:Panel>
 &nbsp;<br />
                 <br />
                 <asp:Label ID="lblError" runat="server" Font-Names="Yu Gothic"></asp:Label>
