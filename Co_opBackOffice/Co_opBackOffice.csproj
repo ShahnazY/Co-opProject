@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUser.designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClaims.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +82,11 @@
     <Compile Include="frmFunds.Designer.cs">
       <DependentUpon>frmFunds.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMainPage.cs">
+    <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMainPage.Designer.cs">
-      <DependentUpon>frmMainPage.cs</DependentUpon>
+    <Compile Include="frmMenu.designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPersonalInjury.cs">
       <SubType>Form</SubType>
@@ -82,8 +94,26 @@
     <Compile Include="frmPersonalInjury.Designer.cs">
       <DependentUpon>frmPersonalInjury.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSignIn.designer.cs">
+      <DependentUpon>frmSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mdiBackEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiBackEnd.designer.cs">
+      <DependentUpon>mdiBackEnd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClaims.resx">
       <DependentUpon>frmClaims.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,11 +126,17 @@
     <EmbeddedResource Include="frmFunds.resx">
       <DependentUpon>frmFunds.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMainPage.resx">
-      <DependentUpon>frmMainPage.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonalInjury.resx">
       <DependentUpon>frmPersonalInjury.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSignIn.resx">
+      <DependentUpon>frmSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiBackEnd.resx">
+      <DependentUpon>mdiBackEnd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

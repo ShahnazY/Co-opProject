@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Co_opClasses;
 using ClassLibrary;
+using BackOffice;
 
 namespace Co_opBackOffice
 {
@@ -186,7 +187,7 @@ namespace Co_opBackOffice
 
         private void btnMainPage_Click(object sender, EventArgs e)
         {
-            frmMainPage MainPage = new frmMainPage();
+            frmMenu MainPage = new frmMenu();
             MainPage.Show();
             this.Hide();
         }

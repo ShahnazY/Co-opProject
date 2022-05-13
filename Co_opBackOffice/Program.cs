@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BackOffice;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Co_opBackOffice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainPage());
+            Application.Run(new mdiBackEnd());
         }
     }
 }

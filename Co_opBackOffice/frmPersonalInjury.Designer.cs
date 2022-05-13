@@ -158,6 +158,7 @@ namespace Co_opBackOffice
             this.btnFilterTypeOfInjury.TabIndex = 3;
             this.btnFilterTypeOfInjury.Text = "FILTER";
             this.btnFilterTypeOfInjury.UseVisualStyleBackColor = true;
+            this.btnFilterTypeOfInjury.Click += new System.EventHandler(this.btnFilterTypeOfInjury_Click);
             // 
             // lblFilterTypeOfInjury
             // 
