@@ -63,6 +63,7 @@ public partial class _Default : System.Web.UI.Page
         btnChangePassword.Visible = Auth;
         btnSignOut.Visible = Auth;
         btnFunds.Visible = Auth;
+        btnPurchase.Visible = Auth;
     }
 
 
@@ -77,5 +78,10 @@ public partial class _Default : System.Web.UI.Page
     {
         //go to funds
         Response.Redirect("AFund.aspx");
+    }
+    protected void btnPurchase_Click(object sender, EventArgs e)
+    {
+        //go to funds
+        Response.Redirect("Purchase.aspx");
     }
 }

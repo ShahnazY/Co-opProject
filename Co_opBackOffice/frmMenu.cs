@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Co_opBackOffice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,39 @@ namespace BackOffice
             InitializeComponent();
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmFunds Funds = new frmFunds();
+            Funds.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmPersonalInjury Injuries = new frmPersonalInjury();
+            Injuries.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmCustomer Customers = new frmCustomer();
+            Customers.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmClaims Claims = new frmClaims();
+            Claims.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmDog Dogs = new frmDog();
+            Dogs.Show();
+            this.Hide();
+        }
     }
 }

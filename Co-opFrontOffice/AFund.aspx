@@ -3,12 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      <br />
         <asp:Panel ID="Panel4" runat="server" BackColor="#0492C2" style="z-index: 1; left: 466px; top: 70px; position: absolute; height: 431px; width: 308px">
-            <asp:Button ID="Holdingsbtn" runat="server" style="z-index: 1; left: 76px; top: 361px; position: absolute; width: 150px;" Text="HOLDINGS" Font-Names="Yu Gothic" OnClick="Holdingsbtn_Click" />
-            <asp:TextBox ID="txtFindID" runat="server" style="z-index: 1; left: 167px; top: 46px; position: absolute; width: 100px;"></asp:TextBox>
-            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 14px; top: 46px; position: absolute" Font-Names="Yu Gothic" Text="Enter Client ID:"></asp:Label>
-            <asp:ListBox ID="lbPurchases" runat="server" style="z-index: 1; left: 42px; top: 98px; position: absolute; height: 248px; width: 233px"></asp:ListBox>
+            <asp:Button ID="Holdingsbtn" runat="server" style="z-index: 1; left: 97px; top: 368px; position: absolute; width: 103px;" Text="CHECK" Font-Names="Yu Gothic" OnClick="Holdingsbtn_Click" />
+            <asp:TextBox ID="txtPurchaseNo" runat="server" style="z-index: 1; left: 203px; top: 47px; position: absolute; width: 79px;"></asp:TextBox>
+            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 14px; top: 46px; position: absolute" Font-Names="Yu Gothic" Text="Enter purchase number:"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 116px; left: 34px" Text="Symbol"></asp:Label>
+            <asp:Label ID="lblSymbol" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 115px; left: 149px"></asp:Label>
+            <asp:Label ID="Durationlbl" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 192px; left: 149px"></asp:Label>
+            <asp:Label ID="lblShares" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 153px; left: 149px"></asp:Label>
+            <asp:Label ID="Label9" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 194px; left: 36px" Text="Duration"></asp:Label>
+            <asp:Label ID="Label10" runat="server" Font-Names="Yu Gothic" style="z-index: 1; position: absolute; top: 155px; left: 35px" Text="Shares"></asp:Label>
+            <asp:Button ID="BtnBack" runat="server" Font-Names="Yu Gothic" OnClick="BtnBack_Click" style="z-index: 1; position: absolute; top: 320px; left: 49px" Text="BACK TO MAIN PAGE" />
         </asp:Panel>
-        <asp:Label ID="lblAdd" runat="server" Font-Size="X-Large" ForeColor="#314367" style="z-index: 1; left: 469px; top: 36px; position: absolute; height: 22px" Text="ACCOUNT INFORMATION"></asp:Label>
+        <asp:Label ID="lblAdd" runat="server" Font-Size="X-Large" ForeColor="#314367" style="z-index: 1; left: 459px; top: 45px; position: absolute; height: 22px" Text="CHECK PURCHASES"></asp:Label>
         <asp:Panel ID="Panel6" runat="server" BackColor="#757C88" style="z-index: 1; left: 17px; top: 136px; position: absolute; height: 388px; width: 438px">
             <asp:TextBox ID="txtShares" runat="server" style="z-index: 1; left: 166px; top: 194px; position: absolute; width: 170px;"></asp:TextBox>
             <asp:Label ID="Symbollbl" runat="server" style="z-index: 1; left: 46px; top: 96px; position: absolute" Text="Symbol:" Font-Italic="False" Font-Names="Yu Gothic"></asp:Label>
@@ -29,14 +35,14 @@
             </asp:DropDownList>
             <asp:TextBox ID="txtSymbol" runat="server" style="z-index: 1; left: 170px; top: 97px; position: absolute; width: 170px;"></asp:TextBox>
             <asp:TextBox ID="txtFundID" runat="server" style="z-index: 1; left: 169px; top: 284px; position: absolute; width: 170px;"></asp:TextBox>
-            <asp:Button ID="Continuebtn" runat="server" style="z-index: 1; left: 23px; top: 337px; position: absolute; width: 140px;" Text="CONTINUE" Font-Names="Yu Gothic" OnClick="Continuebtn_Click" />
+            <asp:Button ID="Continuebtn" runat="server" style="z-index: 1; left: 23px; top: 337px; position: absolute; width: 140px;" Text="ADD" Font-Names="Yu Gothic" OnClick="Continuebtn_Click" />
             <asp:Button ID="Clearbtn" runat="server" style="z-index: 1; left: 204px; top: 336px; position: absolute; width: 140px;" Text="CLEAR" Font-Names="Yu Gothic" OnClick="Clearbtn_Click" />
             <asp:TextBox ID="txtClientID" runat="server" style="z-index: 1; left: 170px; top: 48px; position: absolute; width: 170px;"></asp:TextBox>
             <asp:Label ID="lblClientID" runat="server" Font-Italic="False" Font-Names="Yu Gothic" style="z-index: 1; left: 46px; top: 48px; position: absolute" Text="ClientID"></asp:Label>
             <asp:TextBox ID="txtDuration" runat="server" style="z-index: 1; left: 168px; top: 241px; position: absolute; width: 170px;"></asp:TextBox>
             <asp:Label ID="lblFundID" runat="server" Font-Italic="False" Font-Names="Yu Gothic" style="z-index: 1; left: 41px; top: 282px; position: absolute" Text="Fund ID:"></asp:Label>
         </asp:Panel>
-        <asp:Label ID="lblTrade" runat="server" style="z-index: 1; left: 21px; top: 95px; position: absolute; height: 22px; width: 445px;" Text="TRADE AN ETF OR STOCK" Font-Size="X-Large" ForeColor="#314367"></asp:Label>
+        <asp:Label ID="lblTrade" runat="server" style="z-index: 1; left: 21px; top: 95px; position: absolute; height: 22px; width: 445px;" Text="ADD ETF FOR ADVISOR REVIEW" Font-Size="X-Large" ForeColor="#314367"></asp:Label>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 8px; top: 549px; position: absolute" Font-Names="Yu Gothic" ></asp:Label>
         
         
