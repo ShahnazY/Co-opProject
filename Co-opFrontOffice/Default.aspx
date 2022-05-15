@@ -19,5 +19,9 @@
             <br />
             <asp:Button ID="btnSignOut" runat="server" OnClick="btnSignOut_Click" Text="Sign Out" width="160px" />
         </div>
+    <br />
+            <asp:Button ID="btnPurchase" runat="server" OnClick="btnPurchase_Click" Text="Purchase Funds" width="160px" />
+        </div>
+
 
     </asp:Content>

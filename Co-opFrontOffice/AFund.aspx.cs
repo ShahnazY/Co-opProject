@@ -130,24 +130,37 @@ public partial class AFund : System.Web.UI.Page
 
     protected void Holdingsbtn_Click(object sender, EventArgs e)
     {
-        //instance of shares class
-        clsShare APurchase = new clsShare();
-        //variable to store ClietID
-        Int32 ClientID;
+        //create instance of the class
+        clsShare AnOrder = new clsShare();
+        //variable to store the primary key
+        Int32 PurchaseNo;
+        //variable to store the result
         Boolean Found = false;
-        ClientID = Convert.ToInt32(txtFindID.Text);
-        Found = APurchase.Find(ClientID);
-        //a list so that the DataSource can be used then 
-        List<string> Purchase = new List<string>();
-        if (Found == true) 
+        //get the primary key entered by the user
+        PurchaseNo = Convert.ToInt32(txtPurchaseNo.Text);
+        //find the record
+        Found = AnOrder.Find(PurchaseNo);
+        //if found
+        if (Found == true)
         {
-            Purchase.Add(APurchase.Symbol);
+            //display the values in the form
+            lblShares.Text = AnOrder.Shares.ToString();
+            lblSymbol.Text = AnOrder.Symbol;
+            Durationlbl.Text = AnOrder.Duration.ToString();
+            
 
-            lbPurchases.DataSource = Purchase;
-            //set the text to be displayed
-            lbPurchases.DataTextField = "AllPurchases";
+
+        }
+        else
+        {
+            lblError.Text = "Purchase number not found";
         }
     }
 
-    
+
+
+    protected void BtnBack_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
+    }
 }
