@@ -55,4 +55,9 @@ public partial class CustomerLogin : System.Web.UI.Page
             lblError.Text = "Customer login details not found";
         }
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
+    }
 }

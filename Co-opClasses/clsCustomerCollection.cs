@@ -57,7 +57,16 @@ namespace Co_opClasses
                 mCustomersList = value;
             }
         }
-        public clsCustomer ThisCustomer { get; set; }
+        public clsCustomer ThisCustomer {
+            get
+            {
+                return mThisCustomer;
+            }
+            set
+            {
+                mThisCustomer = value;
+            }
+        }
         public int Count
         {
             get
@@ -100,6 +109,7 @@ namespace Co_opClasses
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
             DB.AddParameter("@Gender", mThisCustomer.Gender);
+            DB.AddParameter("@Email", mThisCustomer.Email);
             DB.AddParameter("@DateOfBirth", mThisCustomer.DateOfBirth);
             DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
             DB.AddParameter("@Street", mThisCustomer.Street);
