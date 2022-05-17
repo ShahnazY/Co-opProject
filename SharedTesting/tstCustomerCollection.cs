@@ -212,10 +212,41 @@ namespace SharedTesting
             //find the record
             AllCustomers.ThisCustomer.Find(PrimaryKey);
             //test to see that the record was not found
-            Assert.AreEqual(AllCustomers.ThisCustomer, TestItem);
-
-            
+            Assert.AreEqual(AllCustomers.ThisCustomer, TestItem); 
         }
 
+        [TestMethod]
+        public void ReportByLastNameMethodOK()
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            FilteredCustomers.ReportByLastName("");
+            Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void ReportByLastNameNoneFound()
+        {
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            FilteredCustomers.ReportByLastName("xxx");
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTownMethodOK()
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            FilteredCustomers.ReportByTown("");
+            Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTownNoneFound()
+        {
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            FilteredCustomers.ReportByTown("xxx");
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
     }
 }

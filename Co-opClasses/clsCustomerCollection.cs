@@ -13,36 +13,10 @@ namespace Co_opClasses
         //constructor for the class
         public clsCustomerCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count 
-            Int32 RecordCount = 0;
-            //object for data connection 
             clsDataConnection DB = new clsDataConnection();
-            //execute the stored procedure 
             DB.Execute("sproc_tblCustomer_SelectAll");
-            //get the count of records 
-            RecordCount = DB.Count;
-            //While there are records to process 
-            while (Index < RecordCount)
-            {
-                //create a blank trainers 
-                clsCustomer ACustomer = new clsCustomer();
-                //read in the fields from the current record 
-                ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
-                ACustomer.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
-                ACustomer.HouseNo= Convert.ToString(DB.DataTable.Rows[Index]["HouseNo"]);
-                ACustomer.Street = Convert.ToString(DB.DataTable.Rows[Index]["Street"]);
-                ACustomer.Town = Convert.ToString(DB.DataTable.Rows[Index]["Town"]);
-                ACustomer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
-                ACustomer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
-                ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
-                //add the record to the private data member
-                mCustomersList.Add(ACustomer);
-                //point to the next record 
-                Index++;
-            }
+            PopulateArray(DB);
+            
         }
 
         List<clsCustomer> mCustomersList = new List<clsCustomer>();
@@ -117,6 +91,54 @@ namespace Co_opClasses
             DB.AddParameter("@PostCode", mThisCustomer.PostCode);
             //execute the stored procedure
             DB.Execute("sproc_tblCustomer_Update");
+        }
+
+        public void ReportByLastName(string LastName)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@LastName", LastName);
+            DB.Execute("sproc_tblCustomer_FilterByLastName");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //get the count of records 
+            RecordCount = DB.Count;
+            mCustomerList = new List<clsCustomer>();
+            //While there are records to process 
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsCustomer ACustomer = new clsCustomer();
+                //read in the fields from the current record 
+                ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
+                ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                ACustomer.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
+                ACustomer.HouseNo = Convert.ToString(DB.DataTable.Rows[Index]["HouseNo"]);
+                ACustomer.Street = Convert.ToString(DB.DataTable.Rows[Index]["Street"]);
+                ACustomer.Town = Convert.ToString(DB.DataTable.Rows[Index]["Town"]);
+                ACustomer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
+                ACustomer.DateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
+                //add the record to the private data member
+                mCustomersList.Add(ACustomer);
+                //point to the next record 
+                Index++;
+            }
+        }
+
+        public void ReportByTown(string Town)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Town", Town);
+            DB.Execute("sproc_tblCustomer_FilterByTown");
+            PopulateArray(DB);
         }
     }
 }

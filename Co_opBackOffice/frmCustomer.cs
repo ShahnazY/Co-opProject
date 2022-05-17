@@ -36,7 +36,7 @@ namespace Co_opBackOffice
             lstCustomers.DisplayMember = "AllDetails";
             lstCustomers.ValueMember = "CustomerID";
             return Customers.Count;
-        }
+       }
 
         void Add()
         {
@@ -190,6 +190,71 @@ namespace Co_opBackOffice
             frmMenu MainPage = new frmMenu();
             MainPage.Show();
             this.Hide();
+        }
+
+        private void btnFilterLastName_Click(object sender, EventArgs e)
+        {
+            if (txtFilterLastName.Text != "")
+            {
+                Int32 Count;
+                Count = DisplayCustomersByLastName(txtFilterLastName.Text);
+                lblError.Text = Count + "  records found";
+            }
+            else
+            {
+                lblFilterError.Text = "Provide a valid filter";
+            }
+        }
+        Int32 DisplayCustomersByLastName(string LastNameFilter)
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            Int32 Count;
+            string LastName;
+            Int32 Index = 0;
+            //lstClaims.Items.Clear();
+            AllCustomers.ReportByLastName(LastNameFilter);
+            Count = AllCustomers.Count;
+            while (Index < Count)
+            {
+                LastName = Convert.ToString(AllCustomers.CustomersList[Index].LastName);
+                lstCustomers.DataSource = AllCustomers.CustomersList;
+                lstCustomers.DisplayMember = "AllDetails";
+                Index++;
+            }
+            return Count;
+        }
+
+        private void btnFilterTown_Click(object sender, EventArgs e)
+        {
+            if (txtFilterTown.Text != "")
+            {
+                Int32 Count;
+                Count = DisplayCustomersByTown(txtFilterTown.Text);
+                lblError.Text = Count + "  records found";
+            }
+            else
+            {
+                lblFilterError.Text = "Provide a valid filter";
+            }
+        }
+
+        Int32 DisplayCustomersByTown(string TownFilter)
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            Int32 Count;
+            string Town;
+            Int32 Index = 0;
+            //lstClaims.Items.Clear();
+            AllCustomers.ReportByTown(TownFilter);
+            Count = AllCustomers.Count;
+            while (Index < Count)
+            {
+                Town = Convert.ToString(AllCustomers.CustomersList[Index].Town);
+                lstCustomers.DataSource = AllCustomers.CustomersList;
+                lstCustomers.DisplayMember = "AllDetails";
+                Index++;
+            }
+            return Count;
         }
     }
 }
