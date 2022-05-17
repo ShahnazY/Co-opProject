@@ -8,7 +8,7 @@
             <asp:Button ID="btnFunds" runat="server" OnClick="btnFunds_Click" Text="Manage Funds" width="160px" />
             <br />
             <br />
-            <asp:Button ID="btnClaims" runat="server" Text="Manage Claims" Width="160px" />
+            <asp:Button ID="btnClaims" runat="server" Text="Manage Claims" Width="160px" OnClick="btnClaims_Click1" />
             <asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" Text="Sign Up" width="160px" />
             <br />
             <br />

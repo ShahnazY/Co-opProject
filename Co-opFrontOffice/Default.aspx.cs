@@ -90,4 +90,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("AClaim1.aspx");
     }
+
+    protected void btnClaims_Click1(object sender, EventArgs e)
+    {
+        Response.Redirect("AClaim1.aspx");
+    }
 }

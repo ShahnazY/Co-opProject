@@ -69,8 +69,10 @@ namespace Co_opBackOffice
             this.btnMainPage = new System.Windows.Forms.Button();
             this.lblAddNewCustomer = new System.Windows.Forms.Label();
             this.lblCustomerManagement = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -106,6 +108,7 @@ namespace Co_opBackOffice
             // 
             // btnNO
             // 
+            this.btnNO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNO.Location = new System.Drawing.Point(165, 445);
             this.btnNO.Name = "btnNO";
             this.btnNO.Size = new System.Drawing.Size(75, 23);
@@ -116,6 +119,7 @@ namespace Co_opBackOffice
             // 
             // btnYes
             // 
+            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.Location = new System.Drawing.Point(14, 445);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 23);
@@ -142,6 +146,7 @@ namespace Co_opBackOffice
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(165, 360);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -152,6 +157,7 @@ namespace Co_opBackOffice
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(14, 360);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
@@ -162,9 +168,10 @@ namespace Co_opBackOffice
             // 
             // btnDisplayAll
             // 
-            this.btnDisplayAll.Location = new System.Drawing.Point(67, 307);
+            this.btnDisplayAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayAll.Location = new System.Drawing.Point(75, 301);
             this.btnDisplayAll.Name = "btnDisplayAll";
-            this.btnDisplayAll.Size = new System.Drawing.Size(116, 23);
+            this.btnDisplayAll.Size = new System.Drawing.Size(97, 43);
             this.btnDisplayAll.TabIndex = 7;
             this.btnDisplayAll.Text = "Display All Customers";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
@@ -172,6 +179,7 @@ namespace Co_opBackOffice
             // 
             // btnFilterTown
             // 
+            this.btnFilterTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilterTown.Location = new System.Drawing.Point(281, 192);
             this.btnFilterTown.Name = "btnFilterTown";
             this.btnFilterTown.Size = new System.Drawing.Size(75, 23);
@@ -182,9 +190,10 @@ namespace Co_opBackOffice
             // lblFilterTown
             // 
             this.lblFilterTown.AutoSize = true;
+            this.lblFilterTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilterTown.Location = new System.Drawing.Point(253, 135);
             this.lblFilterTown.Name = "lblFilterTown";
-            this.lblFilterTown.Size = new System.Drawing.Size(76, 13);
+            this.lblFilterTown.Size = new System.Drawing.Size(104, 18);
             this.lblFilterTown.TabIndex = 5;
             this.lblFilterTown.Text = "Filter by Town:";
             // 
@@ -197,6 +206,7 @@ namespace Co_opBackOffice
             // 
             // btnFilterLastName
             // 
+            this.btnFilterLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilterLastName.Location = new System.Drawing.Point(281, 95);
             this.btnFilterLastName.Name = "btnFilterLastName";
             this.btnFilterLastName.Size = new System.Drawing.Size(75, 23);
@@ -207,9 +217,10 @@ namespace Co_opBackOffice
             // lblFilterLastName
             // 
             this.lblFilterLastName.AutoSize = true;
+            this.lblFilterLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilterLastName.Location = new System.Drawing.Point(253, 34);
             this.lblFilterLastName.Name = "lblFilterLastName";
-            this.lblFilterLastName.Size = new System.Drawing.Size(100, 13);
+            this.lblFilterLastName.Size = new System.Drawing.Size(139, 18);
             this.lblFilterLastName.TabIndex = 2;
             this.lblFilterLastName.Text = "Filter by Last Name:";
             // 
@@ -222,10 +233,12 @@ namespace Co_opBackOffice
             // 
             // lstCustomers
             // 
+            this.lstCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCustomers.FormattingEnabled = true;
+            this.lstCustomers.ItemHeight = 16;
             this.lstCustomers.Location = new System.Drawing.Point(14, 34);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(226, 251);
+            this.lstCustomers.Size = new System.Drawing.Size(226, 244);
             this.lstCustomers.TabIndex = 0;
             // 
             // panel1
@@ -251,9 +264,9 @@ namespace Co_opBackOffice
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtLastName);
             this.panel1.Controls.Add(this.txtFirstName);
-            this.panel1.Location = new System.Drawing.Point(12, 168);
+            this.panel1.Location = new System.Drawing.Point(12, 188);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 491);
+            this.panel1.Size = new System.Drawing.Size(337, 471);
             this.panel1.TabIndex = 3;
             // 
             // txtGender
@@ -294,36 +307,40 @@ namespace Co_opBackOffice
             // lblPostCode
             // 
             this.lblPostCode.AutoSize = true;
-            this.lblPostCode.Location = new System.Drawing.Point(42, 344);
+            this.lblPostCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostCode.Location = new System.Drawing.Point(39, 341);
             this.lblPostCode.Name = "lblPostCode";
-            this.lblPostCode.Size = new System.Drawing.Size(58, 13);
+            this.lblPostCode.Size = new System.Drawing.Size(80, 18);
             this.lblPostCode.TabIndex = 18;
             this.lblPostCode.Text = "Postcode: ";
             // 
             // lblTown
             // 
             this.lblTown.AutoSize = true;
-            this.lblTown.Location = new System.Drawing.Point(42, 307);
+            this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTown.Location = new System.Drawing.Point(36, 306);
             this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(40, 13);
+            this.lblTown.Size = new System.Drawing.Size(53, 18);
             this.lblTown.TabIndex = 17;
             this.lblTown.Text = "Town: ";
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(44, 267);
+            this.lblStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreet.Location = new System.Drawing.Point(36, 266);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(38, 13);
+            this.lblStreet.Size = new System.Drawing.Size(51, 18);
             this.lblStreet.TabIndex = 16;
             this.lblStreet.Text = "Street:";
             // 
             // lblHouseNo
             // 
             this.lblHouseNo.AutoSize = true;
-            this.lblHouseNo.Location = new System.Drawing.Point(42, 231);
+            this.lblHouseNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHouseNo.Location = new System.Drawing.Point(36, 231);
             this.lblHouseNo.Name = "lblHouseNo";
-            this.lblHouseNo.Size = new System.Drawing.Size(58, 13);
+            this.lblHouseNo.Size = new System.Drawing.Size(80, 18);
             this.lblHouseNo.TabIndex = 15;
             this.lblHouseNo.Text = "House No:";
             // 
@@ -337,7 +354,8 @@ namespace Co_opBackOffice
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Ivory;
-            this.btnUpdate.Location = new System.Drawing.Point(228, 445);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(224, 425);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 12;
@@ -347,7 +365,8 @@ namespace Co_opBackOffice
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Ivory;
-            this.btnAdd.Location = new System.Drawing.Point(122, 445);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(125, 425);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 11;
@@ -358,45 +377,50 @@ namespace Co_opBackOffice
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(42, 192);
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(36, 191);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(72, 13);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(98, 18);
             this.lblDateOfBirth.TabIndex = 8;
             this.lblDateOfBirth.Text = "Date of Birth: ";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(42, 151);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(39, 150);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(49, 18);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email:";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(42, 115);
+            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(39, 115);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(45, 13);
+            this.lblGender.Size = new System.Drawing.Size(61, 18);
             this.lblGender.TabIndex = 6;
             this.lblGender.Text = "Gender:";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(42, 76);
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(36, 76);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(64, 13);
+            this.lblLastName.Size = new System.Drawing.Size(88, 18);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name: ";
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.Location = new System.Drawing.Point(39, 37);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(60, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(85, 18);
             this.lblFirstName.TabIndex = 4;
             this.lblFirstName.Text = "First Name:";
             // 
@@ -423,9 +447,10 @@ namespace Co_opBackOffice
             // 
             // btnMainPage
             // 
-            this.btnMainPage.Location = new System.Drawing.Point(929, 29);
+            this.btnMainPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainPage.Location = new System.Drawing.Point(911, 29);
             this.btnMainPage.Name = "btnMainPage";
-            this.btnMainPage.Size = new System.Drawing.Size(75, 23);
+            this.btnMainPage.Size = new System.Drawing.Size(93, 29);
             this.btnMainPage.TabIndex = 4;
             this.btnMainPage.Text = "Main Page";
             this.btnMainPage.UseVisualStyleBackColor = true;
@@ -435,7 +460,7 @@ namespace Co_opBackOffice
             // 
             this.lblAddNewCustomer.AutoSize = true;
             this.lblAddNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewCustomer.Location = new System.Drawing.Point(13, 112);
+            this.lblAddNewCustomer.Location = new System.Drawing.Point(12, 147);
             this.lblAddNewCustomer.Name = "lblAddNewCustomer";
             this.lblAddNewCustomer.Size = new System.Drawing.Size(191, 24);
             this.lblAddNewCustomer.TabIndex = 5;
@@ -451,11 +476,21 @@ namespace Co_opBackOffice
             this.lblCustomerManagement.TabIndex = 6;
             this.lblCustomerManagement.Text = "Customer Management";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Co_opBackOffice.Properties.Resources.co_op_blue_logo_on_white_png1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 126);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 690);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCustomerManagement);
             this.Controls.Add(this.lblAddNewCustomer);
             this.Controls.Add(this.btnMainPage);
@@ -467,6 +502,7 @@ namespace Co_opBackOffice
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,5 +550,6 @@ namespace Co_opBackOffice
         private System.Windows.Forms.Button btnMainPage;
         private System.Windows.Forms.Label lblAddNewCustomer;
         private System.Windows.Forms.Label lblCustomerManagement;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
