@@ -186,6 +186,7 @@ namespace Co_opBackOffice
             this.btnFilterTown.TabIndex = 6;
             this.btnFilterTown.Text = "FILTER";
             this.btnFilterTown.UseVisualStyleBackColor = true;
+            this.btnFilterTown.Click += new System.EventHandler(this.btnFilterTown_Click);
             // 
             // lblFilterTown
             // 
@@ -213,6 +214,7 @@ namespace Co_opBackOffice
             this.btnFilterLastName.TabIndex = 3;
             this.btnFilterLastName.Text = "FILTER";
             this.btnFilterLastName.UseVisualStyleBackColor = true;
+            this.btnFilterLastName.Click += new System.EventHandler(this.btnFilterLastName_Click);
             // 
             // lblFilterLastName
             // 
