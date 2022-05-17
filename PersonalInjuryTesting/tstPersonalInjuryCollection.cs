@@ -165,6 +165,22 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(AllPersonalInjuries.ThisPersonalInjury, TestItem);
         }
 
+        [TestMethod]
+        public void ReportByTypeOfInjuryMethodOK()
+        {
+            clsPersonalInjuryCollection AllInjuries = new clsPersonalInjuryCollection();
+            clsPersonalInjuryCollection FilteredInjuries = new clsPersonalInjuryCollection();
+            FilteredInjuries.ReportByTypeOfInjury("");
+            Assert.AreEqual(AllInjuries.Count, FilteredInjuries.Count);
+        }
+
+        [TestMethod]
+        public void ReportByTypeOfInjuryNoneFound()
+        {
+            clsPersonalInjuryCollection FilteredInjuries = new clsPersonalInjuryCollection();
+            FilteredInjuries.ReportByTypeOfInjury("xxxx");
+            Assert.AreEqual(0, FilteredInjuries.Count);
+        }
 
     }
 }

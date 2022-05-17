@@ -41,7 +41,7 @@ namespace Co_opBackOffice
             this.btnDisplayAll = new System.Windows.Forms.Button();
             this.btnFilterTypeOfInjury = new System.Windows.Forms.Button();
             this.lblFilterTypeOfInjury = new System.Windows.Forms.Label();
-            this.txtFilterStatus = new System.Windows.Forms.TextBox();
+            this.txtFilterTypeOfInjury = new System.Windows.Forms.TextBox();
             this.lstPersonalInjuries = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@ namespace Co_opBackOffice
             this.panel2.Controls.Add(this.btnDisplayAll);
             this.panel2.Controls.Add(this.btnFilterTypeOfInjury);
             this.panel2.Controls.Add(this.lblFilterTypeOfInjury);
-            this.panel2.Controls.Add(this.txtFilterStatus);
+            this.panel2.Controls.Add(this.txtFilterTypeOfInjury);
             this.panel2.Controls.Add(this.lstPersonalInjuries);
             this.panel2.Location = new System.Drawing.Point(536, 159);
             this.panel2.Name = "panel2";
@@ -179,12 +179,12 @@ namespace Co_opBackOffice
             this.lblFilterTypeOfInjury.TabIndex = 2;
             this.lblFilterTypeOfInjury.Text = "Filter by Type of Injury:";
             // 
-            // txtFilterStatus
+            // txtFilterTypeOfInjury
             // 
-            this.txtFilterStatus.Location = new System.Drawing.Point(256, 69);
-            this.txtFilterStatus.Name = "txtFilterStatus";
-            this.txtFilterStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtFilterStatus.TabIndex = 1;
+            this.txtFilterTypeOfInjury.Location = new System.Drawing.Point(256, 69);
+            this.txtFilterTypeOfInjury.Name = "txtFilterTypeOfInjury";
+            this.txtFilterTypeOfInjury.Size = new System.Drawing.Size(100, 20);
+            this.txtFilterTypeOfInjury.TabIndex = 1;
             // 
             // lstPersonalInjuries
             // 
@@ -366,7 +366,7 @@ namespace Co_opBackOffice
         private System.Windows.Forms.Button btnDisplayAll;
         private System.Windows.Forms.Button btnFilterTypeOfInjury;
         private System.Windows.Forms.Label lblFilterTypeOfInjury;
-        private System.Windows.Forms.TextBox txtFilterStatus;
+        private System.Windows.Forms.TextBox txtFilterTypeOfInjury;
         private System.Windows.Forms.ListBox lstPersonalInjuries;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnUpdate;
