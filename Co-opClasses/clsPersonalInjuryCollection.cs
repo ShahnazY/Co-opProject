@@ -10,31 +10,9 @@ namespace Co_opClasses
         clsPersonalInjury mThisPersonalInjury = new clsPersonalInjury();
         public clsPersonalInjuryCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count 
-            Int32 RecordCount = 0;
-            //object for data connection 
             clsDataConnection DB = new clsDataConnection();
-            //execute the stored procedure 
             DB.Execute("sproc_tblPersonalInjury_SelectAll");
-            //get the count of records 
-            RecordCount = DB.Count;
-            //While there are records to process 
-            while (Index < RecordCount)
-            {
-                //create a blank trainers 
-                clsPersonalInjury APersonalInjury = new clsPersonalInjury();
-                //read in the fields from the current record 
-                APersonalInjury.TypeOfInjury = Convert.ToString(DB.DataTable.Rows[Index]["TypeOfInjury"]);
-                APersonalInjury.Severity = Convert.ToString(DB.DataTable.Rows[Index]["Severity"]);
-                APersonalInjury.Compensation = Convert.ToDecimal(DB.DataTable.Rows[Index]["Compensation"]);
-                
-                //add the record to the private data member
-                mPersonalInjuriesList.Add(APersonalInjury);
-                //point to the next record 
-                Index++;
-            }
+            PopulateArray(DB);
         }
 
         
@@ -99,6 +77,36 @@ namespace Co_opClasses
             DB.AddParameter("@Compensation", mThisPersonalInjury.Compensation);
             //execute the stored procedure
             DB.Execute("sproc_tblPersonalInjury_Update");
+        }
+
+        public void ReportByTypeOfInjury(string TypeOfInjury)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@TypeOfInjury", TypeOfInjury);
+            DB.Execute("sproc_tblPersonalInjury_FilterByTypeOfInjury");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mPersonalInjuriesList = new List<clsPersonalInjury>();
+            while (Index < RecordCount)
+            {
+                //create a blank trainers 
+                clsPersonalInjury APersonalInjury = new clsPersonalInjury();
+                //read in the fields from the current record 
+                APersonalInjury.TypeOfInjury = Convert.ToString(DB.DataTable.Rows[Index]["TypeOfInjury"]);
+                APersonalInjury.Severity = Convert.ToString(DB.DataTable.Rows[Index]["Severity"]);
+                APersonalInjury.Compensation = Convert.ToDecimal(DB.DataTable.Rows[Index]["Compensation"]);
+
+                //add the record to the private data member
+                mPersonalInjuriesList.Add(APersonalInjury);
+                //point to the next record 
+                Index++;
+            }
         }
     }
 }

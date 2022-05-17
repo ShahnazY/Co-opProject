@@ -178,15 +178,10 @@ namespace Co_opBackOffice
 
         private void btnFilterTypeOfInjury_Click(object sender, EventArgs e)
         {
-
-        }
-
-        /*private void btnFilterStatus_Click(object sender, EventArgs e)
-        {
-            if (txtStatus.Text != "")
+            if (txtFilterTypeOfInjury.Text != "")
             {
                 Int32 Count;
-                Count = DisplayClaimsByStatus(txtFilterStatus.Text);
+                Count = DisplayPersonalInjuriesByType(txtFilterTypeOfInjury.Text);
                 lblError.Text = Count + "  records found";
             }
             else
@@ -195,23 +190,23 @@ namespace Co_opBackOffice
             }
         }
 
-        Int32 DisplayPersonalInjuriesByType(string StatusFilter)
+        Int32 DisplayPersonalInjuriesByType(string TypeOfInjuryFilter)
         {
-            clsClaimCollection AllClaims = new clsClaimCollection();
+            clsPersonalInjuryCollection AllPersonalInjuries = new clsPersonalInjuryCollection();
             Int32 Count;
-            string Status;
+            string TypeOfInjury;
             Int32 Index = 0;
             //lstClaims.Items.Clear();
-            AllClaims.ReportByStatus(StatusFilter);
-            Count = AllClaims.Count;
+            AllPersonalInjuries.ReportByTypeOfInjury(TypeOfInjuryFilter);
+            Count = AllPersonalInjuries.Count;
             while (Index < Count)
             {
-                Status = Convert.ToString(AllClaims.ClaimsList[Index].Status);
-                lstClaims.DataSource = AllClaims.ClaimsList;
-                lstClaims.DisplayMember = "AllDetails";
+                TypeOfInjury = Convert.ToString(AllPersonalInjuries.PersonalInjuriesList[Index].TypeOfInjury);
+                lstPersonalInjuries.DataSource = AllPersonalInjuries.PersonalInjuriesList;
+                lstPersonalInjuries.DisplayMember = "AllDetails";
                 Index++;
             }
             return Count;
-        }*/
+        }
     }
 }
