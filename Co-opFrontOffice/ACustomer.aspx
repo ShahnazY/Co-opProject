@@ -32,6 +32,9 @@
         </asp:DropDownList>
         <asp:Label ID="lblGender" runat="server" style="z-index: 1; left: 207px; top: 415px; position: absolute" Text="Gender"></asp:Label>
         <asp:DropDownList ID="ddlGender" runat="server" style="z-index: 1; left: 294px; top: 411px; position: absolute">
+            <asp:ListItem>Male</asp:ListItem>
+            <asp:ListItem>Female</asp:ListItem>
+            <asp:ListItem>Other</asp:ListItem>
         </asp:DropDownList>
         <asp:TextBox ID="txtCustomerID" runat="server" style="z-index: 1; left: 294px; top: 158px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblCustomerID" runat="server" style="z-index: 1; left: 164px; top: 162px; position: absolute" Text="Customer ID"></asp:Label>

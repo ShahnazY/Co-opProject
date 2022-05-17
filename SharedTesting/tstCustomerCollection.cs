@@ -152,6 +152,7 @@ namespace SharedTesting
             TestItem.Street = "London Road";
             TestItem.Town = "Leicester";
             TestItem.PostCode = "LE2 3BQ";
+
             //set ThisClaim to the test data;
             AllCustomers.ThisCustomer = TestItem;
             //add the record
@@ -166,6 +167,7 @@ namespace SharedTesting
             Boolean Found = AllCustomers.ThisCustomer.Find(PrimaryKey);
             //test to see that the record was not found
             Assert.IsFalse(Found);
+
         }
 
         [TestMethod]
@@ -178,7 +180,6 @@ namespace SharedTesting
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.CustomerID = 1;
             TestItem.FirstName = "Matt";
             TestItem.LastName = "Rodriguez";
             TestItem.Gender = "Male";
@@ -195,7 +196,6 @@ namespace SharedTesting
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //modify the record
-            TestItem.CustomerID = 1;
             TestItem.FirstName = "Matt";
             TestItem.LastName = "Rodriguez";
             TestItem.Gender = "Male";
@@ -213,6 +213,8 @@ namespace SharedTesting
             AllCustomers.ThisCustomer.Find(PrimaryKey);
             //test to see that the record was not found
             Assert.AreEqual(AllCustomers.ThisCustomer, TestItem);
+
+            
         }
 
     }

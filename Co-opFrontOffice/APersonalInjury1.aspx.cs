@@ -27,7 +27,7 @@ public partial class APersonalInjury1 : System.Web.UI.Page
         {
             APersonalInjury.TypeOfInjury = TypeOfInjury;
             APersonalInjury.Severity = txtSeverity.Text;
-            APersonalInjury.Compensation = Convert.ToDecimal(Compensation);
+            //APersonalInjury.Compensation = Convert.ToDecimal(Compensation);
             //store personal injury in the session object
             Session["APersonalInjury"] = APersonalInjury;
             Response.Write("PersonalInjuryViewer.aspx");
