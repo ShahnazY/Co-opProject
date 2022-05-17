@@ -184,8 +184,38 @@ namespace PersonalInjuryTesting
             Assert.AreEqual(AllClaims.ThisClaim, TestItem);
         }
 
+        [TestMethod]
+        public void ReportByStatusMethodOK()
+        {
+            clsClaimCollection AllClaims = new clsClaimCollection();
+            clsClaimCollection FilteredClaims = new clsClaimCollection();
+            FilteredClaims.ReportByStatus("");
+            Assert.AreEqual(AllClaims.Count, FilteredClaims.Count);
+        }
 
+        [TestMethod]
+        public void ReportByStatusNoneFound()
+        {
+            clsClaimCollection FilteredClaims = new clsClaimCollection();
+            FilteredClaims.ReportByStatus("xxxx");
+            Assert.AreEqual(0, FilteredClaims.Count);
+        }
 
+        [TestMethod]
+        public void ReportByLocationMethodOK()
+        {
+            clsClaimCollection AllClaims = new clsClaimCollection();
+            clsClaimCollection FilteredClaims = new clsClaimCollection();
+            FilteredClaims.ReportByLocation("");
+            Assert.AreEqual(AllClaims.Count, FilteredClaims.Count);
+        }
 
+        [TestMethod]
+        public void ReportByLocationNoneFound()
+        {
+            clsClaimCollection FilteredClaims = new clsClaimCollection();
+            FilteredClaims.ReportByLocation("xxxx");
+            Assert.AreEqual(0, FilteredClaims.Count);
+        }
     }
 }

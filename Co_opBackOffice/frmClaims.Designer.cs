@@ -29,6 +29,7 @@ namespace Co_opBackOffice
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClaims));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -61,8 +62,10 @@ namespace Co_opBackOffice
             this.btnMainPage = new System.Windows.Forms.Button();
             this.lblClaimManagement = new System.Windows.Forms.Label();
             this.lblAddNewClaim = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +91,7 @@ namespace Co_opBackOffice
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Ivory;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(234, 328);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +103,7 @@ namespace Co_opBackOffice
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Ivory;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(119, 328);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -110,9 +115,10 @@ namespace Co_opBackOffice
             // chkYes
             // 
             this.chkYes.AutoSize = true;
-            this.chkYes.Location = new System.Drawing.Point(171, 285);
+            this.chkYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkYes.Location = new System.Drawing.Point(193, 278);
             this.chkYes.Name = "chkYes";
-            this.chkYes.Size = new System.Drawing.Size(44, 17);
+            this.chkYes.Size = new System.Drawing.Size(52, 22);
             this.chkYes.TabIndex = 9;
             this.chkYes.Text = "Yes";
             this.chkYes.UseVisualStyleBackColor = true;
@@ -120,45 +126,50 @@ namespace Co_opBackOffice
             // lblEvidenceProvided
             // 
             this.lblEvidenceProvided.AutoSize = true;
-            this.lblEvidenceProvided.Location = new System.Drawing.Point(42, 285);
+            this.lblEvidenceProvided.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidenceProvided.Location = new System.Drawing.Point(38, 278);
             this.lblEvidenceProvided.Name = "lblEvidenceProvided";
-            this.lblEvidenceProvided.Size = new System.Drawing.Size(97, 13);
+            this.lblEvidenceProvided.Size = new System.Drawing.Size(130, 18);
             this.lblEvidenceProvided.TabIndex = 8;
             this.lblEvidenceProvided.Text = "Evidence Provided";
             // 
             // lblDateOfInjury
             // 
             this.lblDateOfInjury.AutoSize = true;
-            this.lblDateOfInjury.Location = new System.Drawing.Point(42, 234);
+            this.lblDateOfInjury.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfInjury.Location = new System.Drawing.Point(39, 228);
             this.lblDateOfInjury.Name = "lblDateOfInjury";
-            this.lblDateOfInjury.Size = new System.Drawing.Size(70, 13);
+            this.lblDateOfInjury.Size = new System.Drawing.Size(94, 18);
             this.lblDateOfInjury.TabIndex = 7;
             this.lblDateOfInjury.Text = "Date of Injury";
             // 
             // lblDateOfClaim
             // 
             this.lblDateOfClaim.AutoSize = true;
-            this.lblDateOfClaim.Location = new System.Drawing.Point(42, 168);
+            this.lblDateOfClaim.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfClaim.Location = new System.Drawing.Point(38, 161);
             this.lblDateOfClaim.Name = "lblDateOfClaim";
-            this.lblDateOfClaim.Size = new System.Drawing.Size(70, 13);
+            this.lblDateOfClaim.Size = new System.Drawing.Size(98, 18);
             this.lblDateOfClaim.TabIndex = 6;
             this.lblDateOfClaim.Text = "Date of Claim";
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(42, 100);
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(39, 100);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblStatus.Size = new System.Drawing.Size(50, 18);
             this.lblStatus.TabIndex = 5;
             this.lblStatus.Text = "Status";
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocation.Location = new System.Drawing.Point(39, 37);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(48, 13);
+            this.lblLocation.Size = new System.Drawing.Size(65, 18);
             this.lblLocation.TabIndex = 4;
             this.lblLocation.Text = "Location";
             // 
@@ -259,6 +270,7 @@ namespace Co_opBackOffice
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(165, 360);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -269,6 +281,7 @@ namespace Co_opBackOffice
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(14, 360);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
@@ -279,9 +292,10 @@ namespace Co_opBackOffice
             // 
             // btnDisplayAll
             // 
-            this.btnDisplayAll.Location = new System.Drawing.Point(67, 307);
+            this.btnDisplayAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayAll.Location = new System.Drawing.Point(14, 291);
             this.btnDisplayAll.Name = "btnDisplayAll";
-            this.btnDisplayAll.Size = new System.Drawing.Size(116, 23);
+            this.btnDisplayAll.Size = new System.Drawing.Size(105, 43);
             this.btnDisplayAll.TabIndex = 7;
             this.btnDisplayAll.Text = "Display All Claims";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
@@ -289,32 +303,36 @@ namespace Co_opBackOffice
             // 
             // btnFilterLocation
             // 
-            this.btnFilterLocation.Location = new System.Drawing.Point(281, 192);
+            this.btnFilterLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterLocation.Location = new System.Drawing.Point(448, 152);
             this.btnFilterLocation.Name = "btnFilterLocation";
             this.btnFilterLocation.Size = new System.Drawing.Size(75, 23);
             this.btnFilterLocation.TabIndex = 6;
             this.btnFilterLocation.Text = "FILTER";
             this.btnFilterLocation.UseVisualStyleBackColor = true;
+            this.btnFilterLocation.Click += new System.EventHandler(this.btnFilterLocation_Click);
             // 
             // lblFilterLocation
             // 
             this.lblFilterLocation.AutoSize = true;
-            this.lblFilterLocation.Location = new System.Drawing.Point(253, 135);
+            this.lblFilterLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilterLocation.Location = new System.Drawing.Point(334, 115);
             this.lblFilterLocation.Name = "lblFilterLocation";
-            this.lblFilterLocation.Size = new System.Drawing.Size(90, 13);
+            this.lblFilterLocation.Size = new System.Drawing.Size(124, 18);
             this.lblFilterLocation.TabIndex = 5;
             this.lblFilterLocation.Text = "Filter by Location:";
             // 
             // txtFilterLocation
             // 
-            this.txtFilterLocation.Location = new System.Drawing.Point(256, 162);
+            this.txtFilterLocation.Location = new System.Drawing.Point(337, 154);
             this.txtFilterLocation.Name = "txtFilterLocation";
             this.txtFilterLocation.Size = new System.Drawing.Size(100, 20);
             this.txtFilterLocation.TabIndex = 4;
             // 
             // btnFilterStatus
             // 
-            this.btnFilterStatus.Location = new System.Drawing.Point(281, 95);
+            this.btnFilterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterStatus.Location = new System.Drawing.Point(448, 66);
             this.btnFilterStatus.Name = "btnFilterStatus";
             this.btnFilterStatus.Size = new System.Drawing.Size(75, 23);
             this.btnFilterStatus.TabIndex = 3;
@@ -325,41 +343,47 @@ namespace Co_opBackOffice
             // lblFilterStatus
             // 
             this.lblFilterStatus.AutoSize = true;
-            this.lblFilterStatus.Location = new System.Drawing.Point(253, 34);
+            this.lblFilterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilterStatus.Location = new System.Drawing.Point(334, 34);
             this.lblFilterStatus.Name = "lblFilterStatus";
-            this.lblFilterStatus.Size = new System.Drawing.Size(79, 13);
+            this.lblFilterStatus.Size = new System.Drawing.Size(109, 18);
             this.lblFilterStatus.TabIndex = 2;
             this.lblFilterStatus.Text = "Filter by Status:";
             // 
             // txtFilterStatus
             // 
-            this.txtFilterStatus.Location = new System.Drawing.Point(256, 69);
+            this.txtFilterStatus.Location = new System.Drawing.Point(337, 68);
             this.txtFilterStatus.Name = "txtFilterStatus";
             this.txtFilterStatus.Size = new System.Drawing.Size(100, 20);
             this.txtFilterStatus.TabIndex = 1;
             // 
             // lstClaims
             // 
+            this.lstClaims.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstClaims.FormattingEnabled = true;
+            this.lstClaims.ItemHeight = 15;
             this.lstClaims.Location = new System.Drawing.Point(14, 34);
             this.lstClaims.Name = "lstClaims";
-            this.lstClaims.Size = new System.Drawing.Size(226, 251);
+            this.lstClaims.Size = new System.Drawing.Size(288, 244);
             this.lstClaims.TabIndex = 0;
             // 
             // btnMainPage
             // 
-            this.btnMainPage.Location = new System.Drawing.Point(867, 29);
+            this.btnMainPage.BackColor = System.Drawing.Color.Transparent;
+            this.btnMainPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainPage.Location = new System.Drawing.Point(856, 29);
             this.btnMainPage.Name = "btnMainPage";
-            this.btnMainPage.Size = new System.Drawing.Size(75, 23);
+            this.btnMainPage.Size = new System.Drawing.Size(86, 28);
             this.btnMainPage.TabIndex = 2;
             this.btnMainPage.Text = "Main Page";
-            this.btnMainPage.UseVisualStyleBackColor = true;
+            this.btnMainPage.UseVisualStyleBackColor = false;
             this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
             // 
             // lblClaimManagement
             // 
             this.lblClaimManagement.AutoSize = true;
             this.lblClaimManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaimManagement.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblClaimManagement.Location = new System.Drawing.Point(309, 46);
             this.lblClaimManagement.Name = "lblClaimManagement";
             this.lblClaimManagement.Size = new System.Drawing.Size(237, 29);
@@ -370,17 +394,29 @@ namespace Co_opBackOffice
             // 
             this.lblAddNewClaim.AutoSize = true;
             this.lblAddNewClaim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewClaim.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblAddNewClaim.Location = new System.Drawing.Point(12, 179);
             this.lblAddNewClaim.Name = "lblAddNewClaim";
             this.lblAddNewClaim.Size = new System.Drawing.Size(154, 24);
             this.lblAddNewClaim.TabIndex = 8;
             this.lblAddNewClaim.Text = "Add New Claim";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmClaims
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 820);
+            this.ClientSize = new System.Drawing.Size(967, 820);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAddNewClaim);
             this.Controls.Add(this.lblClaimManagement);
             this.Controls.Add(this.btnMainPage);
@@ -393,6 +429,7 @@ namespace Co_opBackOffice
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +469,6 @@ namespace Co_opBackOffice
         private System.Windows.Forms.Button btnMainPage;
         private System.Windows.Forms.Label lblClaimManagement;
         private System.Windows.Forms.Label lblAddNewClaim;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

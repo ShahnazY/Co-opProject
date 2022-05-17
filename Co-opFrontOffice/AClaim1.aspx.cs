@@ -59,7 +59,7 @@ public partial class AClaim1 : System.Web.UI.Page
         Response.Redirect("Default.aspx");
     }
 
-    protected void btnFind_Click(object sender, EventArgs e)
+    /*protected void btnFind_Click(object sender, EventArgs e)
     {
         //create an instance of the class
         clsClaim AClaim = new clsClaim();
@@ -83,7 +83,7 @@ public partial class AClaim1 : System.Web.UI.Page
         {
             lblError.Text = "Claim not found";
         }
-    }
+    }*/
 
     void Add()
     {

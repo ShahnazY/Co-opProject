@@ -179,7 +179,7 @@ namespace Co_opBackOffice
 
         private void btnFilterStatus_Click(object sender, EventArgs e)
         {
-            if (txtStatus.Text != "")
+            if (txtFilterStatus.Text != "")
             {
                 Int32 Count;
                 Count = DisplayClaimsByStatus(txtFilterStatus.Text);
@@ -215,6 +215,39 @@ namespace Co_opBackOffice
             frmMenu MainPage = new frmMenu();
             MainPage.Show();
             this.Hide();
+        }
+
+        private void btnFilterLocation_Click(object sender, EventArgs e)
+        {
+            if (txtFilterLocation.Text != "")
+            {
+                Int32 Count;
+                Count = DisplayClaimsByLocation(txtFilterLocation.Text);
+                lblError.Text = Count + "  records found";
+            }
+            else
+            {
+                lblFilterError.Text = "Provide a valid filter";
+            }
+        }
+
+        Int32 DisplayClaimsByLocation(string LocationFilter)
+        {
+            clsClaimCollection AllClaims = new clsClaimCollection();
+            Int32 Count;
+            string Location;
+            Int32 Index = 0;
+            //lstClaims.Items.Clear();
+            AllClaims.ReportByLocation(LocationFilter);
+            Count = AllClaims.Count;
+            while (Index < Count)
+            {
+                Location = Convert.ToString(AllClaims.ClaimsList[Index].Location);
+                lstClaims.DataSource = AllClaims.ClaimsList;
+                lstClaims.DisplayMember = "AllDetails";
+                Index++;
+            }
+            return Count;
         }
     }
 }
