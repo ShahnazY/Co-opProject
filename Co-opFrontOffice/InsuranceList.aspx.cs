@@ -31,7 +31,7 @@ public partial class InsuranceList : System.Web.UI.Page
         //store -1 into the sessionobject to indicate this is a new record
         Session["InsuranceID"] = -1;
         //redirect to the data entry page
-        Response.Redirect("AInsurance.aspx");
+        Response.Redirect("DogDetails.aspx");
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)

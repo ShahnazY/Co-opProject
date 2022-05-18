@@ -86,7 +86,7 @@ public partial class ADog : System.Web.UI.Page
 
     protected void btnAddInsuranceCover_Click(object sender, EventArgs e)
     {
-        Response.Redirect("InsuranceCoverage.aspx");
+        Response.Redirect("InsuranceList.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
