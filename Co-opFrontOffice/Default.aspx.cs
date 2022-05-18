@@ -93,7 +93,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnClaims_Click1(object sender, EventArgs e)
     {
-        Response.Redirect("AClaim1.aspx");
+        Response.Redirect("APersonalInjury1.aspx");
     }
 
     protected void btnInsurance_Click(object sender, EventArgs e)

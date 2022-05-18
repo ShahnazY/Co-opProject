@@ -30,13 +30,14 @@ public partial class APersonalInjury1 : System.Web.UI.Page
             //APersonalInjury.Compensation = Convert.ToDecimal(Compensation);
             //store personal injury in the session object
             Session["APersonalInjury"] = APersonalInjury;
-            Response.Write("PersonalInjuryViewer.aspx");
+            Response.Redirect("AClaim1.aspx");
         }
         else
         {
             //display the error message
             lblError.Text = Error;
         }
+        
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ public partial class APersonalInjury1 : System.Web.UI.Page
         Response.Redirect("Default.aspx");
     }
 
-    protected void btnFind_Click(object sender, EventArgs e)
+    /*protected void btnFind_Click(object sender, EventArgs e)
     {
         //create an instance of the class
         clsPersonalInjury APersonalInjury = new clsPersonalInjury();
@@ -67,5 +68,5 @@ public partial class APersonalInjury1 : System.Web.UI.Page
         {
             lblError.Text = "Injury not found";
         }
-    }
+    }*/
 }
