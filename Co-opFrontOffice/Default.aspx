@@ -14,6 +14,7 @@
             <br />
             <asp:Button ID="btnReSet" runat="server" OnClick="btnReSet_Click" Text="Re Set Password" width="160px" />
             <br />
+            <asp:Button ID="btnInsurance" runat="server" OnClick="btnInsurance_Click" style="z-index: 1; left: 1px; top: 113px; position: absolute; width: 158px" Text="Manage Insurance" />
             <br />
             <asp:Button ID="btnChangePassword" runat="server" OnClick="btnChangePassword_Click" Text="Change Password" Width="160px" />
             <br />

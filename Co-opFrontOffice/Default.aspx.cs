@@ -95,4 +95,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("AClaim1.aspx");
     }
+
+    protected void btnInsurance_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ADog1.aspx");
+    }
 }
