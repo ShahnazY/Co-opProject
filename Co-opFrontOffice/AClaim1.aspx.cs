@@ -99,6 +99,7 @@ public partial class AClaim1 : System.Web.UI.Page
             Claims.ThisClaim.EvidenceProvided = chkYes.Checked;
             //add the record
             Claims.Add();
+            Response.Redirect("ClaimList1.aspx");
         }
         else
         {
@@ -125,7 +126,7 @@ public partial class AClaim1 : System.Web.UI.Page
             //update the record
             Claims.Update();
             //redirect to list
-            Response.Redirect("ClaimList.aspx");
+            Response.Redirect("ClaimList1.aspx");
         }
         else
         {

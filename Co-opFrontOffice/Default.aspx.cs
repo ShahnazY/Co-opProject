@@ -65,6 +65,7 @@ public partial class _Default : System.Web.UI.Page
         btnFunds.Visible = Auth;
         btnPurchase.Visible = Auth;
         btnClaims.Visible = Auth;
+        btnInsurance.Visible = Auth;
     }
 
 
