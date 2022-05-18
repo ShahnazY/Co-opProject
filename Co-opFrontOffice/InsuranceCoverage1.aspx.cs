@@ -22,7 +22,7 @@ public partial class InsuranceCoverage1 : System.Web.UI.Page
         //store the name in the session object
         Session["AInsurance"] = AInsurance;
         //redirect to the viewer page
-        Response.Redirect("InsuranceCoverageViewer.aspx");
+        Response.Redirect("InsuranceList.aspx");
     }
 
     void Add()

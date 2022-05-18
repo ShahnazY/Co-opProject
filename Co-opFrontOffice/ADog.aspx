@@ -155,7 +155,7 @@
             <asp:Label ID="lblDateAdded" runat="server" CssClass="auto-style17" Font-Size="Large" Text="Date "></asp:Label>
             <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 118px; top: 415px; position: absolute; width: 387px; height: 49px"></asp:Label>
             <asp:Label ID="AddingInsurance" runat="server" style="z-index: 1; left: 694px; top: 246px; position: absolute" Text="Please add a dog to generate Dog ID before continuing with adding insurance cover!"></asp:Label>
-            <asp:Button ID="btnAddInsuranceCover" runat="server" OnClick="btnAddInsuranceCover_Click" style="z-index: 1; left: 841px; top: 371px; position: absolute" Text="Add Insurance Cover" />
+            <asp:Button ID="btnAddInsuranceCover" runat="server" OnClick="btnAddInsuranceCover_Click" style="z-index: 1; left: 841px; top: 371px; position: absolute" Text="View Insurances" />
         </asp:Panel>
     </form>
 </body>
