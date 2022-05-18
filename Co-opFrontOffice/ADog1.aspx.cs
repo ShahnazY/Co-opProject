@@ -21,7 +21,7 @@ public partial class ADog1 : System.Web.UI.Page
 
     protected void btnAddInsuranceCover_Click(object sender, EventArgs e)
     {
-        Response.Redirect("InsuranceCoverage.aspx");
+        Response.Redirect("InsuranceCoverage1.aspx");
     }
 
     protected void btnAddDog_Click(object sender, EventArgs e)
