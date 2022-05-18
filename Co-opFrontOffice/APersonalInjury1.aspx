@@ -18,9 +18,6 @@
         <asp:TextBox ID="txtCompensation" runat="server" style="z-index: 1; left: 224px; top: 325px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblCompensation" runat="server" style="z-index: 1; left: 80px; top: 327px; position: absolute" Text="Compensation"></asp:Label>
         <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 598px; top: 416px; position: absolute" Text="CANCEL" BackColor="White" BorderColor="Red" Font-Bold="True" ForeColor="Red" />
-        <asp:TextBox ID="txtInjuryID" runat="server" style="z-index: 1; left: 227px; top: 164px; position: absolute"></asp:TextBox>
-        <asp:Label ID="lblInjuryID" runat="server" style="z-index: 1; left: 77px; top: 166px; position: absolute" Text="Personal Injury ID"></asp:Label>
-        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 402px; top: 161px; position: absolute" Text="Find" />
         <asp:Panel ID="Panel2" runat="server" BackColor="#B3F0FF" BackImageUrl="~/coop-logo-png-16.png" style="z-index: 1; left: 2px; top: -126px; position: absolute; height: 260px; width: 827px">
             </asp:Panel>
         </asp:Panel>
