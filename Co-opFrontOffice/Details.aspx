@@ -17,12 +17,11 @@
         <asp:TextBox ID="txtQTY" runat="server">1</asp:TextBox>
         <br />
     
-    </div>
+
     <br />
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add to Cart" />
         <br />
         <br />
         <asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Shopping" />
-    </form>
-</body>
+
 </asp:Content>

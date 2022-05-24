@@ -25,22 +25,12 @@ public partial class AddingClient2 : System.Web.UI.Page
         Session["MyCart"] = MyCart;
     }
 
-  
+
 
     protected void btnCheckout_Click(object sender, EventArgs e)
     {
-        //test to see that card details are entered
-        if (txtCardNo.Text != "")
-        {
-            //save the card no
-            MyCart.CardNo = txtCardNo.Text;
-            MyCart.Checkout();
-            Response.Redirect("Thanks.aspx");
-        }
-        else
-        {
-            lblError.Text = "Payment details not valid";
-        }
+
+        Response.Redirect("Thanks.aspx");
     }
 
     protected void btnBack_Click(object sender, EventArgs e)

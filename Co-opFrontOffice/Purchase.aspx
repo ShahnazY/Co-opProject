@@ -51,14 +51,14 @@
                 <td>FTSE Emerging Markets UCITS ETF</td>
                 <td>£47.71</td>
                 <td>
-                    <a href="Details.aspx?ProductID=1">Details</a>
+                    <a href="Details3.aspx?ProductID=1">Details</a>
                 </td>
             </tr>
             <tr>
                 <td>Federal Money Market Fund</td>
                 <td>£3000.00</td>
                 <td>
-                    <a href="Details.aspx?ProductID=2">Details</a>
+                    <a href="Details2.aspx?ProductID=2">Details</a>
                 </td>
             </tr>
             <tr>
